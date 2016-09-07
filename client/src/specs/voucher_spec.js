@@ -21,5 +21,12 @@ describe( 'The Vouchers', function() {
     assert.equal( 15, voucher.value );
   });
 
+  it( 'Should change to used once it has been applied', function() {
+    voucher = new Voucher( "ASHH326" )
+    voucher.setValidation();
+    voucher.useVoucher();
+    assert.equal( true, voucher.hasBeenUsed );
+  })
+
 });
 
