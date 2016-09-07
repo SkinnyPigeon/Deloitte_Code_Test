@@ -8,4 +8,9 @@ describe( 'The Basket', function() {
     assert.equal( 0, basket.totalItems() );
   });
 
+  it( 'Should be able to add an item', function() {
+    basket.add( stock[ 'itemOne' ] );
+    assert.equal( 1, basket.totalItems() );
+  });
+
 });
