@@ -2,9 +2,9 @@ var WomenView = function() {
   console.log( "Women View Accessed" );
 
   var area = document.getElementById( 'main-display' );
-  // area.innerHtml = "";
+  area.innerText = "";
   var p = document.createElement( 'p' );
-  p.innerText = "Hello";
+  p.innerText = "This is the women view";
   area.appendChild( p );
 }
 

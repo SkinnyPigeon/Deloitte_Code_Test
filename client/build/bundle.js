@@ -44,7 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var HomeView = __webpack_require__( 3 );
 	var WomenView = __webpack_require__( 2 );
+	var MenView = __webpack_require__( 4 );
+	var BasketView = __webpack_require__( 5 );
 	
 	window.onload = function() {
 	
@@ -73,20 +76,19 @@
 	}
 	
 	var displayHome = function() {
-	  console.log( "home displayed" );
+	  var view = new HomeView();
 	}
 	
 	var displayWomen = function() {
 	  var view = new WomenView();
-	  console.log( "women displayed" );
 	}
 	
 	var displayMen = function() {
-	  console.log( "men displayed" );
+	  var view = new MenView();
 	}
 	
 	var displayBasket = function() {
-	  console.log( "basket displayed" );
+	  var view = new BasketView();
 	}
 	
 	
@@ -113,13 +115,61 @@
 	  console.log( "Women View Accessed" );
 	
 	  var area = document.getElementById( 'main-display' );
-	  // area.innerHtml = "";
+	  area.innerText = "";
 	  var p = document.createElement( 'p' );
-	  p.innerText = "Hello";
+	  p.innerText = "This is the women view";
 	  area.appendChild( p );
 	}
 	
 	module.exports = WomenView;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	var HomeView = function() {
+	  console.log( "Home View Accessed" );
+	
+	  var area = document.getElementById( 'main-display' );
+	  area.innerText = "";
+	  var p = document.createElement( 'p' );
+	  p.innerText = "This is the home page";
+	  area.appendChild( p );
+	}
+	
+	module.exports = HomeView;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	var MenView = function() {
+	  console.log( "Women View Accessed" );
+	
+	  var area = document.getElementById( 'main-display' );
+	  area.innerText = "";
+	  var p = document.createElement( 'p' );
+	  p.innerText = "This is the men view";
+	  area.appendChild( p );
+	}
+	
+	module.exports = MenView;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	var BasketView = function() {
+	  console.log( "Women View Accessed" );
+	
+	  var area = document.getElementById( 'main-display' );
+	  area.innerText = "";
+	  var p = document.createElement( 'p' );
+	  p.innerText = "This is the basket view";
+	  area.appendChild( p );
+	}
+	
+	module.exports = BasketView;
 
 /***/ }
 /******/ ]);

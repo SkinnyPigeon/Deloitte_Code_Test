@@ -1,4 +1,7 @@
+var HomeView = require( './views/HomeView' );
 var WomenView = require( './views/WomenView' );
+var MenView = require( './views/MenView' );
+var BasketView = require( './views/BasketView' );
 
 window.onload = function() {
 
@@ -27,20 +30,19 @@ window.onload = function() {
 }
 
 var displayHome = function() {
-  console.log( "home displayed" );
+  var view = new HomeView();
 }
 
 var displayWomen = function() {
   var view = new WomenView();
-  console.log( "women displayed" );
 }
 
 var displayMen = function() {
-  console.log( "men displayed" );
+  var view = new MenView();
 }
 
 var displayBasket = function() {
-  console.log( "basket displayed" );
+  var view = new BasketView();
 }
 
 
