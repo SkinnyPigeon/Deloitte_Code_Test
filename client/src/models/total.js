@@ -10,6 +10,12 @@ Total.prototype = {
     return this.total;
   },
 
+  addVoucher: function( voucher ) {
+    if( voucher.valid && this.total >= 5 ) {
+      this.total -= 5;
+    }
+  }
+
 }
 
 module.exports = Total;

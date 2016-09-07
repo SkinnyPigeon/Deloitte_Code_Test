@@ -11,6 +11,7 @@ describe( 'The Total: ', function() {
     basket = new Basket();
     basket.add( stock[1] );
     fiveOff = new Voucher( "GHAD782" );
+    fiveOff.setValidation();
   });
 
   it( 'Should start with a total of zero', function() {
@@ -29,6 +30,7 @@ describe( 'The Total: ', function() {
   });
 
   it( 'Should be able to subtract a valid voucher', function() {
+    runningTotal.getTotal( basket.items );
     runningTotal.addVoucher( fiveOff );
     assert.equal( 37, runningTotal.total );
   })
