@@ -2,7 +2,6 @@ var stock = require( './stock' );
 
 var basket = {
   items: [],
-  total: 0,
 
   totalItems: function() {
     return this.items.length;
