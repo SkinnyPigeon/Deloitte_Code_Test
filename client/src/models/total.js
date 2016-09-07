@@ -25,7 +25,7 @@ Total.prototype = {
       return;
     }
 
-    if( this.checkForAboveSeventyFive( voucher ) && !this.checkForShoes ) {
+    if( !this.checkForShoes() && !this.checkForAboveSeventyFive( voucher )  ) {
       return;
     }
 
@@ -59,12 +59,11 @@ Total.prototype = {
   },
 
   checkForShoes: function() {
-    for( var i = 0; i < this.basket; i++ ) {
+    for( var i = 0; i < this.basket.length; i++ ) {
       if( this.basket[ i ].subcategory === "Footwear" ) {
         return true;
       }
     } 
-    return false;
   }
 
 
