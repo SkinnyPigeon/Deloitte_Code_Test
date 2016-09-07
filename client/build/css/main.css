@@ -9,6 +9,11 @@ body {
   padding: 0 5%;
 }
 
+.home-images {
+  max-width: 35%;
+  min-width: 35%;
+}
+
 a {
   text-decoration: none;
 }
