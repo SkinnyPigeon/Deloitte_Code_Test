@@ -3,7 +3,19 @@ var WomenView = require( './views/WomenView' );
 var MenView = require( './views/MenView' );
 var BasketView = require( './views/BasketView' );
 
+var WomenShoeView = require( './views/WomenShoeView' );
+var WomenCasualView = require( './views/WomenCasualView' );
+var WomenFormalView = require( './views/WomenFormalView' );
+
+var MenShoeView = require( './views/MenShoeView' );
+var MenCasualView = require( './views/MenCasualView' );
+var MenFormalView = require( './views/MenFormalView' );
+
 window.onload = function() {
+  main()
+}
+
+var main = function() {
 
   displayHome();
 
@@ -16,6 +28,7 @@ window.onload = function() {
 
   home.onclick = function(e) {
     displayHome();
+    main();
   }
 
   women.onclick = function(e) {
@@ -54,8 +67,6 @@ var displayMen = function() {
 var displayBasket = function() {
   var view = new BasketView();
 }
-
-
 
 
 

@@ -49,7 +49,19 @@
 	var MenView = __webpack_require__( 4 );
 	var BasketView = __webpack_require__( 5 );
 	
+	var WomenShoeView = __webpack_require__( 12 );
+	var WomenCasualView = __webpack_require__( 7 );
+	var WomenFormalView = __webpack_require__( 8 );
+	
+	var MenShoeView = __webpack_require__( 9 );
+	var MenCasualView = __webpack_require__( 10 );
+	var MenFormalView = __webpack_require__( 11 );
+	
 	window.onload = function() {
+	  main()
+	}
+	
+	var main = function() {
 	
 	  displayHome();
 	
@@ -62,6 +74,7 @@
 	
 	  home.onclick = function(e) {
 	    displayHome();
+	    main();
 	  }
 	
 	  women.onclick = function(e) {
@@ -100,8 +113,6 @@
 	var displayBasket = function() {
 	  var view = new BasketView();
 	}
-	
-	
 	
 	
 	
@@ -247,6 +258,43 @@
 	}
 	
 	module.exports = BasketView;
+
+/***/ },
+/* 6 */,
+/* 7 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+
 
 /***/ }
 /******/ ]);
