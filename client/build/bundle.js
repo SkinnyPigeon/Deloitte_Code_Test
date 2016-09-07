@@ -49,9 +49,7 @@
 	var MenView = __webpack_require__( 4 );
 	var BasketView = __webpack_require__( 5 );
 	
-	var WomenShoeView = __webpack_require__( 12 );
-	var WomenCasualView = __webpack_require__( 7 );
-	var WomenFormalView = __webpack_require__( 8 );
+	
 	
 	var MenShoeView = __webpack_require__( 9 );
 	var MenCasualView = __webpack_require__( 10 );
@@ -130,8 +128,12 @@
 /***/ },
 /* 1 */,
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
+	var WomenShoeView = __webpack_require__( !(function webpackMissingModule() { var e = new Error("Cannot find module \"./views/WomenShoeView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()) );
+	var WomenFormalView = __webpack_require__( !(function webpackMissingModule() { var e = new Error("Cannot find module \"./views/WomenFormalView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()) );
+	var WomenCasualView = __webpack_require__( !(function webpackMissingModule() { var e = new Error("Cannot find module \"./views/WomenCasualView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()) );
+	
 	var WomenView = function() {
 	  console.log( "Women View Accessed" );
 	
@@ -167,7 +169,39 @@
 	  area.appendChild( casual );
 	  area.appendChild( casualText );
 	
+	  shoes.onclick = function() {
+	    displayWomenShoes();
+	  }
+	
+	  formal.onclick = function() {
+	    displayWomenFormal();
+	  }
+	
+	  casual.onclick = function() {
+	    displayWomenCasual();
+	  }
+	
 	}
+	
+	var displayWomenShoes = function() {
+	  var view = new WomenShoeView();
+	}
+	
+	var displayWomenFormal = function() {
+	  var view = new WomenFormalView();
+	}
+	
+	var displayWomenCasual = function() {
+	  var view = new WomenCasualView();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	module.exports = WomenView;
 
@@ -261,18 +295,8 @@
 
 /***/ },
 /* 6 */,
-/* 7 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
+/* 7 */,
+/* 8 */,
 /* 9 */
 /***/ function(module, exports) {
 
@@ -286,12 +310,6 @@
 
 /***/ },
 /* 11 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 12 */
 /***/ function(module, exports) {
 
 

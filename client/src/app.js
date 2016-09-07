@@ -3,9 +3,7 @@ var WomenView = require( './views/WomenView' );
 var MenView = require( './views/MenView' );
 var BasketView = require( './views/BasketView' );
 
-var WomenShoeView = require( './views/WomenShoeView' );
-var WomenCasualView = require( './views/WomenCasualView' );
-var WomenFormalView = require( './views/WomenFormalView' );
+
 
 var MenShoeView = require( './views/MenShoeView' );
 var MenCasualView = require( './views/MenCasualView' );
