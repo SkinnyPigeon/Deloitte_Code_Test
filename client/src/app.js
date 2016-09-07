@@ -3,7 +3,10 @@ var WomenView = require( './views/WomenView' );
 var MenView = require( './views/MenView' );
 var BasketView = require( './views/BasketView' );
 
-
+var Basket = require( './models/basket' );
+var stock = require( './models/stock' );
+var Total = require( './models/total' );
+var Voucher = require( './models/voucher' );
 
 var MenShoeView = require( './views/MenShoeView' );
 var MenCasualView = require( './views/MenCasualView' );

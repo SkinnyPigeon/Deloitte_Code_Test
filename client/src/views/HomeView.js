@@ -4,6 +4,9 @@ var HomeView = function() {
   var clear = document.getElementById( 'choice-display' );
   clear.innerText = "";
 
+  var clearTwo = document.getElementById( 'item-display' );
+  clearTwo.innerText = "";
+
   var area = document.getElementById( 'main-display' );
   area.innerText = "";
 

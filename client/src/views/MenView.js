@@ -4,6 +4,9 @@ var MenView = function() {
   var clear = document.getElementById( 'main-display' );
   clear.innerText = "";
 
+  var clearTwo = document.getElementById( 'item-display' );
+  clearTwo.innerText = "";
+
   var area = document.getElementById( 'choice-display' );
   area.innerText = "";
 

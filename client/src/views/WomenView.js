@@ -1,12 +1,15 @@
-var WomenShoeView = require( './views/WomenShoeView' );
-var WomenFormalView = require( './views/WomenFormalView' );
-var WomenCasualView = require( './views/WomenCasualView' );
+var WomenShoeView = require( './WomenShoeView' );
+var WomenFormalView = require( './WomenFormalView' );
+var WomenCasualView = require( './WomenCasualView' );
 
 var WomenView = function() {
   console.log( "Women View Accessed" );
 
   var clear = document.getElementById( 'main-display' );
   clear.innerText = "";
+
+  var clearTwo = document.getElementById( 'item-display' );
+  clearTwo.innerText = "";
 
   var area = document.getElementById( 'choice-display' );
   area.innerText = "";
