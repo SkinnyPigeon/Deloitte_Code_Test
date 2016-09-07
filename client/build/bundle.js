@@ -44,7 +44,9 @@
 /* 0 */
 /***/ function(module, exports) {
 
-
+	window.onload = function() {
+	  console.log( "app started" );
+	}
 
 /***/ }
 /******/ ]);
