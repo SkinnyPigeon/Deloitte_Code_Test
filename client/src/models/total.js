@@ -14,13 +14,23 @@ Total.prototype = {
     if( this.checkForUsedVouchers( voucher )) {
       return;
     }
-    if( voucher.valid && this.total >= voucher.value ) {
+
+    if( !this.checkForValidVoucher ) {
+      return;
+    }
+    if( this.total >= voucher.value ) {
       this.total -= voucher.value;
     }
   },
 
   checkForUsedVouchers: function( voucher ) {
     if( voucher.hasBeenUsed ) {
+      return true;
+    }
+  },
+
+  checkForValidVoucher: function( voucher ) {
+    if( voucher.valid ) {
       return true;
     }
   }
