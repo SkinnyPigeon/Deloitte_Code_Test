@@ -1,3 +1,31 @@
 body {
   font-family: 'Amatic SC', cursive;
+  background-color: #b2d4de;
+  color: #999;
 }
+
+header {
+  background: #1c7f9b;
+  border-color: #40aac8;
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;
+}
+
+#logo {
+  float: left;
+  margin-left: 5%;
+  text-align: left;
+  width: 45%;
+}
+
+nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%;
+}
+
