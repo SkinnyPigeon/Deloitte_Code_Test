@@ -36,4 +36,13 @@ describe( 'The Basket', function() {
     assert.equal( 11, stock[ 2 ].stock );
   });
 
+  it( 'Should not be able to add an out of stock item', function() {
+    assert.equal( "Out of stock", basket.add( stock[ 4 ] ));
+  });
+
+  it( 'Should make sure the stock has not dropped below zero', function() {
+    basket.add( stock[ 4 ] );
+    assert.equal( 0, stock[ 4 ]. stock );
+  });
+
 });

@@ -1,5 +1,3 @@
-
-
 itemOne = {
   name: "Almond Toe Court Shoes, Patent Black",
   category: "Women’s Footwear",

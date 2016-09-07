@@ -9,16 +9,24 @@ Basket.prototype = {
   },
 
   add: function( item ) {
+    if( item.stock === 0 ) {
+      return this.error();
+    }
     this.items.push( item );
+    item.stock -= 1;
   },
 
   remove: function( item ) {
-    for( basket_item of this.items ) {
+    for( basketItem of this.items ) {
 
-      if( item.name === basket_item.name ){
-        this.items.splice( basket_item.index, 1);
+      if( item.name === basketItem.name ){
+        this.items.splice( basketItem.index, 1);
       }
     }
+  },
+
+  error: function() {
+    return "Out of stock";
   }
 
 }
