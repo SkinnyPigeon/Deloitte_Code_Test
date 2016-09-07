@@ -131,6 +131,7 @@
 	  console.log( "Home View Accessed" );
 	
 	  var area = document.getElementById( 'main-display' );
+	  // var area = document.getElementById( 'wrapper' );
 	  area.innerText = "";
 	
 	  var women = document.createElement( 'img' );
@@ -141,7 +142,7 @@
 	
 	  women.src = "./css/image/women.jpeg";
 	  men.src = "./css/image/men.jpeg";
-	  
+	
 	  area.appendChild( women );
 	  area.appendChild( men );
 	}

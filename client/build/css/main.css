@@ -1,29 +1,24 @@
-
 body {
   font-family: 'Amatic SC', sans-serif;
 }
 
-#wrapper {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.home-images {
+#main-display {
   max-width: 35%;
   min-width: 35%;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  min-width: 100%; 
+  border: 2px solid transparent;
+  border-color: #fff;
 }
 
 a {
   text-decoration: none;
 }
 
-
-img {
-  border: 2px solid transparent;
-  border-color: #fff;
-  max-width: 100%;
-}
 
 li {
   list-style: none;
