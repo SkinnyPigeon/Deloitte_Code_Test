@@ -28,7 +28,12 @@ describe( 'The Basket', function() {
     assert.deepEqual( [{  name: "Suede Shoes, Blue",
                           category: "Women's Footwear",
                           price: 42,
-                          stock: 4 }], basket.seeItems() );
+                          stock: 3 }], basket.items );
+  });
+
+  it( 'Should reduce the level of stock for an item', function() {
+    basket.add( stock[ 2 ] );
+    assert.equal( 11, stock[ 2 ].stock );
   });
 
 });
