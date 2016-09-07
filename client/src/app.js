@@ -1,4 +1,8 @@
+var WomenView = require( './views/WomenView' );
+
 window.onload = function() {
+
+  displayHome();
 
   var home = document.getElementById( 'home' );
   var women = document.getElementById( 'women' );
@@ -6,19 +10,49 @@ window.onload = function() {
   var basket = document.getElementById( 'basket' );
 
   home.onclick = function(e) {
-    console.log( "clicked home" );
+    displayHome();
   }
 
   women.onclick = function(e) {
-    console.log( "clicked women")
+    displayWomen();
   }
 
   men.onclick = function(e) {
-    console.log( "clicked men")
+    displayMen();
   }
 
   basket.onclick = function(e) {
-    console.log( "clicked basket")
+    displayBasket();
   }
 }
+
+var displayHome = function() {
+  console.log( "home displayed" );
+}
+
+var displayWomen = function() {
+  var view = new WomenView();
+  console.log( "women displayed" );
+}
+
+var displayMen = function() {
+  console.log( "men displayed" );
+}
+
+var displayBasket = function() {
+  console.log( "basket displayed" );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
