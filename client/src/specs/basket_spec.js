@@ -13,13 +13,13 @@ describe( 'The Basket', function() {
   });
 
   it( 'Should be able to add an item', function() {
-    basket.add( stock[ 'itemOne' ] );
+    basket.add( stock[ 0 ] );
     assert.equal( 1, basket.totalItems() );
   });
 
   it( 'Should be able to remove an item', function() {
-    basket.add( stock[ 'itemOne' ] );
-    basket.remove( stock[ 'itemOne' ] );
+    basket.add( stock[ 0 ] );
+    basket.remove( stock[ 0 ] );
     assert.equal( 0, basket.totalItems() );
   });
 

@@ -91,7 +91,7 @@ itemThirteen = {
   stock: 5
 }
 
-var stock = { itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve, itemThirteen }
+var stock = [ itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve, itemThirteen ]
 
 module.exports = stock;
 
