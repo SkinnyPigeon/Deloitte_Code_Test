@@ -1,11 +1,11 @@
-var basket = require( '../models/basket' ).basket;
+var Basket = require( '../models/basket' );
 var stock = require( '../models/stock' );
 var assert = require( 'chai' ).assert;
 
 describe( 'The Basket', function() {
 
   beforeEach( function() {
-    basket.items =[];
+    basket = new Basket();
   });
 
   it( 'Should be empty at start', function() {
