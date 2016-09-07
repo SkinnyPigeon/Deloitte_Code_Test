@@ -1,31 +1,145 @@
+
 body {
-  font-family: 'Amatic SC', cursive;
-  background-color: #b2d4de;
-  color: #999;
+  font-family: 'Amatic SC', sans-serif;
+}
+
+
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+img {
+  border: 2px solid transparent;
+  border-color: #fff;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+  padding-right: 10px;
+}
+
+h3 {
+  margin: 0 0 1em 0;
+  
+}
+
+p {
+  font-size: 1.05em;
 }
 
 header {
-  background: #1c7f9b;
-  border-color: #40aac8;
   float: left;
   margin: 0 0 30px 0;
   padding: 5px 0 0 0;
-  width: 100%;
+  width: 100%;  
 }
 
-#logo {
-  float: left;
-  margin-left: 5%;
-  text-align: left;
-  width: 45%;
+
+#logo{
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  margin: 15px 0;
+  font-size: 3.25em;
+  font-weight: normal;
+  line-height: 0.8em;
+}
+
+h2 {
+  font-size: 2.25em;
+  margin: -5px 0 0;
+  font-weight: normal;
 }
 
 nav {
-    background: none;
-    float: right;
-    font-size: 1.125em;
-    margin-right: 5%;
-    text-align: right;
-    width: 45%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 28px 0 0;  
 }
+
+nav ul {
+  list-style: none;
+  margin: 0 30px;
+  padding: 0;
+}
+
+
+nav li {
+  display: inline-block;
+}
+
+
+nav a {
+  font-weight: 800;
+  padding: 15px 10px;
+}
+
+
+/* site body */
+body {
+  background-color: #b2d4de;
+  color: #fff;
+  background-image: url('./image/paper.png');
+}
+
+/* blue header */
+header {
+  
+  background: #1c7f9b;
+  border-color: #40aac8;
+  background-image: url('./image/paper-2.png');
+}
+
+/* nav background on mobile */
+nav {
+  background: #40aac8;
+  background-image: url('./image/paper-2.png');
+}
+
+/* logo text */
+h1, h2 {
+color: #fff;
+}
+
+/* links */
+a {
+  color: #1c7f9b;
+}
+
+/* nav link */
+nav a, nav a:visited {
+  color: #fff;
+}
+
+/* selected nav link */
+nav a.selected, nav li:hover {
+  color: #1c7f9b;
+}
+
+h3 {
+  color: #1c7f9b;
+}
+
+p {
+  color: #1c7f9b;
+}
+
+
+
+
+
+
+
+
+
 
