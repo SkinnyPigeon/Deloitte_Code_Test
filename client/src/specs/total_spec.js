@@ -95,9 +95,17 @@ describe( 'The Total: ', function() {
     basket.add( stock[12] );
     basket.add( stock[11] );
     runningTotal.setTotal( basket.items );
-    console.log( runningTotal.total );
     runningTotal.addVoucher( fifteenOff );
     assert.equal( 885, runningTotal.total );
+  });
+
+  it( 'Should be able to take an assortment of goods and apply a voucher accordingly ( part 2 )', function() {
+    basket.add( stock[3] );
+    basket.add( stock[12] );
+    basket.add( stock[5] );
+    runningTotal.setTotal( basket.items );
+    runningTotal.addVoucher( fakeFiveOff );
+    assert.equal( 726, runningTotal.total );
   });
 
 });
