@@ -5,12 +5,13 @@ var BasketView = require( './views/BasketView' );
 
 var Basket = require( './models/basket' );
 var stock = require( './models/stock' );
-var Total = require( './models/total' );
 var Voucher = require( './models/voucher' );
 
 var MenShoeView = require( './views/MenShoeView' );
 var MenCasualView = require( './views/MenCasualView' );
 var MenFormalView = require( './views/MenFormalView' );
+
+var basket = new Basket();
 
 window.onload = function() {
   main()
@@ -18,55 +19,57 @@ window.onload = function() {
 
 var main = function() {
 
-  displayHome();
+  displayHome( basket, stock );
 
   var home = document.getElementById( 'home' );
   var women = document.getElementById( 'women' );
   var womenImage = document.getElementById( 'women-image' );
   var men = document.getElementById( 'men' );
   var menImage = document.getElementById( 'men-image' );
-  var basket = document.getElementById( 'basket' );
+  var basketLink = document.getElementById( 'basket' );
 
   home.onclick = function(e) {
-    displayHome();
+    displayHome( basket, stock );
     main();
   }
 
   women.onclick = function(e) {
-    displayWomen();
+    console.log( stock );
+    displayWomen( basket, stock );
   }
 
   men.onclick = function(e) {
-    displayMen();
+    displayMen( basket, stock );
   }
 
-  basket.onclick = function(e) {
-    displayBasket();
+  basketLink.onclick = function(e) {
+    displayBasket( basket );
   }
 
   womenImage.onclick = function(e) {
-    displayWomen();
+    displayWomen( basket, stock );
   }
 
   menImage.onclick = function(e) {
-    displayMen();
+    displayMen( basket, stock );
   }
 }
 
-var displayHome = function() {
-  var view = new HomeView();
+var displayHome = function( basket, stock ) {
+  var view = new HomeView( basket, stock );
 }
 
-var displayWomen = function() {
-  var view = new WomenView();
+var displayWomen = function( basket, stock ) {
+  console.log( stock );
+  var view = new WomenView( basket, stock );
 }
 
-var displayMen = function() {
-  var view = new MenView();
+var displayMen = function( basket, stock ) {
+  var view = new MenView( basket, stock );
 }
 
-var displayBasket = function() {
-  var view = new BasketView();
+var displayBasket = function( basket ) {
+  var view = new BasketView( basket );
 }
 
 

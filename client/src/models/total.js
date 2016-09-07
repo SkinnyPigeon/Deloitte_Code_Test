@@ -5,6 +5,7 @@ var Total = function() {
 
 Total.prototype = {
   setTotal: function( basket ) {
+    this.total = 0;
     this.basket = basket;
     for( var i = 0; i < basket.length; i++ ) {
       this.total += basket[ i ].price;

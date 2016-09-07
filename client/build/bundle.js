@@ -51,12 +51,13 @@
 	
 	var Basket = __webpack_require__( 13 );
 	var stock = __webpack_require__( 14 );
-	var Total = __webpack_require__( 15 );
 	var Voucher = __webpack_require__( 16 );
 	
 	var MenShoeView = __webpack_require__( 9 );
 	var MenCasualView = __webpack_require__( 10 );
 	var MenFormalView = __webpack_require__( 11 );
+	
+	var basket = new Basket();
 	
 	window.onload = function() {
 	  main()
@@ -64,55 +65,57 @@
 	
 	var main = function() {
 	
-	  displayHome();
+	  displayHome( basket, stock );
 	
 	  var home = document.getElementById( 'home' );
 	  var women = document.getElementById( 'women' );
 	  var womenImage = document.getElementById( 'women-image' );
 	  var men = document.getElementById( 'men' );
 	  var menImage = document.getElementById( 'men-image' );
-	  var basket = document.getElementById( 'basket' );
+	  var basketLink = document.getElementById( 'basket' );
 	
 	  home.onclick = function(e) {
-	    displayHome();
+	    displayHome( basket, stock );
 	    main();
 	  }
 	
 	  women.onclick = function(e) {
-	    displayWomen();
+	    console.log( stock );
+	    displayWomen( basket, stock );
 	  }
 	
 	  men.onclick = function(e) {
-	    displayMen();
+	    displayMen( basket, stock );
 	  }
 	
-	  basket.onclick = function(e) {
-	    displayBasket();
+	  basketLink.onclick = function(e) {
+	    displayBasket( basket );
 	  }
 	
 	  womenImage.onclick = function(e) {
-	    displayWomen();
+	    displayWomen( basket, stock );
 	  }
 	
 	  menImage.onclick = function(e) {
-	    displayMen();
+	    displayMen( basket, stock );
 	  }
 	}
 	
-	var displayHome = function() {
-	  var view = new HomeView();
+	var displayHome = function( basket, stock ) {
+	  var view = new HomeView( basket, stock );
 	}
 	
-	var displayWomen = function() {
-	  var view = new WomenView();
+	var displayWomen = function( basket, stock ) {
+	  console.log( stock );
+	  var view = new WomenView( basket, stock );
 	}
 	
-	var displayMen = function() {
-	  var view = new MenView();
+	var displayMen = function( basket, stock ) {
+	  var view = new MenView( basket, stock );
 	}
 	
-	var displayBasket = function() {
-	  var view = new BasketView();
+	var displayBasket = function( basket ) {
+	  var view = new BasketView( basket );
 	}
 	
 	
@@ -133,11 +136,12 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WomenShoeView = __webpack_require__( !(function webpackMissingModule() { var e = new Error("Cannot find module \"./WomenShoeView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()) );
-	var WomenFormalView = __webpack_require__( 8 );
-	var WomenCasualView = __webpack_require__( 7 );
+	var WomenShoeView = __webpack_require__( 12 );
+	// var WomenFormalView = require( './WomenFormalView' );
+	// var WomenCasualView = require( './WomenCasualView' );
 	
-	var WomenView = function() {
+	var WomenView = function( basket, stock ) {
+	  console.log( stock );
 	  console.log( "Women View Accessed" );
 	
 	  var clear = document.getElementById( 'main-display' );
@@ -176,7 +180,8 @@
 	  area.appendChild( casualText );
 	
 	  shoes.onclick = function() {
-	    displayWomenShoes();
+	    console.log( stock );
+	    displayWomenShoes( basket, stock );
 	  }
 	
 	  formal.onclick = function() {
@@ -186,20 +191,19 @@
 	  casual.onclick = function() {
 	    displayWomenCasual();
 	  }
-	
 	}
 	
-	var displayWomenShoes = function() {
-	  var view = new WomenShoeView();
+	var displayWomenShoes = function( basket, stock ) {
+	  var view = new WomenShoeView(  basket, stock );
 	}
 	
-	var displayWomenFormal = function() {
-	  var view = new WomenFormalView();
-	}
+	// var displayWomenFormal = function() {
+	//   var view = new WomenFormalView();
+	// }
 	
-	var displayWomenCasual = function() {
-	  var view = new WomenCasualView();
-	}
+	// var displayWomenCasual = function() {
+	//   var view = new WomenCasualView();
+	// }
 	
 	
 	
@@ -291,11 +295,22 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	var BasketView = function() {
-	  console.log( "Women View Accessed" );
+	var Total = __webpack_require__( 15 );
 	
+	var runningTotal = new Total();
+	
+	var BasketView = function( basket ) {
+	
+	  console.log( basket );
+	
+	  runningTotal.setTotal( basket.items );
+	
+	  console.log( runningTotal.total );
+	
+	  console.log( "Basket View Accessed" );
+	  console.log( basket.totalItems() );
 	  var area = document.getElementById( 'main-display' );
 	  area.innerText = "";
 	  var p = document.createElement( 'p' );
@@ -307,18 +322,8 @@
 
 /***/ },
 /* 6 */,
-/* 7 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
+/* 7 */,
+/* 8 */,
 /* 9 */
 /***/ function(module, exports) {
 
@@ -390,7 +395,60 @@
 
 
 /***/ },
-/* 12 */,
+/* 12 */
+/***/ function(module, exports) {
+
+	var WomenShoeView = function( basket, stock ) {
+	  console.log( stock )
+	  console.log( "Women Shoe View Accessed" );
+	
+	  var clear = document.getElementById( 'main-display' );
+	  clear.innerText = "";
+	
+	  var clearTwo = document.getElementById( 'choice-display' );
+	  clearTwo.innerText = "";
+	
+	  var area = document.getElementById( 'item-display' );
+	  area.innerText = "";
+	
+	  var court = document.createElement( 'img' );
+	  var courtText = document.createElement( 'p' );
+	
+	  var suede = document.createElement( 'img' );
+	  var suedeText = document.createElement( 'p' );
+	
+	  court.src = "./css/image/court-black.jpeg";
+	  suede.src = "./css/image/suede-blue.jpg";
+	
+	  courtText.innerText = stock[0].name;
+	  suedeText.innerText = "Shoe 2";
+	
+	  area.appendChild( court );
+	  area.appendChild( courtText );
+	
+	  area.appendChild( suede );
+	  area.appendChild( suedeText );
+	
+	  court.onclick = function() {
+	    basket.add( stock[0] );
+	  }
+	
+	  // formal.onclick = function() {
+	  //   displayWomenFormal();
+	  // }
+	
+	  // casual.onclick = function() {
+	  //   displayWomenCasual();
+	  // }
+	
+	}
+	
+	
+	
+	
+	module.exports = WomenShoeView;
+
+/***/ },
 /* 13 */
 /***/ function(module, exports) {
 
@@ -556,6 +614,7 @@
 	
 	Total.prototype = {
 	  setTotal: function( basket ) {
+	    this.total = 0;
 	    this.basket = basket;
 	    for( var i = 0; i < basket.length; i++ ) {
 	      this.total += basket[ i ].price;

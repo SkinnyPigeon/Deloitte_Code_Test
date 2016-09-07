@@ -1,4 +1,5 @@
-var WomenShoeView = function() {
+var WomenShoeView = function( basket, stock ) {
+  console.log( stock )
   console.log( "Women Shoe View Accessed" );
 
   var clear = document.getElementById( 'main-display' );
@@ -19,8 +20,8 @@ var WomenShoeView = function() {
   court.src = "./css/image/court-black.jpeg";
   suede.src = "./css/image/suede-blue.jpg";
 
-  shoeText.innerText = ;
-  formalText.innerText = ;
+  courtText.innerText = stock[0].name;
+  suedeText.innerText = "Shoe 2";
 
   area.appendChild( court );
   area.appendChild( courtText );
@@ -28,9 +29,9 @@ var WomenShoeView = function() {
   area.appendChild( suede );
   area.appendChild( suedeText );
 
-  // shoes.onclick = function() {
-  //   displayWomenShoes();
-  // }
+  court.onclick = function() {
+    basket.add( stock[0] );
+  }
 
   // formal.onclick = function() {
   //   displayWomenFormal();
@@ -41,6 +42,8 @@ var WomenShoeView = function() {
   // }
 
 }
+
+
 
 
 module.exports = WomenShoeView;
