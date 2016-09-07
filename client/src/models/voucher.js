@@ -19,9 +19,11 @@ Voucher.prototype = {
   },
 
   setValidation: function() {
-    checkIfValid( this.fiveOff, 5 );
-    checkIfValid( this.tenOff, 10 );
-    checkIfValid( this.fifteenOff, 15 );
+    this.checkIfValid( this.fiveOff, 5 );
+    this.checkIfValid( this.tenOff, 10 );
+    this.checkIfValid( this.fifteenOff, 15 );
   }
 
 }
+
+module.exports = Voucher;
