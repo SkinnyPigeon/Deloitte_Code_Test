@@ -2,6 +2,7 @@ var assert = require( 'chai' ).assert;
 var stock = require( '../models/stock' );
 var Basket = require( '../models/basket' );
 var Total = require( '../models/total' );
+var Voucher = require( '../models/voucher' );
 
 describe( 'The Total: ', function() {
 
@@ -9,6 +10,7 @@ describe( 'The Total: ', function() {
     runningTotal = new Total();
     basket = new Basket();
     basket.add( stock[1] );
+    fiveOff = new Voucher( "GHAD782" );
   });
 
   it( 'Should start with a total of zero', function() {
@@ -25,5 +27,10 @@ describe( 'The Total: ', function() {
     runningTotal.getTotal( basket.items );
     assert.equal( 76, runningTotal.total );
   });
+
+  it( 'Should be able to subtract a valid voucher', function() {
+    runningTotal.addVoucher( fiveOff );
+    assert.equal( 37, runningTotal.total );
+  })
 
 });
