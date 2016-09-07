@@ -59,6 +59,29 @@ describe( 'The Total: ', function() {
     fiveOff.useVoucher();
     runningTotal.addVoucher( fiveOff );
     assert.equal( 99, runningTotal.total );
+  });
+
+  it( 'Should apply £10 off when total is over £50', function() {
+    basket.add( stock[0] );
+    runningTotal.setTotal( basket.items );
+    runningTotal.addVoucher( tenOff );
+    assert.equal( 89, runningTotal.total );
+  })
+
+  it( 'Should not apply £10 off when total is under £50', function() {
+    basket.add( stock[3] );
+    runningTotal.setTotal( basket.items );
+    runningTotal.addVoucher( tenOff );
+    assert.equal( 19, runningTotal.total );
   })
 
 });
+
+
+
+
+
+
+
+
+

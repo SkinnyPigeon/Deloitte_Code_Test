@@ -15,9 +15,14 @@ Total.prototype = {
       return;
     }
 
-    if( !this.checkForValidVoucher ) {
+    if( !this.checkForValidVoucher( voucher ) ) {
       return;
     }
+
+    if( !this.checkForAboveFifty( voucher ) ) {
+      return;
+    }
+
     if( this.total >= voucher.value ) {
       this.total -= voucher.value;
     }
@@ -33,7 +38,15 @@ Total.prototype = {
     if( voucher.valid ) {
       return true;
     }
+  },
+
+  checkForAboveFifty: function( voucher ) {
+    if( this.total >= 50 && voucher.value > 5 ) {
+      return true;
+    }
   }
+
+
 
 }
 
