@@ -17,15 +17,19 @@ Total.prototype = {
       return;
     }
 
-    if( !this.checkForValidVoucher( voucher ) ) {
+    if( !this.checkForValidVoucher( voucher )) {
       return;
     }
 
-    if( this.checkForAboveFifty( voucher ) ) {
+    if( this.checkForUnderFifty( voucher )) {
       return;
     }
 
-    if( !this.checkForShoes() && !this.checkForAboveSeventyFive( voucher )  ) {
+    if( this.checkForUnderSeventyFive( voucher )) {
+      return;
+    }
+
+    if( this.checkForAboveSeventyFiveAndShoes( voucher )) {
       return;
     }
 
@@ -46,27 +50,47 @@ Total.prototype = {
     }
   },
 
-  checkForAboveFifty: function( voucher ) {
+  checkForUnderFifty: function( voucher ) {
     if( this.total <= 50 && voucher.value === 10 ) {
       return true;
+    } else {
+      return false;
     }
   },
 
-  checkForAboveSeventyFive: function( voucher ) {
+  checkForUnderSeventyFive: function( voucher ) {
     if( this.total <= 75 && voucher.value === 15 ) {
       return true;
+    } else {
+      return false;
+    }
+  },
+
+  checkForOverSeventyFive: function( voucher ) {
+    if( this.total >= 75 && voucher.value === 15 ) {
+      return true;
+    } else {
+      return false;
     }
   },
 
   checkForShoes: function() {
     for( var i = 0; i < this.basket.length; i++ ) {
-      if( this.basket[ i ].subcategory === "Footwear" ) {
+      if( this.basket[ i ].subcategory != "Footwear" ) {
         return true;
+      } else {
+        return false;
       }
     } 
+  },
+
+  checkForAboveSeventyFiveAndShoes: function( voucher ) {
+    if( this.checkForOverSeventyFive( voucher ) && this.checkForShoes() ) {
+      return true;
+    } else {
+      return false;
+    }
   }
-
-
 
 }
 

@@ -90,6 +90,16 @@ describe( 'The Total: ', function() {
     assert.equal( 175.5, runningTotal.total );
   });
 
+  it( 'Should be able to take an assortment of goods and apply a voucher accordingly', function() {
+    basket.add( stock[9] );
+    basket.add( stock[12] );
+    basket.add( stock[11] );
+    runningTotal.setTotal( basket.items );
+    console.log( runningTotal.total );
+    runningTotal.addVoucher( fifteenOff );
+    assert.equal( 885, runningTotal.total );
+  });
+
 });
 
 
