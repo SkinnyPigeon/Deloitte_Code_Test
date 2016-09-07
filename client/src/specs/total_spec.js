@@ -16,13 +16,13 @@ describe( 'The Total: ', function() {
   });
 
   it( 'Should be able to add something to its total', function() {
-    runningTotal.getTotal( basket.seeItems() );
+    runningTotal.getTotal( basket.items );
     assert.equal( 42, runningTotal.total );
   });
 
   it( 'Should be able to add multiple items to its total', function() {
     basket.add( stock[2] );
-    runningTotal.getTotal( basket.seeItems() );
+    runningTotal.getTotal( basket.items );
     assert.equal( 76, runningTotal.total );
   });
 

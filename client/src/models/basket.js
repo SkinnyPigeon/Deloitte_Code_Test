@@ -4,10 +4,6 @@ var Basket = function() {
 
 Basket.prototype = {
 
-  seeItems: function() {
-    return this.items;
-  },
-
   totalItems: function() {
     return this.items.length;
   },
