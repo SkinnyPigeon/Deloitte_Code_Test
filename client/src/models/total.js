@@ -19,7 +19,7 @@ Total.prototype = {
       return;
     }
 
-    if( !this.checkForAboveFifty( voucher ) ) {
+    if( this.checkForAboveFifty( voucher ) ) {
       return;
     }
 
@@ -41,7 +41,7 @@ Total.prototype = {
   },
 
   checkForAboveFifty: function( voucher ) {
-    if( this.total >= 50 && voucher.value > 5 ) {
+    if( this.total <= 50 && voucher.value === 10 ) {
       return true;
     }
   }
