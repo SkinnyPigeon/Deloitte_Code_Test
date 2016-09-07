@@ -16,7 +16,7 @@ describe( 'The Total: ', function() {
   });
 
   it( 'Should be able to add something to its total', function() {
-    runningTotal.getTotal( basket.items );
+    runningTotal.getTotal( basket.seeItems() );
     assert.equal( 42, runningTotal.total );
   });
 
