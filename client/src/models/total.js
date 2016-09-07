@@ -4,8 +4,12 @@ var Total = function() {
 
 Total.prototype = {
   getTotal: function( basket ) {
-
+    for( item in basket ) {
+      this.total += item.price
+    }
+    return this.total;
   },
+
 }
 
 module.exports = Total;

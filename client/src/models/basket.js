@@ -4,6 +4,10 @@ var Basket = function() {
 
 Basket.prototype = {
 
+  seeItems: function() {
+    return this.items;
+  },
+
   totalItems: function() {
     return this.items.length;
   },
@@ -14,7 +18,7 @@ Basket.prototype = {
 
   remove: function( item ) {
     for( basket_item of this.items ) {
-      
+
       if( item.name === basket_item.name ){
         this.items.splice( basket_item.index, 1);
       }

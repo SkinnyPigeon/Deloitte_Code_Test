@@ -23,4 +23,12 @@ describe( 'The Basket', function() {
     assert.equal( 0, basket.totalItems() );
   });
 
+  it( 'Should return the contents', function() {
+    basket.add( stock[ 1 ] );
+    assert.deepEqual( [{  name: "Suede Shoes, Blue",
+                          category: "Women's Footwear",
+                          price: 42,
+                          stock: 4 }], basket.seeItems() );
+  });
+
 });

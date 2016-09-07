@@ -15,9 +15,9 @@ describe( 'The Total: ', function() {
     assert.equal( 0, runningTotal.total );
   });
 
-  // it( 'Should be able to add everything together', function() {
-  //   total.add( basket );
-  //   assert.equal( 42, runningTotal.getTotal() );
-  // });
+  it( 'Should be able to add something to its total', function() {
+    runningTotal.getTotal( basket.items );
+    assert.equal( 42, runningTotal.total );
+  });
 
 });
