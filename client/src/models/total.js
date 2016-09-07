@@ -25,6 +25,10 @@ Total.prototype = {
       return;
     }
 
+    if( this.checkForAboveSeventyFive( voucher ) && !this.checkForShoes ) {
+      return;
+    }
+
     if( this.total >= voucher.value ) {
       this.total -= voucher.value;
     }
@@ -48,8 +52,8 @@ Total.prototype = {
     }
   },
 
-  checkForShoesAndOverSeventyFive: function( voucher ) {
-    if( this.total >= 75 && voucher.value === 15 && this.checkForShoes ) {
+  checkForAboveSeventyFive: function( voucher ) {
+    if( this.total <= 75 && voucher.value === 15 ) {
       return true;
     }
   },
@@ -60,6 +64,7 @@ Total.prototype = {
         return true;
       }
     } 
+    return false;
   }
 
 

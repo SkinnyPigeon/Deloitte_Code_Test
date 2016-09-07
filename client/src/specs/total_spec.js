@@ -83,12 +83,11 @@ describe( 'The Total: ', function() {
     assert.equal( 103, runningTotal.total );
   });
 
-  it( 'Should not apply £15 off when total is under £75 and there are no shoes', function() {
-    basket.add( stock[0] );
-    basket.add( stock[3] );
+  it( 'Should not apply £15 off when total is over £75 and there are no shoes', function() {
+    basket.add( stock[10] );
     runningTotal.setTotal( basket.items );
     runningTotal.addVoucher( fifteenOff );
-    assert.equal( 118, runningTotal.total );
+    assert.equal( 175.5, runningTotal.total );
   });
 
 });
