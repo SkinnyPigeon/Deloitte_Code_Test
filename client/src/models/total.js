@@ -14,8 +14,8 @@ Total.prototype = {
     if( this.checkForUsedVouchers( voucher )) {
       return;
     }
-    if( voucher.valid && this.total >= 5 ) {
-      this.total -= 5;
+    if( voucher.valid && this.total >= voucher.value ) {
+      this.total -= voucher.value;
     }
   },
 
