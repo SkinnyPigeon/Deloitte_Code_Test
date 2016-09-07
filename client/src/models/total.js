@@ -1,9 +1,11 @@
 var Total = function() {
   this.total = 0;
+  this.basket = [];
 }
 
 Total.prototype = {
   setTotal: function( basket ) {
+    this.basket = basket;
     for( var i = 0; i < basket.length; i++ ) {
       this.total += basket[ i ].price;
     }
@@ -44,6 +46,20 @@ Total.prototype = {
     if( this.total <= 50 && voucher.value === 10 ) {
       return true;
     }
+  },
+
+  checkForShoesAndOverSeventyFive: function( voucher ) {
+    if( this.total >= 75 && voucher.value === 15 && this.checkForShoes ) {
+      return true;
+    }
+  },
+
+  checkForShoes: function() {
+    for( var i = 0; i < this.basket; i++ ) {
+      if( this.basket[ i ].subcategory === "Footwear" ) {
+        return true;
+      }
+    } 
   }
 
 
