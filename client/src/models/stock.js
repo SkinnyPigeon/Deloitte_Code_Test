@@ -9,7 +9,7 @@ itemOne = {
 
 itemTwo = {
   name: "Suede Shoes, Blue",
-  category: "Women’s Footwear",
+  category: "Women's Footwear",
   price: 42,
   stock: 4
 }
