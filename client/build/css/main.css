@@ -8,6 +8,12 @@ body {
   margin: 0 auto;
 }
 
+#choice-display {
+  max-width: 25%;
+  min-width: 25%;
+  margin: 0 auto;
+}
+
 img {
   max-width: 100%;
   min-width: 100%; 

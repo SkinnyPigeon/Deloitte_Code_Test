@@ -9,7 +9,9 @@ window.onload = function() {
 
   var home = document.getElementById( 'home' );
   var women = document.getElementById( 'women' );
+  var womenImage = document.getElementById( 'women-image' );
   var men = document.getElementById( 'men' );
+  var menImage = document.getElementById( 'men-image' );
   var basket = document.getElementById( 'basket' );
 
   home.onclick = function(e) {
@@ -26,6 +28,14 @@ window.onload = function() {
 
   basket.onclick = function(e) {
     displayBasket();
+  }
+
+  womenImage.onclick = function(e) {
+    displayWomen();
+  }
+
+  menImage.onclick = function(e) {
+    displayMen();
   }
 }
 
