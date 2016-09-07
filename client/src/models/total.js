@@ -3,7 +3,7 @@ var Total = function() {
 }
 
 Total.prototype = {
-  getTotal: function( basket ) {
+  setTotal: function( basket ) {
     for( var i = 0; i < basket.length; i++ ) {
       this.total += basket[ i ].price
     }
