@@ -1,6 +1,7 @@
 itemOne = {
   name: "Almond Toe Court Shoes, Patent Black",
   category: "Women’s Footwear",
+  subcategory: "Footwear",
   price: 99,
   stock: 5
 }
@@ -8,6 +9,7 @@ itemOne = {
 itemTwo = {
   name: "Suede Shoes, Blue",
   category: "Women's Footwear",
+  subcategory: "Footwear",
   price: 42,
   stock: 4
 }
@@ -15,13 +17,15 @@ itemTwo = {
 itemThree = {
   name: "Leather Driver Saddle Loafers, Tan",
   category: "Men’s Footwear",
-  price: 34.00,
+  subcategory: "Footwear",
+  price: 34,
   stock: 12
 }
 
 itemFour = {
   name: "Flip Flops, Red",
   category: "Men’s Footwear",
+  subcategory: "Footwear",
   price: 19,
   stock: 6
 }
@@ -29,6 +33,7 @@ itemFour = {
 itemFive = {
   name: "Flip Flops, Blue",
   category: "Men’s Footwear",
+  subcategory: "Footwear",
   price: 19,
   stock: 0
 }
@@ -36,6 +41,7 @@ itemFive = {
 itemSix = {
   name: "Gold Button Cardigan, Black",
   category: "Women’s Casualwear",
+  subcategory: "Casualwear",
   price: 167,
   stock: 6
 }
@@ -43,6 +49,7 @@ itemSix = {
 itemSeven = {
   name: "Cotton Shorts, Medium Red",
   category: "Women’s Casualwear",
+  subcategory: "Casualwear",
   price: 30,
   stock: 5
 }
@@ -50,6 +57,7 @@ itemSeven = {
 itemEight = {
   name: "Fine Stripe Short Sleeve Shirt, Grey",
   category: "Men’s Casualwear",
+  subcategory: "Casualwear",
   price: 49.99,
   stock: 9
 }
@@ -57,6 +65,7 @@ itemEight = {
 itemNine = {
   name: "Fine Stripe Short Sleeve Shirt, Green",
   category: "Men’s Casualwear",
+  subcategory: "Casualwear",
   price: 39.99,
   stock: 3
 }
@@ -64,6 +73,7 @@ itemNine = {
 itemTen = {
   name: "Sharkskin Waistcoat, Charcoal",
   category: "Men’s Formalwear",
+  subcategory: "Formalwear",
   price: 75,
   stock: 2
 }
@@ -71,6 +81,7 @@ itemTen = {
 itemEleven = {
   name: "Lightweight Patch Pocket Blazer, Deer",
   category: "Men’s Formalwear ",
+  subcategory: "Formalwear",
   price: 175.5,
   stock: 1
 }
@@ -78,6 +89,7 @@ itemEleven = {
 itemTwelve = {
   name: "Bird Print Dress, Black",
   category: "Women’s Formalwear",
+  subcategory: "Formalwear",
   price: 270,
   stock: 10
 }
@@ -85,6 +97,7 @@ itemTwelve = {
 itemThirteen = {
   name: "Mid Twist Cut-Out Dress, Pink",
   category: "Women’s Formalwear",
+  subcategory: "Formalwear",
   price: 540,
   stock: 5
 }

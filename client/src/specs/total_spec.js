@@ -17,6 +17,12 @@ describe( 'The Total: ', function() {
 
     fakeFiveOff = new Voucher( "ASHKDHS" );
     fakeFiveOff.setValidation();
+
+    tenOff = new Voucher( "BCHS927" );
+    tenOff.setValidation();
+
+    fifteenOff = new Voucher( "ASHH326" );
+    fifteenOff.setValidation();
   });
 
   it( 'Should start with a total of zero', function() {
@@ -46,5 +52,13 @@ describe( 'The Total: ', function() {
     runningTotal.addVoucher( fakeFiveOff );
     assert.equal( 99, runningTotal.total );
   });
+
+  it( 'Should not take a used voucher', function() {
+    basket.add( stock[0] );
+    runningTotal.setTotal( basket.items );
+    fiveOff.useVoucher();
+    runningTotal.addVoucher( fiveOff );
+    assert.equal( 99, runningTotal.total );
+  })
 
 });
