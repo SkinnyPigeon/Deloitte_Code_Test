@@ -8,6 +8,7 @@ var BasketView = function( basket ) {
   this.basket = basket;
   this.resetView();
   this.total = this.giveRunningTotal();
+  this.codes = [];
 }
 
 BasketView.prototype = {
@@ -78,14 +79,26 @@ BasketView.prototype = {
 
   handleVoucherClick: function() {
     var voucherEntry = document.getElementById( 'voucher-entry' );
-    var code = voucherEntry.value;
+    var code = voucherEntry.value.toUpperCase();
+    this.handleVoucherChecks( code );
+  },
+
+  handleVoucherChecks: function( code ) {
+    for( var i = 0; i < this.codes.length; i++ ) {
+      if( this.codes[i] === code ) {
+        alert( "Code has already been used" );
+        return
+      }
+    }
+    this.useVoucher( code );
+  },
+
+  useVoucher: function( code ) {
     var voucher = new Voucher( code );
+    this.codes.push( code );
     voucher.setValidation();
-    console.log( voucher );
-    // insert error handler here
-    runningTotal.addVoucher( voucher );
-    console.log( runningTotal.total );
-    console.log( this.basket );
+    this.handleAlert( voucher );
+    voucher.useVoucher();
     this.total = runningTotal.total;
     this.resetView();
     this.display();
@@ -95,6 +108,12 @@ BasketView.prototype = {
     runningTotal.setTotal( this.basket.items );
     this.total = runningTotal.total;
     return this.total;
+  },
+
+  handleAlert: function( voucher ) {
+    if( voucher.valid === false || runningTotal.addVoucher( voucher ) === false ) {
+      alert( "Please check your voucher code and validity for use on this shop" );
+    }
   }
 }
 

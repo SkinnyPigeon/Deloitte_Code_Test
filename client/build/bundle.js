@@ -392,9 +392,16 @@
 	
 	  handleButtonClick: function( id ) {
 	    console.log( this.basket );
+	    this.handleAlert( id );
 	    this.basket.add( this.department[ id ]);
 	    this.resetView();
 	    this.display();
+	  },
+	
+	  handleAlert: function( id ) {
+	    if( this.department[ id ].stock === 0 ) {
+	      alert( "Sorry we are out of that at the moment" );      
+	    }
 	  }
 	}
 	
@@ -589,6 +596,7 @@
 	  this.basket = basket;
 	  this.resetView();
 	  this.total = this.giveRunningTotal();
+	  this.codes = [];
 	}
 	
 	BasketView.prototype = {
@@ -659,14 +667,26 @@
 	
 	  handleVoucherClick: function() {
 	    var voucherEntry = document.getElementById( 'voucher-entry' );
-	    var code = voucherEntry.value;
+	    var code = voucherEntry.value.toUpperCase();
+	    this.handleVoucherChecks( code );
+	  },
+	
+	  handleVoucherChecks: function( code ) {
+	    for( var i = 0; i < this.codes.length; i++ ) {
+	      if( this.codes[i] === code ) {
+	        alert( "Code has already been used" );
+	        return
+	      }
+	    }
+	    this.useVoucher( code );
+	  },
+	
+	  useVoucher: function( code ) {
 	    var voucher = new Voucher( code );
+	    this.codes.push( code );
 	    voucher.setValidation();
-	    console.log( voucher );
-	    // insert error handler here
-	    runningTotal.addVoucher( voucher );
-	    console.log( runningTotal.total );
-	    console.log( this.basket );
+	    this.handleAlert( voucher );
+	    voucher.useVoucher();
 	    this.total = runningTotal.total;
 	    this.resetView();
 	    this.display();
@@ -676,6 +696,12 @@
 	    runningTotal.setTotal( this.basket.items );
 	    this.total = runningTotal.total;
 	    return this.total;
+	  },
+	
+	  handleAlert: function( voucher ) {
+	    if( voucher.valid === false || runningTotal.addVoucher( voucher ) === false ) {
+	      alert( "Please check your voucher code and validity for use on this shop" );
+	    }
 	  }
 	}
 	
@@ -702,23 +728,23 @@
 	
 	  addVoucher: function( voucher ) {
 	    if( this.checkForUsedVouchers( voucher )) {
-	      return;
+	      return false;
 	    }
 	
 	    if( !this.checkForValidVoucher( voucher )) {
-	      return;
+	      return false;
 	    }
 	
 	    if( this.checkForUnderFifty( voucher )) {
-	      return;
+	      return false;
 	    }
 	
 	    if( this.checkForUnderSeventyFive( voucher )) {
-	      return;
+	      return false;
 	    }
 	
 	    if( this.checkForAboveSeventyFiveAndShoes( voucher )) {
-	      return;
+	      return false;
 	    }
 	
 	    if( this.total >= voucher.value ) {
@@ -786,10 +812,9 @@
 	var Voucher = function( code ) {
 	  this.valid = false;
 	  this.value = 0;
-	  this.hasBeenUsed = false;
-	  this.fiveOff = [ "AA52721", "BC67123", "GHAD782", "a" ];
-	  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127", "b" ];
-	  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260", "c" ];
+	  this.fiveOff = [ "AA52721", "BC67123", "GHAD782", "A" ];
+	  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127", "B" ];
+	  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260", "C" ];
 	  this.code = code;
 	}
 	
@@ -810,10 +835,19 @@
 	    this.checkIfValid( this.fifteenOff, 15 );
 	  },
 	
-	  useVoucher: function() {
-	    this.hasBeenUsed = true;
-	  }
+	  useVoucher: function( code ) {
+	    this.findVoucher( this.fiveOff, code );
+	    this.findVoucher( this.tenOff, code );
+	    this.findVoucher( this.fifteenOff, code );
+	  },
 	
+	  findVoucher: function( array, code ) {
+	    for( var i = 0; i < array.length; i++ ) {
+	      if( this.code === array[i] ) {
+	        array.splice( array[i], 1 );
+	      }
+	    }
+	  }
 	}
 	
 	module.exports = Voucher;

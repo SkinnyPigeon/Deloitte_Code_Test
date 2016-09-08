@@ -53,9 +53,16 @@ ClothesView.prototype = {
 
   handleButtonClick: function( id ) {
     console.log( this.basket );
+    this.handleAlert( id );
     this.basket.add( this.department[ id ]);
     this.resetView();
     this.display();
+  },
+
+  handleAlert: function( id ) {
+    if( this.department[ id ].stock === 0 ) {
+      alert( "Sorry we are out of that at the moment" );      
+    }
   }
 }
 
