@@ -1,8 +1,8 @@
-var womensFootwear = require( '../models/stock' );
+var womensFootwear = require( '../models/stock/womensFootwear' );
 
 var WomenShoeView = function( basket ) {
-  console.log( womensFootwear )
-  console.log( "Women Shoe View Accessed" );
+
+  this.basket = basket;
 
   var clear = document.getElementById( 'main-display' );
   clear.innerText = "";
@@ -10,42 +10,45 @@ var WomenShoeView = function( basket ) {
   var clearTwo = document.getElementById( 'choice-display' );
   clearTwo.innerText = "";
 
-  var area = document.getElementById( 'item-display' );
-  area.innerText = "";
-
-  var court = document.createElement( 'img' );
-  var courtText = document.createElement( 'p' );
-
-  var suede = document.createElement( 'img' );
-  var suedeText = document.createElement( 'p' );
-
-  court.src = "./css/image/court-black.jpeg";
-  suede.src = "./css/image/suede-blue.jpg";
-
-  // courtText.innerText = stock[0].name;
-  // suedeText.innerText = "Shoe 2";
-
-  // area.appendChild( court );
-  // area.appendChild( courtText );
-
-  // area.appendChild( suede );
-  // area.appendChild( suedeText );
-
-  // court.onclick = function() {
-  //   basket.add( stock[0] );
-  // }
-
-  // formal.onclick = function() {
-  //   displayWomenFormal();
-  // }
-
-  // casual.onclick = function() {
-  //   displayWomenCasual();
-  // }
+  this.area = document.getElementById( 'item-display' );
+  this.area.innerText = "";
 
 }
 
+WomenShoeView.prototype = {
+
+  display: function() {
+    for( var i = 0; i < womensFootwear.length; i++ ) {
+
+      var image = document.createElement( 'img' );
+      var description = document.createElement( 'p' );
+      var price = document.createElement( 'p' );
+      var stock = document.createElement( 'p' );
+      var button = document.createElement( 'button' );
+
+      image.src = womensFootwear[i].image;
+      description.innerText = womensFootwear[i].name;
+      price.innerText = womensFootwear[i].price;
+      stock.innerText = womensFootwear[i].stock;
+      button.innerText = "Add to basket";
+      button.id = i;
+
+      button.onclick = function() {
+        var i = button.id;
+        console.log( "button clicked" );
+        console.log( womensFootwear[i] );
+        this.basket.add( womensFootwear[i] );
+      }.bind( this );
+
+      this.area.appendChild( image );
+      this.area.appendChild( description );
+      this.area.appendChild( price );
+      this.area.appendChild( stock );
+      this.area.appendChild( button );
+    }
+  },
 
 
+}
 
 module.exports = WomenShoeView;

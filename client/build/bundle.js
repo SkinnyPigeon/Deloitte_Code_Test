@@ -51,11 +51,11 @@
 	
 	var Basket = __webpack_require__( 7 );
 	// var stock = require( './models/stock' );
-	var Voucher = __webpack_require__( 9 );
+	var Voucher = __webpack_require__( 8 );
 	
-	var MenShoeView = __webpack_require__( 10 );
-	var MenCasualView = __webpack_require__( 11 );
-	var MenFormalView = __webpack_require__( 12 );
+	var MenShoeView = __webpack_require__( 9 );
+	var MenCasualView = __webpack_require__( 10 );
+	var MenFormalView = __webpack_require__( 11 );
 	
 	var basket = new Basket();
 	
@@ -172,7 +172,6 @@
 	// var WomenCasualView = require( './WomenCasualView' );
 	
 	var WomenView = function( basket ) {
-	  // console.log( stock );
 	  console.log( "Women View Accessed" );
 	
 	  var clear = document.getElementById( 'main-display' );
@@ -211,7 +210,6 @@
 	  area.appendChild( casualText );
 	
 	  shoes.onclick = function() {
-	    // console.log( stock );
 	    displayWomenShoes( basket );
 	  }
 	
@@ -226,6 +224,7 @@
 	
 	var displayWomenShoes = function( basket ) {
 	  var view = new WomenShoeView(  basket );
+	  view.display();
 	}
 	
 	// var displayWomenFormal = function() {
@@ -250,11 +249,11 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var womensFootwear = __webpack_require__( 8 );
+	var womensFootwear = __webpack_require__( 12 );
 	
 	var WomenShoeView = function( basket ) {
-	  console.log( womensFootwear )
-	  console.log( "Women Shoe View Accessed" );
+	
+	  this.basket = basket;
 	
 	  var clear = document.getElementById( 'main-display' );
 	  clear.innerText = "";
@@ -262,43 +261,46 @@
 	  var clearTwo = document.getElementById( 'choice-display' );
 	  clearTwo.innerText = "";
 	
-	  var area = document.getElementById( 'item-display' );
-	  area.innerText = "";
-	
-	  var court = document.createElement( 'img' );
-	  var courtText = document.createElement( 'p' );
-	
-	  var suede = document.createElement( 'img' );
-	  var suedeText = document.createElement( 'p' );
-	
-	  court.src = "./css/image/court-black.jpeg";
-	  suede.src = "./css/image/suede-blue.jpg";
-	
-	  // courtText.innerText = stock[0].name;
-	  // suedeText.innerText = "Shoe 2";
-	
-	  // area.appendChild( court );
-	  // area.appendChild( courtText );
-	
-	  // area.appendChild( suede );
-	  // area.appendChild( suedeText );
-	
-	  // court.onclick = function() {
-	  //   basket.add( stock[0] );
-	  // }
-	
-	  // formal.onclick = function() {
-	  //   displayWomenFormal();
-	  // }
-	
-	  // casual.onclick = function() {
-	  //   displayWomenCasual();
-	  // }
+	  this.area = document.getElementById( 'item-display' );
+	  this.area.innerText = "";
 	
 	}
 	
+	WomenShoeView.prototype = {
+	
+	  display: function() {
+	    for( var i = 0; i < womensFootwear.length; i++ ) {
+	
+	      var image = document.createElement( 'img' );
+	      var description = document.createElement( 'p' );
+	      var price = document.createElement( 'p' );
+	      var stock = document.createElement( 'p' );
+	      var button = document.createElement( 'button' );
+	
+	      image.src = womensFootwear[i].image;
+	      description.innerText = womensFootwear[i].name;
+	      price.innerText = womensFootwear[i].price;
+	      stock.innerText = womensFootwear[i].stock;
+	      button.innerText = "Add to basket";
+	      button.id = i;
+	
+	      button.onclick = function() {
+	        var i = button.id;
+	        console.log( "button clicked" );
+	        console.log( womensFootwear[i] );
+	        this.basket.add( womensFootwear[i] );
+	      }.bind( this );
+	
+	      this.area.appendChild( image );
+	      this.area.appendChild( description );
+	      this.area.appendChild( price );
+	      this.area.appendChild( stock );
+	      this.area.appendChild( button );
+	    }
+	  },
 	
 	
+	}
 	
 	module.exports = WomenShoeView;
 
@@ -522,126 +524,6 @@
 /* 8 */
 /***/ function(module, exports) {
 
-	itemOne = {
-	  name: "Almond Toe Court Shoes, Patent Black",
-	  category: "Women’s Footwear",
-	  subcategory: "Footwear",
-	  price: 99,
-	  stock: 5
-	}
-	
-	itemTwo = {
-	  name: "Suede Shoes, Blue",
-	  category: "Women's Footwear",
-	  subcategory: "Footwear",
-	  price: 42,
-	  stock: 4
-	}
-	
-	itemThree = {
-	  name: "Leather Driver Saddle Loafers, Tan",
-	  category: "Men’s Footwear",
-	  subcategory: "Footwear",
-	  price: 34,
-	  stock: 12
-	}
-	
-	itemFour = {
-	  name: "Flip Flops, Red",
-	  category: "Men’s Footwear",
-	  subcategory: "Footwear",
-	  price: 19,
-	  stock: 6
-	}
-	
-	itemFive = {
-	  name: "Flip Flops, Blue",
-	  category: "Men’s Footwear",
-	  subcategory: "Footwear",
-	  price: 19,
-	  stock: 0
-	}
-	
-	itemSix = {
-	  name: "Gold Button Cardigan, Black",
-	  category: "Women’s Casualwear",
-	  subcategory: "Casualwear",
-	  price: 167,
-	  stock: 6
-	}
-	
-	itemSeven = {
-	  name: "Cotton Shorts, Medium Red",
-	  category: "Women’s Casualwear",
-	  subcategory: "Casualwear",
-	  price: 30,
-	  stock: 5
-	}
-	
-	itemEight = {
-	  name: "Fine Stripe Short Sleeve Shirt, Grey",
-	  category: "Men’s Casualwear",
-	  subcategory: "Casualwear",
-	  price: 49.99,
-	  stock: 9
-	}
-	
-	itemNine = {
-	  name: "Fine Stripe Short Sleeve Shirt, Green",
-	  category: "Men’s Casualwear",
-	  subcategory: "Casualwear",
-	  price: 39.99,
-	  stock: 3
-	}
-	
-	itemTen = {
-	  name: "Sharkskin Waistcoat, Charcoal",
-	  category: "Men’s Formalwear",
-	  subcategory: "Formalwear",
-	  price: 75,
-	  stock: 2
-	}
-	
-	itemEleven = {
-	  name: "Lightweight Patch Pocket Blazer, Deer",
-	  category: "Men’s Formalwear ",
-	  subcategory: "Formalwear",
-	  price: 175.5,
-	  stock: 1
-	}
-	
-	itemTwelve = {
-	  name: "Bird Print Dress, Black",
-	  category: "Women’s Formalwear",
-	  subcategory: "Formalwear",
-	  price: 270,
-	  stock: 10
-	}
-	
-	itemThirteen = {
-	  name: "Mid Twist Cut-Out Dress, Pink",
-	  category: "Women’s Formalwear",
-	  subcategory: "Formalwear",
-	  price: 540,
-	  stock: 5
-	}
-	
-	var womensFootwear = [ itemOne, itemTwo ]
-	var mensFootwear = [ itemThree, itemFour, itemFive ]
-	var womensCasual = [ itemSix, itemSeven ]
-	var mensCasual = [ itemEight, itemNine ]
-	var mensFormal = [ itemTen, itemEleven ]
-	var womensFormal = [ itemTwelve, itemThirteen ]
-	
-	module.exports = womensFootwear
-	// , mensFootwear, womensCasual, mensCasual, mensFormal, womensFormal;
-	
-
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
 	var Voucher = function( code ) {
 	  this.valid = false;
 	  this.value = 0;
@@ -678,7 +560,7 @@
 	module.exports = Voucher;
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 	var MenShoeView = function() {
@@ -737,6 +619,12 @@
 	module.exports = MenShoeView;
 
 /***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
 /* 11 */
 /***/ function(module, exports) {
 
@@ -746,6 +634,27 @@
 /* 12 */
 /***/ function(module, exports) {
 
+	itemOne = {
+	  name: "Almond Toe Court Shoes, Patent Black",
+	  category: "Women’s Footwear",
+	  subcategory: "Footwear",
+	  image: "./css/image/court-black.jpeg",
+	  price: 99,
+	  stock: 5
+	}
+	
+	itemTwo = {
+	  name: "Suede Shoes, Blue",
+	  category: "Women's Footwear",
+	  subcategory: "Footwear",
+	  image: "./css/image/suede-blue.jpg",
+	  price: 42,
+	  stock: 4
+	}
+	
+	var womensFootwear = [ itemOne, itemTwo ]
+	
+	module.exports = womensFootwear;
 
 
 /***/ }

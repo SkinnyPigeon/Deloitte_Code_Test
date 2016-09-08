@@ -3,7 +3,6 @@ var WomenShoeView = require( './WomenShoeView' );
 // var WomenCasualView = require( './WomenCasualView' );
 
 var WomenView = function( basket ) {
-  // console.log( stock );
   console.log( "Women View Accessed" );
 
   var clear = document.getElementById( 'main-display' );
@@ -42,7 +41,6 @@ var WomenView = function( basket ) {
   area.appendChild( casualText );
 
   shoes.onclick = function() {
-    // console.log( stock );
     displayWomenShoes( basket );
   }
 
@@ -57,6 +55,7 @@ var WomenView = function( basket ) {
 
 var displayWomenShoes = function( basket ) {
   var view = new WomenShoeView(  basket );
+  view.display();
 }
 
 // var displayWomenFormal = function() {
