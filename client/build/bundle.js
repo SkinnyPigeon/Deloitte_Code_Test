@@ -909,6 +909,7 @@
 	
 	  this.basket = basket;
 	  this.resetView();
+	  this.total = this.giveRunningTotal();
 	}
 	
 	BasketView.prototype = {
@@ -936,6 +937,10 @@
 	      this.area.appendChild( price );
 	      this.area.appendChild( button );
 	    }
+	
+	    var total = document.createElement( 'h3' );
+	    total.innerText = this.total;
+	    this.area.appendChild( total );
 	  },
 	
 	  resetView: function() {
@@ -954,8 +959,17 @@
 	
 	  handleButtonClick: function( id ) {
 	    this.basket.remove( this.basket.items[ id ]);
+	    console.log( this.basket );
+	    this.giveRunningTotal();
 	    this.resetView();
 	    this.display();
+	    console.log( this.total );
+	  },
+	
+	  giveRunningTotal: function() {
+	    runningTotal.setTotal( this.basket.items );
+	    this.total = runningTotal.total;
+	    return this.total;
 	  }
 	}
 	
