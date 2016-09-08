@@ -2,9 +2,9 @@ var Voucher = function( code ) {
   this.valid = false;
   this.value = 0;
   this.hasBeenUsed = false;
-  this.fiveOff = [ "AA52721", "BC67123", "GHAD782", "a" ];
-  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127", "b" ];
-  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260", "c" ];
+  this.fiveOff = [ "AA52721", "BC67123", "GHAD782", "A" ];
+  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127", "B" ];
+  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260", "C" ];
   this.code = code;
 }
 

@@ -15,23 +15,23 @@ Total.prototype = {
 
   addVoucher: function( voucher ) {
     if( this.checkForUsedVouchers( voucher )) {
-      return;
+      return false;
     }
 
     if( !this.checkForValidVoucher( voucher )) {
-      return;
+      return false;
     }
 
     if( this.checkForUnderFifty( voucher )) {
-      return;
+      return false;
     }
 
     if( this.checkForUnderSeventyFive( voucher )) {
-      return;
+      return false;
     }
 
     if( this.checkForAboveSeventyFiveAndShoes( voucher )) {
-      return;
+      return false;
     }
 
     if( this.total >= voucher.value ) {
