@@ -130,24 +130,12 @@ p {
   color: #1c7f9b;
 }
 
-#basket-display {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
-#basket-display ul {
-  /*float: left;*/
-  width: 5%;
-  margin: 2.5%;
-  background-color: transparent;
-  color: #1c7f9b;
-}
 
-#basket-page li {
-  display: block;
+/*#basket-page tr {
+  display: table-row;
   /*float: left;*/
-}
+/*}*/
 
 
 #basket-display li img {
@@ -200,7 +188,23 @@ p {
   color: #1c7f9b;
 }
 
+#basket-display {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
+#basket-display table {
+  /*float: left;*/
+  width: 5%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
+
+#basket-display table, th, td {
+  border: 2px solid black;
+}
 
 
 

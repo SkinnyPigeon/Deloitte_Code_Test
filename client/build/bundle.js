@@ -643,12 +643,18 @@
 	BasketView.prototype = {
 	
 	  display: function() {
-	    var ul = document.createElement( 'ul' );
-	    ul.id = "basket-page"
-	    this.area.appendChild( ul );
-	    
+	    // var ul = document.createElement( 'ul' );
+	    // ul.id = "basket-page"
+	    // this.area.appendChild( ul );
+	
+	    var table = document.createElement( 'table' );
+	    table.id = "basket-page"
+	    this.area.appendChild( table );
+	
 	    for( var i = 0; i < this.basket.items.length; i ++ ) {
-	      var li = document.createElement( 'li' );
+	      var tr = document.createElement( 'tr' );
+	      var th = document.createElement( 'th' );
+	      // var li = document.createElement( 'li' );
 	      var image = document.createElement( 'img' );
 	      var description = document.createElement( 'p' );
 	      var price = document.createElement( 'p' );
@@ -665,12 +671,19 @@
 	        this.handleButtonClick( id );
 	      }.bind( this );
 	
-	      li.appendChild( image );
-	      li.appendChild( description );
-	      li.appendChild( price );
-	      li.appendChild( button );
+	      // li.appendChild( image );
+	      // li.appendChild( description );
+	      // li.appendChild( price );
+	      // li.appendChild( button );
 	
-	      ul.appendChild( li );
+	      th.appendChild( image );
+	      th.appendChild( description );
+	      th.appendChild( price );
+	      th.appendChild( button );
+	
+	      tr.appendChild( th );
+	
+	      table.appendChild( tr );
 	
 	      // this.area.appendChild( image );
 	      // this.area.appendChild( description );
