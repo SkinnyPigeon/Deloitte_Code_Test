@@ -85,6 +85,7 @@ BasketView.prototype = {
     // insert error handler here
     runningTotal.addVoucher( voucher );
     console.log( runningTotal.total );
+    console.log( this.basket );
     this.total = runningTotal.total;
     this.resetView();
     this.display();

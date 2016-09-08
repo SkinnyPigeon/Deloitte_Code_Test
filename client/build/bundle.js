@@ -991,6 +991,7 @@
 	    // insert error handler here
 	    runningTotal.addVoucher( voucher );
 	    console.log( runningTotal.total );
+	    console.log( this.basket );
 	    this.total = runningTotal.total;
 	    this.resetView();
 	    this.display();
@@ -1086,11 +1087,11 @@
 	
 	  checkForShoes: function() {
 	    for( var i = 0; i < this.basket.length; i++ ) {
-	      if( this.basket[ i ].subcategory != "Footwear" ) {
-	        return true;
+	      if( this.basket[ i ].subcategory === "Footwear" ) {
+	        return false;
 	      }
-	      return false;
 	    } 
+	    return true;
 	  },
 	
 	  checkForAboveSeventyFiveAndShoes: function( voucher ) {

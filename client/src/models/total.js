@@ -74,11 +74,11 @@ Total.prototype = {
 
   checkForShoes: function() {
     for( var i = 0; i < this.basket.length; i++ ) {
-      if( this.basket[ i ].subcategory != "Footwear" ) {
-        return true;
+      if( this.basket[ i ].subcategory === "Footwear" ) {
+        return false;
       }
-      return false;
     } 
+    return true;
   },
 
   checkForAboveSeventyFiveAndShoes: function( voucher ) {
