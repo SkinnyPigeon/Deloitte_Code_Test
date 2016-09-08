@@ -2,6 +2,7 @@ itemOne = {
   name: "Fine Stripe Short Sleeve Shirt, Grey",
   category: "Men’s Casualwear",
   subcategory: "Casualwear",
+  image: "./css/image/striped-grey.jpg",
   price: 49.99,
   salePrice: null,
   stock: 9
@@ -11,6 +12,7 @@ itemTwo = {
   name: "Fine Stripe Short Sleeve Shirt, Green",
   category: "Men’s Casualwear",
   subcategory: "Casualwear",
+  image: "./css/image/striped-green.jpg",
   price: 49.99,
   salePrice: 39.99,
   stock: 3

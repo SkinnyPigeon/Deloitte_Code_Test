@@ -440,6 +440,7 @@
 	  name: "Sharkskin Waistcoat, Charcoal",
 	  category: "Men’s Formalwear",
 	  subcategory: "Formalwear",
+	  image: "./css/image/waistcoat-grey-low.jpg",
 	  price: 75,
 	  stock: 2
 	}
@@ -448,6 +449,7 @@
 	  name: "Lightweight Patch Pocket Blazer, Deer",
 	  category: "Men’s Formalwear ",
 	  subcategory: "Formalwear",
+	  image: "./css/image/lightweight-deer.jpeg",
 	  price: 175.5,
 	  stock: 1
 	}
@@ -467,6 +469,7 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Grey",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
+	  image: "./css/image/striped-grey.jpg",
 	  price: 49.99,
 	  salePrice: null,
 	  stock: 9
@@ -476,6 +479,7 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Green",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
+	  image: "./css/image/striped-green.jpg",
 	  price: 49.99,
 	  salePrice: 39.99,
 	  stock: 3
