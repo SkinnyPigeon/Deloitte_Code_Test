@@ -4,7 +4,7 @@ var MenView = require( './views/MenView' );
 var BasketView = require( './views/BasketView' );
 
 var Basket = require( './models/basket' );
-var stock = require( './models/stock' );
+// var stock = require( './models/stock' );
 var Voucher = require( './models/voucher' );
 
 var MenShoeView = require( './views/MenShoeView' );
@@ -19,7 +19,7 @@ window.onload = function() {
 
 var main = function() {
 
-  displayHome( basket, stock );
+  displayHome( basket );
 
   var home = document.getElementById( 'home' );
   var women = document.getElementById( 'women' );
@@ -29,13 +29,13 @@ var main = function() {
   var basketLink = document.getElementById( 'basket' );
 
   home.onclick = function(e) {
-    displayHome( basket, stock );
+    displayHome( basket );
     main();
   }
 
   women.onclick = function(e) {
     console.log( stock );
-    displayWomen( basket, stock );
+    displayWomen( basket );
   }
 
   men.onclick = function(e) {
@@ -47,7 +47,7 @@ var main = function() {
   }
 
   womenImage.onclick = function(e) {
-    displayWomen( basket, stock );
+    displayWomen( basket );
   }
 
   menImage.onclick = function(e) {
@@ -60,7 +60,6 @@ var displayHome = function( basket, stock ) {
 }
 
 var displayWomen = function( basket, stock ) {
-  console.log( stock );
   var view = new WomenView( basket, stock );
 }
 

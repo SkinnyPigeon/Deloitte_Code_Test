@@ -50,7 +50,7 @@
 	var BasketView = __webpack_require__( 5 );
 	
 	var Basket = __webpack_require__( 7 );
-	var stock = __webpack_require__( 8 );
+	// var stock = require( './models/stock' );
 	var Voucher = __webpack_require__( 9 );
 	
 	var MenShoeView = __webpack_require__( 10 );
@@ -65,7 +65,7 @@
 	
 	var main = function() {
 	
-	  displayHome( basket, stock );
+	  displayHome( basket );
 	
 	  var home = document.getElementById( 'home' );
 	  var women = document.getElementById( 'women' );
@@ -75,13 +75,13 @@
 	  var basketLink = document.getElementById( 'basket' );
 	
 	  home.onclick = function(e) {
-	    displayHome( basket, stock );
+	    displayHome( basket );
 	    main();
 	  }
 	
 	  women.onclick = function(e) {
 	    console.log( stock );
-	    displayWomen( basket, stock );
+	    displayWomen( basket );
 	  }
 	
 	  men.onclick = function(e) {
@@ -93,7 +93,7 @@
 	  }
 	
 	  womenImage.onclick = function(e) {
-	    displayWomen( basket, stock );
+	    displayWomen( basket );
 	  }
 	
 	  menImage.onclick = function(e) {
@@ -106,7 +106,6 @@
 	}
 	
 	var displayWomen = function( basket, stock ) {
-	  console.log( stock );
 	  var view = new WomenView( basket, stock );
 	}
 	
@@ -172,8 +171,8 @@
 	// var WomenFormalView = require( './WomenFormalView' );
 	// var WomenCasualView = require( './WomenCasualView' );
 	
-	var WomenView = function( basket, stock ) {
-	  console.log( stock );
+	var WomenView = function( basket ) {
+	  // console.log( stock );
 	  console.log( "Women View Accessed" );
 	
 	  var clear = document.getElementById( 'main-display' );
@@ -212,8 +211,8 @@
 	  area.appendChild( casualText );
 	
 	  shoes.onclick = function() {
-	    console.log( stock );
-	    displayWomenShoes( basket, stock );
+	    // console.log( stock );
+	    displayWomenShoes( basket );
 	  }
 	
 	  formal.onclick = function() {
@@ -225,8 +224,8 @@
 	  }
 	}
 	
-	var displayWomenShoes = function( basket, stock ) {
-	  var view = new WomenShoeView(  basket, stock );
+	var displayWomenShoes = function( basket ) {
+	  var view = new WomenShoeView(  basket );
 	}
 	
 	// var displayWomenFormal = function() {
@@ -249,10 +248,12 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	var WomenShoeView = function( basket, stock ) {
-	  console.log( stock )
+	var womensFootwear = __webpack_require__( 8 );
+	
+	var WomenShoeView = function( basket ) {
+	  console.log( womensFootwear )
 	  console.log( "Women Shoe View Accessed" );
 	
 	  var clear = document.getElementById( 'main-display' );
@@ -273,18 +274,18 @@
 	  court.src = "./css/image/court-black.jpeg";
 	  suede.src = "./css/image/suede-blue.jpg";
 	
-	  courtText.innerText = stock[0].name;
-	  suedeText.innerText = "Shoe 2";
+	  // courtText.innerText = stock[0].name;
+	  // suedeText.innerText = "Shoe 2";
 	
-	  area.appendChild( court );
-	  area.appendChild( courtText );
+	  // area.appendChild( court );
+	  // area.appendChild( courtText );
 	
-	  area.appendChild( suede );
-	  area.appendChild( suedeText );
+	  // area.appendChild( suede );
+	  // area.appendChild( suedeText );
 	
-	  court.onclick = function() {
-	    basket.add( stock[0] );
-	  }
+	  // court.onclick = function() {
+	  //   basket.add( stock[0] );
+	  // }
 	
 	  // formal.onclick = function() {
 	  //   displayWomenFormal();
@@ -625,9 +626,15 @@
 	  stock: 5
 	}
 	
-	var stock = [ itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve, itemThirteen ]
+	var womensFootwear = [ itemOne, itemTwo ]
+	var mensFootwear = [ itemThree, itemFour, itemFive ]
+	var womensCasual = [ itemSix, itemSeven ]
+	var mensCasual = [ itemEight, itemNine ]
+	var mensFormal = [ itemTen, itemEleven ]
+	var womensFormal = [ itemTwelve, itemThirteen ]
 	
-	module.exports = stock;
+	module.exports = womensFootwear
+	// , mensFootwear, womensCasual, mensCasual, mensFormal, womensFormal;
 	
 
 

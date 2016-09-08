@@ -1,5 +1,7 @@
-var WomenShoeView = function( basket, stock ) {
-  console.log( stock )
+var womensFootwear = require( '../models/stock' );
+
+var WomenShoeView = function( basket ) {
+  console.log( womensFootwear )
   console.log( "Women Shoe View Accessed" );
 
   var clear = document.getElementById( 'main-display' );
@@ -20,18 +22,18 @@ var WomenShoeView = function( basket, stock ) {
   court.src = "./css/image/court-black.jpeg";
   suede.src = "./css/image/suede-blue.jpg";
 
-  courtText.innerText = stock[0].name;
-  suedeText.innerText = "Shoe 2";
+  // courtText.innerText = stock[0].name;
+  // suedeText.innerText = "Shoe 2";
 
-  area.appendChild( court );
-  area.appendChild( courtText );
+  // area.appendChild( court );
+  // area.appendChild( courtText );
 
-  area.appendChild( suede );
-  area.appendChild( suedeText );
+  // area.appendChild( suede );
+  // area.appendChild( suedeText );
 
-  court.onclick = function() {
-    basket.add( stock[0] );
-  }
+  // court.onclick = function() {
+  //   basket.add( stock[0] );
+  // }
 
   // formal.onclick = function() {
   //   displayWomenFormal();
