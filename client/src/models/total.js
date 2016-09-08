@@ -54,43 +54,38 @@ Total.prototype = {
   checkForUnderFifty: function( voucher ) {
     if( this.total <= 50 && voucher.value === 10 ) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   },
 
   checkForUnderSeventyFive: function( voucher ) {
     if( this.total <= 75 && voucher.value === 15 ) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   },
 
   checkForOverSeventyFive: function( voucher ) {
     if( this.total >= 75 && voucher.value === 15 ) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   },
 
   checkForShoes: function() {
     for( var i = 0; i < this.basket.length; i++ ) {
       if( this.basket[ i ].subcategory != "Footwear" ) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     } 
   },
 
   checkForAboveSeventyFiveAndShoes: function( voucher ) {
     if( this.checkForOverSeventyFive( voucher ) && this.checkForShoes() ) {
       return true;
-    } else {
-      return false;
-    }
+    } 
+    return false;
   }
 
 }

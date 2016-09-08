@@ -3,6 +3,7 @@ var womensCasual = require( '../models/stock/womensCasual' );
 var WomenCasualView = function( basket ) {
   
   this.basket = basket;
+  console.log( basket );
 
   var clear = document.getElementById( 'main-display' );
   clear.innerText = "";

@@ -1,5 +1,5 @@
 var Basket = require( '../models/basket' );
-var stock = require( '../models/stock' );
+var stock = require( '../models/stock/stock' );
 var assert = require( 'chai' ).assert;
 
 describe( 'The Basket', function() {

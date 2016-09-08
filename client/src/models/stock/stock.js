@@ -102,13 +102,14 @@ itemThirteen = {
   stock: 5
 }
 
-var womensFootwear = [ itemOne, itemTwo ]
-var mensFootwear = [ itemThree, itemFour, itemFive ]
-var womensCasual = [ itemSix, itemSeven ]
-var mensCasual = [ itemEight, itemNine ]
-var mensFormal = [ itemTen, itemEleven ]
-var womensFormal = [ itemTwelve, itemThirteen ]
+var stock = [ itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix, itemSeven, itemEight, itemNine, itemTen, itemEleven, itemTwelve, itemThirteen ];
 
-module.exports = womensFootwear
-// , mensFootwear, womensCasual, mensCasual, mensFormal, womensFormal;
+// var womensFootwear = [ itemOne, itemTwo ]
+// var mensFootwear = [ itemThree, itemFour, itemFive ]
+// var womensCasual = [ itemSix, itemSeven ]
+// var mensCasual = [ itemEight, itemNine ]
+// var mensFormal = [ itemTen, itemEleven ]
+// var womensFormal = [ itemTwelve, itemThirteen ]
+
+module.exports = stock;
 

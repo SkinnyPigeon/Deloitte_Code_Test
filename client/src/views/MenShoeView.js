@@ -1,5 +1,8 @@
-var MenShoeView = function() {
-  console.log( "Men Shoe View Accessed" );
+var mensFootwear = require( '../models/stock/mensFootwear' );
+
+var MenShoeView = function( basket ) {
+  
+  this.basket = basket;
 
   var clear = document.getElementById( 'main-display' );
   clear.innerText = "";
@@ -7,48 +10,45 @@ var MenShoeView = function() {
   var clearTwo = document.getElementById( 'choice-display' );
   clearTwo.innerText = "";
 
-  var area = document.getElementById( 'item-display' );
-  area.innerText = "";
-
-  var shoes = document.createElement( 'img' );
-  var shoeText = document.createElement( 'p' );
-
-  var formal = document.createElement( 'img' );
-  var formalText = document.createElement( 'p' );
-
-  var casual = document.createElement( 'img' );
-  var casualText = document.createElement( 'p' );
-
-  shoes.src = "./css/image/court-black.jpeg";
-  formal.src = "./css/image/bird.jpeg";
-  casual.src = "./css/image/cardigan-gold.jpg";
-
-  shoeText.innerText = "Shoes";
-  formalText.innerText = "Formal";
-  casualText.innerText = "Casual";
-
-  area.appendChild( shoes );
-  area.appendChild( shoeText );
-
-  area.appendChild( formal );
-  area.appendChild( formalText );
-
-  area.appendChild( casual );
-  area.appendChild( casualText );
-
-  shoes.onclick = function() {
-    displayWomenShoes();
-  }
-
-  formal.onclick = function() {
-    displayWomenFormal();
-  }
-
-  casual.onclick = function() {
-    displayWomenCasual();
-  }
-
+  this.area = document.getElementById( 'item-display' );
+  this.area.innerText = "";
 }
 
+MenShoeView.prototype = {
+
+  display: function() {
+    for( var i = 0; i < mensFootwear.length; i++ ) {
+
+      var image = document.createElement( 'img' );
+      var description = document.createElement( 'p' );
+      var price = document.createElement( 'p' );
+      var stock = document.createElement( 'p' );
+      var button = document.createElement( 'button' );
+
+      image.src = mensFootwear[i].image;
+      description.innerText = mensFootwear[i].name;
+      price.innerText = mensFootwear[i].price;
+      stock.innerText = mensFootwear[i].stock;
+      button.innerText = "Add to basket";
+      button.id = i;
+      console.log( i );
+
+      button.onclick = function( e ) {
+        var id = e.path[0].id;
+        this.handleButtonClick( id );
+      }.bind( this );
+
+      this.area.appendChild( image );
+      this.area.appendChild( description );
+      this.area.appendChild( price );
+      this.area.appendChild( stock );
+      this.area.appendChild( button );
+    }
+  },
+
+  handleButtonClick: function( id ) {
+    this.basket.add( mensFootwear[ id ]);
+  }
+}
 
 module.exports = MenShoeView;

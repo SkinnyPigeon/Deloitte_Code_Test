@@ -1,5 +1,5 @@
 var assert = require( 'chai' ).assert;
-var stock = require( '../models/stock' );
+var stock = require( '../models/stock/stock' );
 var Basket = require( '../models/basket' );
 var Total = require( '../models/total' );
 var Voucher = require( '../models/voucher' );

@@ -58,22 +58,14 @@ var displayWomenShoes = function( basket ) {
   view.display();
 }
 
-var displayWomenFormal = function() {
-  var view = new WomenFormalView();
+var displayWomenFormal = function( basket ) {
+  var view = new WomenFormalView( basket );
   view.display();
 }
 
-var displayWomenCasual = function() {
-  var view = new WomenCasualView();
+var displayWomenCasual = function( basket ) {
+  var view = new WomenCasualView( basket );
   view.display();
 }
-
-
-
-
-
-
-
-
 
 module.exports = WomenView;

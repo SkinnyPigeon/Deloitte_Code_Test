@@ -1,3 +1,8 @@
+var MenShoeView = require( './MenShoeView' );
+var MenFormalView = require( './MenFormalView' );
+var MenCasualView = require( './MenCasualView' );
+
+
 var MenView = function() {
   console.log( "Men View Accessed" );
 
@@ -35,6 +40,34 @@ var MenView = function() {
 
   area.appendChild( casual );
   area.appendChild( casualText );
+
+  shoes.onclick = function() {
+    displayMenShoes( basket );
+  }
+
+  formal.onclick = function() {
+    displayMenFormal();
+  }
+
+  casual.onclick = function() {
+    displayMenCasual();
+  }
 }
+
+var displayMenShoes = function( basket ) {
+  var view = new MenShoeView(  basket );
+  view.display();
+}
+
+var displayMenFormal = function() {
+  var view = new MenFormalView();
+  view.display();
+}
+
+var displayMenCasual = function() {
+  var view = new MenCasualView();
+  view.display();
+}
+
 
 module.exports = MenView;
