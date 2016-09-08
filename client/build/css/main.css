@@ -2,8 +2,6 @@ body {
   font-family: 'Amatic SC', sans-serif;
 }
 
-
-
 img {
   max-width: 100%;
   min-width: 100%; 
@@ -13,7 +11,6 @@ img {
 
 h3 {
   margin: 0 0 1em 0;
-  
 }
 
 p {
@@ -26,7 +23,6 @@ header {
   padding: 5px 0 0 0;
   width: 100%;  
 }
-
 
 #logo{
   text-align: center;
@@ -69,15 +65,12 @@ nav a {
   padding: 15px 10px;
 }
 
-
-/* site body */
 body {
   background-color: #b2d4de;
   color: #fff;
   background-image: url('./image/paper.png');
 }
 
-/* blue header */
 header {
   
   background: #1c7f9b;
@@ -85,28 +78,23 @@ header {
   background-image: url('./image/paper-2.png');
 }
 
-/* nav background on mobile */
 nav {
   background: #40aac8;
   background-image: url('./image/paper-2.png');
 }
 
-/* logo text */
 h1, h2 {
 color: #fff;
 }
 
-/* links */
 a {
   color: #1c7f9b;
 }
 
-/* nav link */
 nav a, nav a:visited {
   color: #fff;
 }
 
-/* selected nav link */
 nav a.selected, nav li:hover {
   color: #1c7f9b;
 }
@@ -148,13 +136,26 @@ p {
   list-style: none;
 }
 
-
-#basket-display li {
+#basket-display ul {
   /*float: left;*/
-  width: 25%;
+  width: 5%;
   margin: 2.5%;
   background-color: transparent;
   color: #1c7f9b;
+}
+
+#basket-page li {
+  display: block;
+  /*float: left;*/
+}
+
+
+#basket-display li img {
+  float: left;
+}
+
+#basket-display li p {
+  float: left;
 }
 
 #men-page {
@@ -185,27 +186,13 @@ p {
   color: #1c7f9b;
 }
 
-#display-page-three {
+#display-page {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-#display-page-three li {
-  float: left;
-  width: 28.3333333%;
-  margin: 2.5%;
-  background-color: transparent;
-  color: #1c7f9b;
-}
-
-#display-page-two {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#display-page-two li {
+#display-page li {
   float: left;
   width: 45%;
   margin: 2.5%;

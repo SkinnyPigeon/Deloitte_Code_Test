@@ -9,7 +9,7 @@ ClothesView.prototype = {
 
   display: function() {
     var ul = document.createElement( 'ul' );
-    ul.id = "display-page-two";
+    ul.id = "display-page";
 
     for( var i = 0; i < this.department.length; i++ ) {
 

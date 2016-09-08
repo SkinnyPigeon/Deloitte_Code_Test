@@ -373,7 +373,7 @@
 	
 	  display: function() {
 	    var ul = document.createElement( 'ul' );
-	    ul.id = "display-page-two";
+	    ul.id = "display-page";
 	
 	    for( var i = 0; i < this.department.length; i++ ) {
 	
@@ -643,10 +643,10 @@
 	BasketView.prototype = {
 	
 	  display: function() {
-	    var div = document.createElement( 'div' );
-	    div.className = 'basket-view'
 	    var ul = document.createElement( 'ul' );
+	    ul.id = "basket-page"
 	    this.area.appendChild( ul );
+	    
 	    for( var i = 0; i < this.basket.items.length; i ++ ) {
 	      var li = document.createElement( 'li' );
 	      var image = document.createElement( 'img' );
