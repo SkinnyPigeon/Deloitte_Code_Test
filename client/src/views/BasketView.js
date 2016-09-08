@@ -4,19 +4,52 @@ var runningTotal = new Total();
 
 var BasketView = function( basket ) {
 
-  console.log( basket );
 
-  runningTotal.setTotal( basket.items );
+  this.basket = basket;
 
-  console.log( runningTotal.total );
+  var clear = document.getElementById( 'main-display' );
+  clear.innerText = "";
 
-  console.log( "Basket View Accessed" );
-  console.log( basket.totalItems() );
-  var area = document.getElementById( 'main-display' );
-  area.innerText = "";
-  var p = document.createElement( 'p' );
-  p.innerText = "This is the basket view";
-  area.appendChild( p );
+  var clearTwo = document.getElementById( 'item-display' );
+  clearTwo.innerText = "";
+
+  var clearThree = document.getElementById( 'choice-display' );
+  clearThree.innerText = "";
+
+  this.area = document.getElementById( 'basket-display' );
+  this.area.innerText = "";
+}
+
+BasketView.prototype = {
+
+  display: function() {
+    for( var i = 0; i < this.basket.items.length; i ++ ) {
+      var image = document.createElement( 'img' );
+      var description = document.createElement( 'p' );
+      var price = document.createElement( 'p' );
+      var button = document.createElement( 'button' );
+
+      image.src = this.basket.items[i].image;
+      description.innerText = this.basket.items[i].name;
+      price.innerText = this.basket.items[i].price;
+      button.innerText = "Delete";
+      button.id = i;
+
+      button.onclick = function( e ) {
+        var id = e.path[0].id;
+        this.handleButtonClick( id );
+      }.bind( this );
+
+      this.area.appendChild( image );
+      this.area.appendChild( description );
+      this.area.appendChild( price );
+      this.area.appendChild( button );
+    }
+  },
+
+  handleButtonClick: function( id ) {
+    this.basket.remove( this.basket.items[ id ]);
+  }
 }
 
 module.exports = BasketView;

@@ -1,5 +1,5 @@
 var assert = require( 'chai' ).assert;
-var stock = require( '../models/stock' );
+var stock = require( '../models/stock/stock' );
 
 describe( 'The Stock: ', function() {
 

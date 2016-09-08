@@ -1,9 +1,8 @@
 var WomenShoeView = require( './WomenShoeView' );
-// var WomenFormalView = require( './WomenFormalView' );
-// var WomenCasualView = require( './WomenCasualView' );
+var WomenFormalView = require( './WomenFormalView' );
+var WomenCasualView = require( './WomenCasualView' );
 
-var WomenView = function( basket, stock ) {
-  console.log( stock );
+var WomenView = function( basket ) {
   console.log( "Women View Accessed" );
 
   var clear = document.getElementById( 'main-display' );
@@ -42,37 +41,31 @@ var WomenView = function( basket, stock ) {
   area.appendChild( casualText );
 
   shoes.onclick = function() {
-    console.log( stock );
-    displayWomenShoes( basket, stock );
+    displayWomenShoes( basket );
   }
 
   formal.onclick = function() {
-    displayWomenFormal();
+    displayWomenFormal( basket );
   }
 
   casual.onclick = function() {
-    displayWomenCasual();
+    displayWomenCasual( basket );
   }
 }
 
-var displayWomenShoes = function( basket, stock ) {
-  var view = new WomenShoeView(  basket, stock );
+var displayWomenShoes = function( basket ) {
+  var view = new WomenShoeView(  basket );
+  view.display();
 }
 
-// var displayWomenFormal = function() {
-//   var view = new WomenFormalView();
-// }
+var displayWomenFormal = function( basket ) {
+  var view = new WomenFormalView( basket );
+  view.display();
+}
 
-// var displayWomenCasual = function() {
-//   var view = new WomenCasualView();
-// }
-
-
-
-
-
-
-
-
+var displayWomenCasual = function( basket ) {
+  var view = new WomenCasualView( basket );
+  view.display();
+}
 
 module.exports = WomenView;
