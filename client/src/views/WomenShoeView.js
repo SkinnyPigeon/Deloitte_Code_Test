@@ -3,15 +3,7 @@ var womensFootwear = require( '../models/stock/womensFootwear' );
 var WomenShoeView = function( basket ) {
   
   this.basket = basket;
-
-  var clear = document.getElementById( 'main-display' );
-  clear.innerText = "";
-
-  var clearTwo = document.getElementById( 'choice-display' );
-  clearTwo.innerText = "";
-
-  this.area = document.getElementById( 'item-display' );
-  this.area.innerText = "";
+  this.resetView();
 }
 
 WomenShoeView.prototype = {
@@ -46,8 +38,21 @@ WomenShoeView.prototype = {
     }
   },
 
+  resetView: function() {
+    var clear = document.getElementById( 'main-display' );
+    clear.innerText = "";
+
+    var clearTwo = document.getElementById( 'choice-display' );
+    clearTwo.innerText = "";
+
+    this.area = document.getElementById( 'item-display' );
+    this.area.innerText = "";
+  },
+
   handleButtonClick: function( id ) {
     this.basket.add( womensFootwear[ id ]);
+    this.resetView();
+    this.display();
   }
 }
 

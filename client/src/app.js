@@ -67,6 +67,7 @@ var displayMen = function( basket ) {
 
 var displayBasket = function( basket ) {
   var view = new BasketView( basket );
+  view.display();
 }
 
 

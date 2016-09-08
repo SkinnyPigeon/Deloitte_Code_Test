@@ -3,7 +3,7 @@ var MenFormalView = require( './MenFormalView' );
 var MenCasualView = require( './MenCasualView' );
 
 
-var MenView = function() {
+var MenView = function( basket ) {
   console.log( "Men View Accessed" );
 
   var clear = document.getElementById( 'main-display' );
@@ -46,11 +46,11 @@ var MenView = function() {
   }
 
   formal.onclick = function() {
-    displayMenFormal();
+    displayMenFormal( basket );
   }
 
   casual.onclick = function() {
-    displayMenCasual();
+    displayMenCasual( basket );
   }
 }
 
@@ -59,13 +59,13 @@ var displayMenShoes = function( basket ) {
   view.display();
 }
 
-var displayMenFormal = function() {
-  var view = new MenFormalView();
+var displayMenFormal = function( basket ) {
+  var view = new MenFormalView( basket );
   view.display();
 }
 
-var displayMenCasual = function() {
-  var view = new MenCasualView();
+var displayMenCasual = function( basket ) {
+  var view = new MenCasualView( basket );
   view.display();
 }
 

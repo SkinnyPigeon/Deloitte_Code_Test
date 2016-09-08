@@ -45,11 +45,11 @@ var WomenView = function( basket ) {
   }
 
   formal.onclick = function() {
-    displayWomenFormal();
+    displayWomenFormal( basket );
   }
 
   casual.onclick = function() {
-    displayWomenCasual();
+    displayWomenCasual( basket );
   }
 }
 
