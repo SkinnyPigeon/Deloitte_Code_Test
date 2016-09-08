@@ -1,7 +1,7 @@
 var womensFootwear = require( '../models/stock/womensFootwear' );
 
 var WomenShoeView = function( basket ) {
-
+  
   this.basket = basket;
 
   var clear = document.getElementById( 'main-display' );
@@ -32,12 +32,11 @@ WomenShoeView.prototype = {
       stock.innerText = womensFootwear[i].stock;
       button.innerText = "Add to basket";
       button.id = i;
+      console.log( i );
 
-      button.onclick = function() {
-        var i = button.id;
-        console.log( "button clicked" );
-        console.log( womensFootwear[i] );
-        this.basket.add( womensFootwear[i] );
+      button.onclick = function( e ) {
+        var id = e.path[0].id;
+        this.handleButtonClick( id );
       }.bind( this );
 
       this.area.appendChild( image );
@@ -48,7 +47,9 @@ WomenShoeView.prototype = {
     }
   },
 
-
+  handleButtonClick: function( id ) {
+    this.basket.add( womensFootwear[ id ]);
+  }
 }
 
 module.exports = WomenShoeView;
