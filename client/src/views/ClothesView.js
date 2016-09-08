@@ -1,5 +1,3 @@
-
-
 var ClothesView = function( basket, department ) {
   
   this.department = department;

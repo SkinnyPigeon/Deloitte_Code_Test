@@ -106,6 +106,7 @@
 	
 	var displayMen = function( basket ) {
 	  var view = new MenView( basket );
+	  view.display();
 	}
 	
 	var displayBasket = function( basket ) {
@@ -166,72 +167,78 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ClothesView = __webpack_require__( 20 );
-	
 	var womensCasual = __webpack_require__( 8 );
 	var womensFormal = __webpack_require__( 6 );
 	var womensFootwear = __webpack_require__( 4 );
 	
+	var ClothesView = __webpack_require__( 20 );
+	
 	var WomenView = function( basket ) {
-	  console.log( "Women View Accessed" );
 	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
-	
-	  var clearThree = document.getElementById( 'basket-display' );
-	  clearThree.innerText = "";
-	
-	  var area = document.getElementById( 'choice-display' );
-	  area.innerText = "";
-	
-	  var shoes = document.createElement( 'img' );
-	  var shoeText = document.createElement( 'p' );
-	
-	  var formal = document.createElement( 'img' );
-	  var formalText = document.createElement( 'p' );
-	
-	  var casual = document.createElement( 'img' );
-	  var casualText = document.createElement( 'p' );
-	
-	  shoes.src = "./css/image/court-black.jpeg";
-	  formal.src = "./css/image/bird.jpeg";
-	  casual.src = "./css/image/cardigan-gold.jpg";
-	
-	  shoeText.innerText = "Shoes";
-	  formalText.innerText = "Formal";
-	  casualText.innerText = "Casual";
-	
-	  area.appendChild( shoes );
-	  area.appendChild( shoeText );
-	
-	  area.appendChild( formal );
-	  area.appendChild( formalText );
-	
-	  area.appendChild( casual );
-	  area.appendChild( casualText );
-	
-	
-	  shoes.onclick = function() {
-	    displayDepartment( basket, womensFootwear );
-	  }
-	
-	  formal.onclick = function() {
-	    displayDepartment( basket, womensFormal );
-	  }
-	
-	  casual.onclick = function() {
-	    displayDepartment( basket, womensCasual );
-	  }
+	  this.resetView();
 	}
 	
-	var displayDepartment = function( basket, department ) {
-	  var view = new ClothesView( basket, department );
-	  view.display();
-	}
+	WomenView.prototype = {
 	
+	  display: function() {
+	    var shoes = document.createElement( 'img' );
+	    var shoeText = document.createElement( 'p' );
+	
+	    var formal = document.createElement( 'img' );
+	    var formalText = document.createElement( 'p' );
+	
+	    var casual = document.createElement( 'img' );
+	    var casualText = document.createElement( 'p' );
+	
+	    shoes.src = "./css/image/court-black.jpeg";
+	    formal.src = "./css/image/bird.jpeg";
+	    casual.src = "./css/image/cardigan-gold.jpg";
+	
+	    shoeText.innerText = "Shoes";
+	    formalText.innerText = "Formal";
+	    casualText.innerText = "Casual";
+	
+	    this.area.appendChild( shoes );
+	    this.area.appendChild( shoeText );
+	
+	    this.area.appendChild( formal );
+	    this.area.appendChild( formalText );
+	
+	    this.area.appendChild( casual );
+	    this.area.appendChild( casualText );
+	
+	    shoes.onclick = function() {
+	      displayDepartment( basket, womensFootwear );
+	    }.bind( this );
+	
+	    formal.onclick = function() {
+	      displayDepartment( basket, womensFormal );
+	    }.bind( this );
+	
+	    casual.onclick = function() {
+	      displayDepartment( basket, womensCasual );
+	    }.bind( this );
+	  },
+	
+	  resetView: function() {
+	    var clear = document.getElementById( 'main-display' );
+	    clear.innerText = "";
+	
+	    var clearTwo = document.getElementById( 'item-display' );
+	    clearTwo.innerText = "";
+	
+	    var clearThree = document.getElementById( 'basket-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'choice-display' );
+	    this.area.innerText = "";
+	  },
+	
+	  displayDepartment: function( basket, department ) {
+	    var view = new ClothesView( basket, department );
+	    view.display();
+	  }
+	}
 	
 	module.exports = WomenView;
 
@@ -331,64 +338,70 @@
 	var ClothesView = __webpack_require__( 20 );
 	
 	var MenView = function( basket ) {
-	  console.log( "Men View Accessed" );
 	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
-	
-	  var clearThree = document.getElementById( 'basket-display' );
-	  clearThree.innerText = "";
-	
-	  var area = document.getElementById( 'choice-display' );
-	  area.innerText = "";
-	
-	  var shoes = document.createElement( 'img' );
-	  var shoeText = document.createElement( 'p' );
-	
-	  var formal = document.createElement( 'img' );
-	  var formalText = document.createElement( 'p' );
-	
-	  var casual = document.createElement( 'img' );
-	  var casualText = document.createElement( 'p' );
-	
-	  shoes.src = "./css/image/leather-tan.jpeg";
-	  formal.src = "./css/image/lightweight-deer.jpeg";
-	  casual.src = "./css/image/striped-green.jpg";
-	
-	  shoeText.innerText = "Shoes";
-	  formalText.innerText = "Formal";
-	  casualText.innerText = "Casual";
-	
-	  area.appendChild( shoes );
-	  area.appendChild( shoeText );
-	
-	  area.appendChild( formal );
-	  area.appendChild( formalText );
-	
-	  area.appendChild( casual );
-	  area.appendChild( casualText );
-	
-	
-	
-	  shoes.onclick = function() {
-	    displayDepartment( basket, mensFootwear );
-	  }
-	
-	  formal.onclick = function() {
-	    displayDepartment( basket, mensFormal );
-	  }
-	
-	  casual.onclick = function() {
-	    displayDepartment( basket, mensCasual );
-	  }
+	  this.resetView();
 	}
 	
-	var displayDepartment = function( basket, department ) {
-	  var view = new ClothesView( basket, department );
-	  view.display();
+	MenView.prototype = {
+	
+	  display: function() {
+	    var shoes = document.createElement( 'img' );
+	    var shoeText = document.createElement( 'p' );
+	
+	    var formal = document.createElement( 'img' );
+	    var formalText = document.createElement( 'p' );
+	
+	    var casual = document.createElement( 'img' );
+	    var casualText = document.createElement( 'p' );
+	
+	    shoes.src = "./css/image/leather-tan.jpeg";
+	    formal.src = "./css/image/lightweight-deer.jpeg";
+	    casual.src = "./css/image/striped-green.jpg";
+	
+	    shoeText.innerText = "Shoes";
+	    formalText.innerText = "Formal";
+	    casualText.innerText = "Casual";
+	
+	    this.area.appendChild( shoes );
+	    this.area.appendChild( shoeText );
+	
+	    this.area.appendChild( formal );
+	    this.area.appendChild( formalText );
+	
+	    this.area.appendChild( casual );
+	    this.area.appendChild( casualText );
+	
+	    shoes.onclick = function() {
+	      this.displayDepartment( basket, mensFootwear );
+	    }.bind( this );
+	
+	    formal.onclick = function() {
+	      this.displayDepartment( basket, mensFormal );
+	    }.bind( this );
+	
+	    casual.onclick = function() {
+	      this.displayDepartment( basket, mensCasual );
+	    }.bind( this );
+	  },
+	
+	  resetView: function() {
+	    var clear = document.getElementById( 'main-display' );
+	    clear.innerText = "";
+	
+	    var clearTwo = document.getElementById( 'item-display' );
+	    clearTwo.innerText = "";
+	
+	    var clearThree = document.getElementById( 'basket-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'choice-display' );
+	    this.area.innerText = "";
+	  },
+	
+	  displayDepartment: function( basket, department ) {
+	    var view = new ClothesView( basket, department );
+	    view.display();
+	  }
 	}
 	
 	module.exports = MenView;
@@ -779,8 +792,6 @@
 /* 20 */
 /***/ function(module, exports) {
 
-	
-	
 	var ClothesView = function( basket, department ) {
 	  
 	  this.department = department;
