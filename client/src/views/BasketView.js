@@ -1,4 +1,5 @@
 var Total = require( '../models/total' );
+var Voucher = require( '../models/voucher' );
 
 var runningTotal = new Total();
 
@@ -40,9 +41,18 @@ BasketView.prototype = {
     this.area.appendChild( total );
 
     var voucherEntry = document.createElement( 'input' );
+    voucherEntry.id = "voucher-entry";
     voucherEntry.type = "text";
     voucherEntry.placeholder = "Enter voucher code...";
     this.area.appendChild( voucherEntry );
+
+    var voucherButton = document.createElement( 'button' );
+    voucherButton.id = "voucher-button";
+    voucherButton.innerText = "Add voucher";
+    this.area.appendChild( voucherButton );
+    voucherButton.onclick = function() {
+      this.handleVoucherClick();
+    }.bind( this );
   },
 
   resetView: function() {
@@ -66,11 +76,19 @@ BasketView.prototype = {
     this.display();
   },
 
+  handleVoucherClick: function() {
+    var voucherEntry = document.getElementById( 'voucher-entry' );
+    var code = voucherEntry.value;
+    var voucher = new Voucher( code );
+    // insert error handler here
+  },
+
   giveRunningTotal: function() {
     runningTotal.setTotal( this.basket.items );
     this.total = runningTotal.total;
     return this.total;
   }
+
 }
 
 module.exports = BasketView;
