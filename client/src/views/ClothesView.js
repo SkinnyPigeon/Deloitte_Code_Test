@@ -1,15 +1,14 @@
-var womensFormal = require( '../models/stock/womensFormal' );
-
-var WomenFormalView = function( basket ) {
+var ClothesView = function( basket, department ) {
   
+  this.department = department;
   this.basket = basket;
   this.resetView();
 }
 
-WomenFormalView.prototype = {
+ClothesView.prototype = {
 
   display: function() {
-    for( var i = 0; i < womensFormal.length; i++ ) {
+    for( var i = 0; i < this.department.length; i++ ) {
 
       var image = document.createElement( 'img' );
       var description = document.createElement( 'p' );
@@ -17,10 +16,10 @@ WomenFormalView.prototype = {
       var stock = document.createElement( 'p' );
       var button = document.createElement( 'button' );
 
-      image.src = womensFormal[i].image;
-      description.innerText = womensFormal[i].name;
-      price.innerText = womensFormal[i].price;
-      stock.innerText = womensFormal[i].stock;
+      image.src = this.department[i].image;
+      description.innerText = this.department[i].name;
+      price.innerText = this.department[i].price;
+      stock.innerText = this.department[i].stock;
       button.innerText = "Add to basket";
       button.id = i;
       console.log( i );
@@ -45,15 +44,19 @@ WomenFormalView.prototype = {
     var clearTwo = document.getElementById( 'choice-display' );
     clearTwo.innerText = "";
 
+    var clearThree = document.getElementById( 'basket-display' );
+    clearThree.innerText = "";
+
     this.area = document.getElementById( 'item-display' );
     this.area.innerText = "";
   },
 
   handleButtonClick: function( id ) {
-    this.basket.add( womensFormal[ id ]);
+    console.log( this.basket );
+    this.basket.add( this.department[ id ]);
     this.resetView();
     this.display();
   }
 }
 
-module.exports = WomenFormalView;
+module.exports = ClothesView;

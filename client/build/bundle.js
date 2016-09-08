@@ -52,10 +52,6 @@
 	var Basket = __webpack_require__( 18 );
 	var Voucher = __webpack_require__( 19 );
 	
-	var MenShoeView = __webpack_require__( 10 );
-	var MenCasualView = __webpack_require__( 14 );
-	var MenFormalView = __webpack_require__( 12 );
-	
 	var basket = new Basket();
 	
 	window.onload = function() {
@@ -101,14 +97,17 @@
 	
 	var displayHome = function( basket ) {
 	  var view = new HomeView( basket );
+	  view.display();
 	}
 	
 	var displayWomen = function( basket ) {
 	  var view = new WomenView( basket );
+	  view.display();
 	}
 	
 	var displayMen = function( basket ) {
 	  var view = new MenView( basket );
+	  view.display();
 	}
 	
 	var displayBasket = function( basket ) {
@@ -134,30 +133,41 @@
 /***/ function(module, exports) {
 
 	var HomeView = function() {
-	  console.log( "Home View Accessed" );
 	
-	  var clear = document.getElementById( 'choice-display' );
-	  clear.innerText = "";
+	  this.resetView();
+	}
 	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
+	HomeView.prototype = {
 	
-	  var area = document.getElementById( 'main-display' );
-	  area.innerText = "";
+	  display: function() {
+	    var women = document.createElement( 'img' );
+	    var men = document.createElement( 'img' );
 	
-	  var women = document.createElement( 'img' );
-	  var men = document.createElement( 'img' );
+	    women.src = "./css/image/women.jpeg";
+	    men.src = "./css/image/men.jpeg";
 	
-	  women.src = "./css/image/women.jpeg";
-	  men.src = "./css/image/men.jpeg";
+	    women.className = "home-images";
+	    women.id = 'women-image';
+	    men.className = "home-images";
+	    men.id = 'men-image';
 	
-	  women.className = "home-images";
-	  women.id = 'women-image';
-	  men.className = "home-images";
-	  men.id = 'men-image';
+	    this.area.appendChild( women );
+	    this.area.appendChild( men );
+	  },
 	
-	  area.appendChild( women );
-	  area.appendChild( men );
+	  resetView: function() {
+	    var clear = document.getElementById( 'choice-display' );
+	    clear.innerText = "";
+	
+	    var clearTwo = document.getElementById( 'item-display' );
+	    clearTwo.innerText = "";
+	
+	    var clearThree = document.getElementById( 'basket-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'main-display' );
+	    this.area.innerText = "";
+	  }
 	}
 	
 	module.exports = HomeView;
@@ -166,143 +176,83 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WomenShoeView = __webpack_require__( 3 );
-	var WomenFormalView = __webpack_require__( 5 );
-	var WomenCasualView = __webpack_require__( 7 );
-	
-	var WomenView = function( basket ) {
-	  console.log( "Women View Accessed" );
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
-	
-	  var area = document.getElementById( 'choice-display' );
-	  area.innerText = "";
-	
-	  var shoes = document.createElement( 'img' );
-	  var shoeText = document.createElement( 'p' );
-	
-	  var formal = document.createElement( 'img' );
-	  var formalText = document.createElement( 'p' );
-	
-	  var casual = document.createElement( 'img' );
-	  var casualText = document.createElement( 'p' );
-	
-	  shoes.src = "./css/image/court-black.jpeg";
-	  formal.src = "./css/image/bird.jpeg";
-	  casual.src = "./css/image/cardigan-gold.jpg";
-	
-	  shoeText.innerText = "Shoes";
-	  formalText.innerText = "Formal";
-	  casualText.innerText = "Casual";
-	
-	  area.appendChild( shoes );
-	  area.appendChild( shoeText );
-	
-	  area.appendChild( formal );
-	  area.appendChild( formalText );
-	
-	  area.appendChild( casual );
-	  area.appendChild( casualText );
-	
-	  shoes.onclick = function() {
-	    displayWomenShoes( basket );
-	  }
-	
-	  formal.onclick = function() {
-	    displayWomenFormal( basket );
-	  }
-	
-	  casual.onclick = function() {
-	    displayWomenCasual( basket );
-	  }
-	}
-	
-	var displayWomenShoes = function( basket ) {
-	  var view = new WomenShoeView(  basket );
-	  view.display();
-	}
-	
-	var displayWomenFormal = function( basket ) {
-	  var view = new WomenFormalView( basket );
-	  view.display();
-	}
-	
-	var displayWomenCasual = function( basket ) {
-	  var view = new WomenCasualView( basket );
-	  view.display();
-	}
-	
-	module.exports = WomenView;
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
+	var womensCasual = __webpack_require__( 8 );
+	var womensFormal = __webpack_require__( 6 );
 	var womensFootwear = __webpack_require__( 4 );
 	
-	var WomenShoeView = function( basket ) {
-	  
+	var ClothesView = __webpack_require__( 20 );
+	
+	var WomenView = function( basket ) {
 	  this.basket = basket;
 	  this.resetView();
 	}
 	
-	WomenShoeView.prototype = {
+	WomenView.prototype = {
 	
 	  display: function() {
-	    for( var i = 0; i < womensFootwear.length; i++ ) {
+	    var shoes = document.createElement( 'img' );
+	    var shoeText = document.createElement( 'p' );
 	
-	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
-	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
-	      var button = document.createElement( 'button' );
+	    var formal = document.createElement( 'img' );
+	    var formalText = document.createElement( 'p' );
 	
-	      image.src = womensFootwear[i].image;
-	      description.innerText = womensFootwear[i].name;
-	      price.innerText = womensFootwear[i].price;
-	      stock.innerText = womensFootwear[i].stock;
-	      button.innerText = "Add to basket";
-	      button.id = i;
-	      console.log( i );
+	    var casual = document.createElement( 'img' );
+	    var casualText = document.createElement( 'p' );
 	
-	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
-	        this.handleButtonClick( id );
-	      }.bind( this );
+	    shoes.src = "./css/image/court-black.jpeg";
+	    formal.src = "./css/image/bird.jpeg";
+	    casual.src = "./css/image/cardigan-gold.jpg";
 	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
-	      this.area.appendChild( button );
-	    }
+	    shoeText.innerText = "Shoes";
+	    formalText.innerText = "Formal";
+	    casualText.innerText = "Casual";
+	
+	    this.area.appendChild( shoes );
+	    this.area.appendChild( shoeText );
+	
+	    this.area.appendChild( formal );
+	    this.area.appendChild( formalText );
+	
+	    this.area.appendChild( casual );
+	    this.area.appendChild( casualText );
+	
+	    shoes.onclick = function() {
+	      this.displayDepartment( this.basket, womensFootwear );
+	    }.bind( this );
+	
+	    formal.onclick = function() {
+	      this.displayDepartment( this.basket, womensFormal );
+	    }.bind( this );
+	
+	    casual.onclick = function() {
+	      this.displayDepartment( this.basket, womensCasual );
+	    }.bind( this );
 	  },
 	
 	  resetView: function() {
 	    var clear = document.getElementById( 'main-display' );
 	    clear.innerText = "";
 	
-	    var clearTwo = document.getElementById( 'choice-display' );
+	    var clearTwo = document.getElementById( 'item-display' );
 	    clearTwo.innerText = "";
 	
-	    this.area = document.getElementById( 'item-display' );
+	    var clearThree = document.getElementById( 'basket-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'choice-display' );
 	    this.area.innerText = "";
 	  },
 	
-	  handleButtonClick: function( id ) {
-	    this.basket.add( womensFootwear[ id ]);
-	    this.resetView();
-	    this.display();
+	  displayDepartment: function( basket, department ) {
+	    var view = new ClothesView( basket, department );
+	    view.display();
 	  }
 	}
 	
-	module.exports = WomenShoeView;
+	module.exports = WomenView;
 
 /***/ },
+/* 3 */,
 /* 4 */
 /***/ function(module, exports) {
 
@@ -330,70 +280,7 @@
 
 
 /***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var womensFormal = __webpack_require__( 6 );
-	
-	var WomenFormalView = function( basket ) {
-	  
-	  this.basket = basket;
-	  this.resetView();
-	}
-	
-	WomenFormalView.prototype = {
-	
-	  display: function() {
-	    for( var i = 0; i < womensFormal.length; i++ ) {
-	
-	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
-	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
-	      var button = document.createElement( 'button' );
-	
-	      image.src = womensFormal[i].image;
-	      description.innerText = womensFormal[i].name;
-	      price.innerText = womensFormal[i].price;
-	      stock.innerText = womensFormal[i].stock;
-	      button.innerText = "Add to basket";
-	      button.id = i;
-	      console.log( i );
-	
-	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
-	        this.handleButtonClick( id );
-	      }.bind( this );
-	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
-	      this.area.appendChild( button );
-	    }
-	  },
-	
-	  resetView: function() {
-	    var clear = document.getElementById( 'main-display' );
-	    clear.innerText = "";
-	
-	    var clearTwo = document.getElementById( 'choice-display' );
-	    clearTwo.innerText = "";
-	
-	    this.area = document.getElementById( 'item-display' );
-	    this.area.innerText = "";
-	  },
-	
-	  handleButtonClick: function( id ) {
-	    this.basket.add( womensFormal[ id ]);
-	    this.resetView();
-	    this.display();
-	  }
-	}
-	
-	module.exports = WomenFormalView;
-
-/***/ },
+/* 5 */,
 /* 6 */
 /***/ function(module, exports) {
 
@@ -422,66 +309,7 @@
 
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var womensCasual = __webpack_require__( 8 );
-	
-	var WomenCasualView = function( basket ) {
-	  
-	  this.basket = basket;
-	  console.log( basket );
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'choice-display' );
-	  clearTwo.innerText = "";
-	
-	  this.area = document.getElementById( 'item-display' );
-	  this.area.innerText = "";
-	}
-	
-	WomenCasualView.prototype = {
-	
-	  display: function() {
-	    for( var i = 0; i < womensCasual.length; i++ ) {
-	
-	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
-	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
-	      var button = document.createElement( 'button' );
-	
-	      image.src = womensCasual[i].image;
-	      description.innerText = womensCasual[i].name;
-	      price.innerText = womensCasual[i].price;
-	      stock.innerText = womensCasual[i].stock;
-	      button.innerText = "Add to basket";
-	      button.id = i;
-	      console.log( i );
-	
-	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
-	        this.handleButtonClick( id );
-	      }.bind( this );
-	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
-	      this.area.appendChild( button );
-	    }
-	  },
-	
-	  handleButtonClick: function( id ) {
-	    this.basket.add( womensCasual[ id ]);
-	  }
-	}
-	
-	module.exports = WomenCasualView;
-
-/***/ },
+/* 7 */,
 /* 8 */
 /***/ function(module, exports) {
 
@@ -512,140 +340,84 @@
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var MenShoeView = __webpack_require__( 10 );
-	var MenFormalView = __webpack_require__( 12 );
-	var MenCasualView = __webpack_require__( 14 );
+	var mensCasual = __webpack_require__( 15 );
+	var mensFormal = __webpack_require__( 13 );
+	var mensFootwear = __webpack_require__( 11 );
 	
+	var ClothesView = __webpack_require__( 20 );
 	
 	var MenView = function( basket ) {
-	  console.log( "Men View Accessed" );
 	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
+	  this.basket = basket;
+	  this.resetView();
+	}
 	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
+	MenView.prototype = {
 	
-	  var area = document.getElementById( 'choice-display' );
-	  area.innerText = "";
+	  display: function() {
+	    var shoes = document.createElement( 'img' );
+	    var shoeText = document.createElement( 'p' );
 	
-	  var shoes = document.createElement( 'img' );
-	  var shoeText = document.createElement( 'p' );
+	    var formal = document.createElement( 'img' );
+	    var formalText = document.createElement( 'p' );
 	
-	  var formal = document.createElement( 'img' );
-	  var formalText = document.createElement( 'p' );
+	    var casual = document.createElement( 'img' );
+	    var casualText = document.createElement( 'p' );
 	
-	  var casual = document.createElement( 'img' );
-	  var casualText = document.createElement( 'p' );
+	    shoes.src = "./css/image/leather-tan.jpeg";
+	    formal.src = "./css/image/lightweight-deer.jpeg";
+	    casual.src = "./css/image/striped-green.jpg";
 	
-	  shoes.src = "./css/image/leather-tan.jpeg";
-	  formal.src = "./css/image/lightweight-deer.jpeg";
-	  casual.src = "./css/image/striped-green.jpg";
+	    shoeText.innerText = "Shoes";
+	    formalText.innerText = "Formal";
+	    casualText.innerText = "Casual";
 	
-	  shoeText.innerText = "Shoes";
-	  formalText.innerText = "Formal";
-	  casualText.innerText = "Casual";
+	    this.area.appendChild( shoes );
+	    this.area.appendChild( shoeText );
 	
-	  area.appendChild( shoes );
-	  area.appendChild( shoeText );
+	    this.area.appendChild( formal );
+	    this.area.appendChild( formalText );
 	
-	  area.appendChild( formal );
-	  area.appendChild( formalText );
+	    this.area.appendChild( casual );
+	    this.area.appendChild( casualText );
 	
-	  area.appendChild( casual );
-	  area.appendChild( casualText );
+	    shoes.onclick = function() {
+	      this.displayDepartment( this.basket, mensFootwear );
+	    }.bind( this );
 	
-	  shoes.onclick = function() {
-	    displayMenShoes( basket );
+	    formal.onclick = function() {
+	      this.displayDepartment( this.basket, mensFormal );
+	    }.bind( this );
+	
+	    casual.onclick = function() {
+	      this.displayDepartment( this.basket, mensCasual );
+	    }.bind( this );
+	  },
+	
+	  resetView: function() {
+	    var clear = document.getElementById( 'main-display' );
+	    clear.innerText = "";
+	
+	    var clearTwo = document.getElementById( 'item-display' );
+	    clearTwo.innerText = "";
+	
+	    var clearThree = document.getElementById( 'basket-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'choice-display' );
+	    this.area.innerText = "";
+	  },
+	
+	  displayDepartment: function( basket, department ) {
+	    var view = new ClothesView( basket, department );
+	    view.display();
 	  }
-	
-	  formal.onclick = function() {
-	    displayMenFormal( basket );
-	  }
-	
-	  casual.onclick = function() {
-	    displayMenCasual( basket );
-	  }
 	}
-	
-	var displayMenShoes = function( basket ) {
-	  var view = new MenShoeView(  basket );
-	  view.display();
-	}
-	
-	var displayMenFormal = function( basket ) {
-	  var view = new MenFormalView( basket );
-	  view.display();
-	}
-	
-	var displayMenCasual = function( basket ) {
-	  var view = new MenCasualView( basket );
-	  view.display();
-	}
-	
 	
 	module.exports = MenView;
 
 /***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var mensFootwear = __webpack_require__( 11 );
-	
-	var MenShoeView = function( basket ) {
-	  
-	  this.basket = basket;
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'choice-display' );
-	  clearTwo.innerText = "";
-	
-	  this.area = document.getElementById( 'item-display' );
-	  this.area.innerText = "";
-	}
-	
-	MenShoeView.prototype = {
-	
-	  display: function() {
-	    for( var i = 0; i < mensFootwear.length; i++ ) {
-	
-	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
-	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
-	      var button = document.createElement( 'button' );
-	
-	      image.src = mensFootwear[i].image;
-	      description.innerText = mensFootwear[i].name;
-	      price.innerText = mensFootwear[i].price;
-	      stock.innerText = mensFootwear[i].stock;
-	      button.innerText = "Add to basket";
-	      button.id = i;
-	      console.log( i );
-	
-	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
-	        this.handleButtonClick( id );
-	      }.bind( this );
-	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
-	      this.area.appendChild( button );
-	    }
-	  },
-	
-	  handleButtonClick: function( id ) {
-	    this.basket.add( mensFootwear[ id ]);
-	  }
-	}
-	
-	module.exports = MenShoeView;
-
-/***/ },
+/* 10 */,
 /* 11 */
 /***/ function(module, exports) {
 
@@ -683,65 +455,7 @@
 
 
 /***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var mensFormal = __webpack_require__( 13 );
-	
-	var MenFormalView = function( basket ) {
-	  
-	  this.basket = basket;
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'choice-display' );
-	  clearTwo.innerText = "";
-	
-	  this.area = document.getElementById( 'item-display' );
-	  this.area.innerText = "";
-	}
-	
-	MenFormalView.prototype = {
-	
-	  display: function() {
-	    for( var i = 0; i < mensFormal.length; i++ ) {
-	
-	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
-	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
-	      var button = document.createElement( 'button' );
-	
-	      image.src = mensFormal[i].image;
-	      description.innerText = mensFormal[i].name;
-	      price.innerText = mensFormal[i].price;
-	      stock.innerText = mensFormal[i].stock;
-	      button.innerText = "Add to basket";
-	      button.id = i;
-	      console.log( i );
-	
-	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
-	        this.handleButtonClick( id );
-	      }.bind( this );
-	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
-	      this.area.appendChild( button );
-	    }
-	  },
-	
-	  handleButtonClick: function( id ) {
-	    this.basket.add( mensFormal[ id ]);
-	  }
-	}
-	
-	module.exports = MenFormalView;
-
-/***/ },
+/* 12 */,
 /* 13 */
 /***/ function(module, exports) {
 
@@ -749,6 +463,7 @@
 	  name: "Sharkskin Waistcoat, Charcoal",
 	  category: "Men’s Formalwear",
 	  subcategory: "Formalwear",
+	  image: "./css/image/waistcoat-grey-low.jpg",
 	  price: 75,
 	  stock: 2
 	}
@@ -757,6 +472,7 @@
 	  name: "Lightweight Patch Pocket Blazer, Deer",
 	  category: "Men’s Formalwear ",
 	  subcategory: "Formalwear",
+	  image: "./css/image/lightweight-deer.jpeg",
 	  price: 175.5,
 	  stock: 1
 	}
@@ -768,65 +484,7 @@
 
 
 /***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var mensCasual = __webpack_require__( 15 );
-	
-	var MenCasualView = function( basket ) {
-	  
-	  this.basket = basket;
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'choice-display' );
-	  clearTwo.innerText = "";
-	
-	  this.area = document.getElementById( 'item-display' );
-	  this.area.innerText = "";
-	}
-	
-	MenCasualView.prototype = {
-	
-	  display: function() {
-	    for( var i = 0; i < mensCasual.length; i++ ) {
-	
-	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
-	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
-	      var button = document.createElement( 'button' );
-	
-	      image.src = mensCasual[i].image;
-	      description.innerText = mensCasual[i].name;
-	      price.innerText = mensCasual[i].price;
-	      stock.innerText = mensCasual[i].stock;
-	      button.innerText = "Add to basket";
-	      button.id = i;
-	      console.log( i );
-	
-	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
-	        this.handleButtonClick( id );
-	      }.bind( this );
-	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
-	      this.area.appendChild( button );
-	    }
-	  },
-	
-	  handleButtonClick: function( id ) {
-	    this.basket.add( mensCasual[ id ]);
-	  }
-	}
-	
-	module.exports = MenCasualView;
-
-/***/ },
+/* 14 */,
 /* 15 */
 /***/ function(module, exports) {
 
@@ -834,7 +492,9 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Grey",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
+	  image: "./css/image/striped-grey.jpg",
 	  price: 49.99,
+	  salePrice: null,
 	  stock: 9
 	}
 	
@@ -842,7 +502,9 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Green",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
-	  price: 39.99,
+	  image: "./css/image/striped-green.jpg",
+	  price: 49.99,
+	  salePrice: 39.99,
 	  stock: 3
 	}
 	var mensCasual = [ itemOne, itemTwo ]
@@ -857,25 +519,15 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var Total = __webpack_require__( 17 );
+	var Voucher = __webpack_require__( 19 );
 	
 	var runningTotal = new Total();
 	
 	var BasketView = function( basket ) {
 	
-	
 	  this.basket = basket;
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
-	
-	  var clearThree = document.getElementById( 'choice-display' );
-	  clearThree.innerText = "";
-	
-	  this.area = document.getElementById( 'basket-display' );
-	  this.area.innerText = "";
+	  this.resetView();
+	  this.total = this.giveRunningTotal();
 	}
 	
 	BasketView.prototype = {
@@ -903,10 +555,66 @@
 	      this.area.appendChild( price );
 	      this.area.appendChild( button );
 	    }
+	
+	    var total = document.createElement( 'h3' );
+	    total.innerText = this.total;
+	    this.area.appendChild( total );
+	
+	    var voucherEntry = document.createElement( 'input' );
+	    voucherEntry.id = "voucher-entry";
+	    voucherEntry.type = "text";
+	    voucherEntry.placeholder = "Enter voucher code...";
+	    this.area.appendChild( voucherEntry );
+	
+	    var voucherButton = document.createElement( 'button' );
+	    voucherButton.id = "voucher-button";
+	    voucherButton.innerText = "Add voucher";
+	    this.area.appendChild( voucherButton );
+	    voucherButton.onclick = function() {
+	      this.handleVoucherClick();
+	    }.bind( this );
+	  },
+	
+	  resetView: function() {
+	    var clear = document.getElementById( 'main-display' );
+	    clear.innerText = "";
+	
+	    var clearTwo = document.getElementById( 'item-display' );
+	    clearTwo.innerText = "";
+	
+	    var clearThree = document.getElementById( 'choice-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'basket-display' );
+	    this.area.innerText = "";
 	  },
 	
 	  handleButtonClick: function( id ) {
 	    this.basket.remove( this.basket.items[ id ]);
+	    this.giveRunningTotal();
+	    this.resetView();
+	    this.display();
+	  },
+	
+	  handleVoucherClick: function() {
+	    var voucherEntry = document.getElementById( 'voucher-entry' );
+	    var code = voucherEntry.value;
+	    var voucher = new Voucher( code );
+	    voucher.setValidation();
+	    console.log( voucher );
+	    // insert error handler here
+	    runningTotal.addVoucher( voucher );
+	    console.log( runningTotal.total );
+	    console.log( this.basket );
+	    this.total = runningTotal.total;
+	    this.resetView();
+	    this.display();
+	  },
+	
+	  giveRunningTotal: function() {
+	    runningTotal.setTotal( this.basket.items );
+	    this.total = runningTotal.total;
+	    return this.total;
 	  }
 	}
 	
@@ -992,11 +700,11 @@
 	
 	  checkForShoes: function() {
 	    for( var i = 0; i < this.basket.length; i++ ) {
-	      if( this.basket[ i ].subcategory != "Footwear" ) {
-	        return true;
+	      if( this.basket[ i ].subcategory === "Footwear" ) {
+	        return false;
 	      }
-	      return false;
 	    } 
+	    return true;
 	  },
 	
 	  checkForAboveSeventyFiveAndShoes: function( voucher ) {
@@ -1059,9 +767,9 @@
 	  this.valid = false;
 	  this.value = 0;
 	  this.hasBeenUsed = false;
-	  this.fiveOff = [ "AA52721", "BC67123", "GHAD782" ];
-	  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127" ];
-	  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260" ];
+	  this.fiveOff = [ "AA52721", "BC67123", "GHAD782", "a" ];
+	  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127", "b" ];
+	  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260", "c" ];
 	  this.code = code;
 	}
 	
@@ -1089,6 +797,73 @@
 	}
 	
 	module.exports = Voucher;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	var ClothesView = function( basket, department ) {
+	  
+	  this.department = department;
+	  this.basket = basket;
+	  this.resetView();
+	}
+	
+	ClothesView.prototype = {
+	
+	  display: function() {
+	    for( var i = 0; i < this.department.length; i++ ) {
+	
+	      var image = document.createElement( 'img' );
+	      var description = document.createElement( 'p' );
+	      var price = document.createElement( 'p' );
+	      var stock = document.createElement( 'p' );
+	      var button = document.createElement( 'button' );
+	
+	      image.src = this.department[i].image;
+	      description.innerText = this.department[i].name;
+	      price.innerText = this.department[i].price;
+	      stock.innerText = this.department[i].stock;
+	      button.innerText = "Add to basket";
+	      button.id = i;
+	      console.log( i );
+	
+	      button.onclick = function( e ) {
+	        var id = e.path[0].id;
+	        this.handleButtonClick( id );
+	      }.bind( this );
+	
+	      this.area.appendChild( image );
+	      this.area.appendChild( description );
+	      this.area.appendChild( price );
+	      this.area.appendChild( stock );
+	      this.area.appendChild( button );
+	    }
+	  },
+	
+	  resetView: function() {
+	    var clear = document.getElementById( 'main-display' );
+	    clear.innerText = "";
+	
+	    var clearTwo = document.getElementById( 'choice-display' );
+	    clearTwo.innerText = "";
+	
+	    var clearThree = document.getElementById( 'basket-display' );
+	    clearThree.innerText = "";
+	
+	    this.area = document.getElementById( 'item-display' );
+	    this.area.innerText = "";
+	  },
+	
+	  handleButtonClick: function( id ) {
+	    console.log( this.basket );
+	    this.basket.add( this.department[ id ]);
+	    this.resetView();
+	    this.display();
+	  }
+	}
+	
+	module.exports = ClothesView;
 
 /***/ }
 /******/ ]);

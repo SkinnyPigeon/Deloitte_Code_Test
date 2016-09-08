@@ -2,6 +2,7 @@ itemOne = {
   name: "Sharkskin Waistcoat, Charcoal",
   category: "Men’s Formalwear",
   subcategory: "Formalwear",
+  image: "./css/image/waistcoat-grey-low.jpg",
   price: 75,
   stock: 2
 }
@@ -10,6 +11,7 @@ itemTwo = {
   name: "Lightweight Patch Pocket Blazer, Deer",
   category: "Men’s Formalwear ",
   subcategory: "Formalwear",
+  image: "./css/image/lightweight-deer.jpeg",
   price: 175.5,
   stock: 1
 }

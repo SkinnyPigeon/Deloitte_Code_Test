@@ -6,10 +6,6 @@ var BasketView = require( './views/BasketView' );
 var Basket = require( './models/basket' );
 var Voucher = require( './models/voucher' );
 
-var MenShoeView = require( './views/MenShoeView' );
-var MenCasualView = require( './views/MenCasualView' );
-var MenFormalView = require( './views/MenFormalView' );
-
 var basket = new Basket();
 
 window.onload = function() {
@@ -55,14 +51,17 @@ var main = function() {
 
 var displayHome = function( basket ) {
   var view = new HomeView( basket );
+  view.display();
 }
 
 var displayWomen = function( basket ) {
   var view = new WomenView( basket );
+  view.display();
 }
 
 var displayMen = function( basket ) {
   var view = new MenView( basket );
+  view.display();
 }
 
 var displayBasket = function( basket ) {
