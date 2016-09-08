@@ -6,9 +6,6 @@ var BasketView = require( './views/BasketView' );
 var Basket = require( './models/basket' );
 var Voucher = require( './models/voucher' );
 
-var MenShoeView = require( './views/MenShoeView' );
-var MenCasualView = require( './views/MenCasualView' );
-var MenFormalView = require( './views/MenFormalView' );
 
 var basket = new Basket();
 

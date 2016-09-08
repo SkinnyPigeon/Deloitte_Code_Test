@@ -96,7 +96,6 @@ BasketView.prototype = {
     this.total = runningTotal.total;
     return this.total;
   }
-
 }
 
 module.exports = BasketView;

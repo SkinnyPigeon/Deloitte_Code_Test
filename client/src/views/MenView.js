@@ -1,7 +1,8 @@
-var MenShoeView = require( './MenShoeView' );
-var MenFormalView = require( './MenFormalView' );
-var MenCasualView = require( './MenCasualView' );
+var mensCasual = require( '../models/stock/mensCasual' );
+var mensFormal = require( '../models/stock/mensFormal' );
+var mensFootwear = require( '../models/stock/mensFootwear' );
 
+var ClothesView = require( './ClothesView' );
 
 var MenView = function( basket ) {
   console.log( "Men View Accessed" );
@@ -47,32 +48,21 @@ var MenView = function( basket ) {
 
 
   shoes.onclick = function() {
-    displayMenShoes( basket );
+    displayDepartment( basket, mensFootwear );
   }
 
   formal.onclick = function() {
-    displayMenFormal( basket );
+    displayDepartment( basket, mensFormal );
   }
 
   casual.onclick = function() {
-    displayMenCasual( basket );
+    displayDepartment( basket, mensCasual );
   }
 }
 
-var displayMenShoes = function( basket ) {
-  var view = new MenShoeView(  basket );
+var displayDepartment = function( basket, department ) {
+  var view = new ClothesView( basket, department );
   view.display();
 }
-
-var displayMenFormal = function( basket ) {
-  var view = new MenFormalView( basket );
-  view.display();
-}
-
-var displayMenCasual = function( basket ) {
-  var view = new MenCasualView( basket );
-  view.display();
-}
-
 
 module.exports = MenView;
