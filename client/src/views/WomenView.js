@@ -39,15 +39,15 @@ WomenView.prototype = {
     this.area.appendChild( casualText );
 
     shoes.onclick = function() {
-      displayDepartment( basket, womensFootwear );
+      this.displayDepartment( basket, womensFootwear );
     }.bind( this );
 
     formal.onclick = function() {
-      displayDepartment( basket, womensFormal );
+      this.displayDepartment( basket, womensFormal );
     }.bind( this );
 
     casual.onclick = function() {
-      displayDepartment( basket, womensCasual );
+      this.displayDepartment( basket, womensCasual );
     }.bind( this );
   },
 

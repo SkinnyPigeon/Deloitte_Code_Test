@@ -56,6 +56,7 @@ var displayHome = function( basket ) {
 
 var displayWomen = function( basket ) {
   var view = new WomenView( basket );
+  view.display();
 }
 
 var displayMen = function( basket ) {
