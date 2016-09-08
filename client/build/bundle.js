@@ -883,6 +883,7 @@
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
 	  price: 49.99,
+	  salePrice: null,
 	  stock: 9
 	}
 	
@@ -890,7 +891,8 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Green",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
-	  price: 39.99,
+	  price: 49.99,
+	  salePrice: 39.99,
 	  stock: 3
 	}
 	var mensCasual = [ itemOne, itemTwo ]
