@@ -941,6 +941,11 @@
 	    var total = document.createElement( 'h3' );
 	    total.innerText = this.total;
 	    this.area.appendChild( total );
+	
+	    var voucherEntry = document.createElement( 'input' );
+	    voucherEntry.type = "text";
+	    voucherEntry.placeholder = "Enter voucher code...";
+	    this.area.appendChild( voucherEntry );
 	  },
 	
 	  resetView: function() {
@@ -959,11 +964,9 @@
 	
 	  handleButtonClick: function( id ) {
 	    this.basket.remove( this.basket.items[ id ]);
-	    console.log( this.basket );
 	    this.giveRunningTotal();
 	    this.resetView();
 	    this.display();
-	    console.log( this.total );
 	  },
 	
 	  giveRunningTotal: function() {
