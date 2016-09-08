@@ -14,21 +14,40 @@ var BasketView = function( basket ) {
 BasketView.prototype = {
 
   display: function() {
-    // var ul = document.createElement( 'ul' );
-    // ul.id = "basket-page"
-    // this.area.appendChild( ul );
-
     var table = document.createElement( 'table' );
     table.id = "basket-page"
     this.area.appendChild( table );
 
+    var tr = document.createElement( 'tr' );
+    var thP = document.createElement( 'th' );
+    var thD = document.createElement( 'th' );
+    var thPr = document.createElement( 'th' );
+    var thDe = document.createElement( 'th' );
+
+    thP.innerText = "Product";
+    thD.innerText = "Description";
+    thPr.innerText = "Price";
+    thDe.innerText = "Delete";
+
+    tr.appendChild( thP );
+    tr.appendChild( thD );
+    tr.appendChild( thPr );
+    tr.appendChild( thDe );
+
+    table.appendChild( tr );
+
     for( var i = 0; i < this.basket.items.length; i ++ ) {
-      var tr = document.createElement( 'tr' );
-      var th = document.createElement( 'th' );
-      // var li = document.createElement( 'li' );
+      var trItems = document.createElement( 'tr' );
+      var thImg = document.createElement( 'th' );
       var image = document.createElement( 'img' );
+
+      var thDesciption = document.createElement( 'th' );
       var description = document.createElement( 'p' );
+
+      var thPrice = document.createElement( 'th' );
       var price = document.createElement( 'p' );
+
+      var thButton = document.createElement( 'th' );
       var button = document.createElement( 'button' );
 
       image.src = this.basket.items[i].image;
@@ -42,24 +61,17 @@ BasketView.prototype = {
         this.handleButtonClick( id );
       }.bind( this );
 
-      // li.appendChild( image );
-      // li.appendChild( description );
-      // li.appendChild( price );
-      // li.appendChild( button );
+      thImg.appendChild( image );
+      thDesciption.appendChild( description );
+      thPrice.appendChild( price );
+      thButton.appendChild( button );
 
-      th.appendChild( image );
-      th.appendChild( description );
-      th.appendChild( price );
-      th.appendChild( button );
+      trItems.appendChild( thImg );
+      trItems.appendChild( thDesciption );
+      trItems.appendChild( thPrice );
+      trItems.appendChild( thButton );
 
-      tr.appendChild( th );
-
-      table.appendChild( tr );
-
-      // this.area.appendChild( image );
-      // this.area.appendChild( description );
-      // this.area.appendChild( price );
-      // this.area.appendChild( button );
+      table.appendChild( trItems );
     }
 
     var total = document.createElement( 'h3' );
