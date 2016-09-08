@@ -4,20 +4,8 @@ var runningTotal = new Total();
 
 var BasketView = function( basket ) {
 
-
   this.basket = basket;
-
-  var clear = document.getElementById( 'main-display' );
-  clear.innerText = "";
-
-  var clearTwo = document.getElementById( 'item-display' );
-  clearTwo.innerText = "";
-
-  var clearThree = document.getElementById( 'choice-display' );
-  clearThree.innerText = "";
-
-  this.area = document.getElementById( 'basket-display' );
-  this.area.innerText = "";
+  this.resetView();
 }
 
 BasketView.prototype = {
@@ -47,8 +35,24 @@ BasketView.prototype = {
     }
   },
 
+  resetView: function() {
+    var clear = document.getElementById( 'main-display' );
+    clear.innerText = "";
+
+    var clearTwo = document.getElementById( 'item-display' );
+    clearTwo.innerText = "";
+
+    var clearThree = document.getElementById( 'choice-display' );
+    clearThree.innerText = "";
+
+    this.area = document.getElementById( 'basket-display' );
+    this.area.innerText = "";
+  },
+
   handleButtonClick: function( id ) {
     this.basket.remove( this.basket.items[ id ]);
+    this.resetView();
+    this.display();
   }
 }
 

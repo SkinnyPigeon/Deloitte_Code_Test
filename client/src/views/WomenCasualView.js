@@ -3,16 +3,7 @@ var womensCasual = require( '../models/stock/womensCasual' );
 var WomenCasualView = function( basket ) {
   
   this.basket = basket;
-  console.log( basket );
-
-  var clear = document.getElementById( 'main-display' );
-  clear.innerText = "";
-
-  var clearTwo = document.getElementById( 'choice-display' );
-  clearTwo.innerText = "";
-
-  this.area = document.getElementById( 'item-display' );
-  this.area.innerText = "";
+  this.resetView();
 }
 
 WomenCasualView.prototype = {
@@ -47,8 +38,24 @@ WomenCasualView.prototype = {
     }
   },
 
+  resetView: function() {
+    var clear = document.getElementById( 'main-display' );
+    clear.innerText = "";
+
+    var clearTwo = document.getElementById( 'choice-display' );
+    clearTwo.innerText = "";
+
+    var clearThree = document.getElementById( 'basket-display' );
+    clearThree.innerText = "";
+
+    this.area = document.getElementById( 'item-display' );
+    this.area.innerText = "";
+  },
+
   handleButtonClick: function( id ) {
     this.basket.add( womensCasual[ id ]);
+    this.resetView();
+    this.display();
   }
 }
 

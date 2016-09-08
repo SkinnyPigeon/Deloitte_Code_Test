@@ -11,6 +11,9 @@ var WomenView = function( basket ) {
   var clearTwo = document.getElementById( 'item-display' );
   clearTwo.innerText = "";
 
+  var clearThree = document.getElementById( 'basket-display' );
+  clearThree.innerText = "";
+
   var area = document.getElementById( 'choice-display' );
   area.innerText = "";
 

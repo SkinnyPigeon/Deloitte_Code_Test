@@ -3,15 +3,7 @@ var mensCasual = require( '../models/stock/mensCasual' );
 var MenCasualView = function( basket ) {
   
   this.basket = basket;
-
-  var clear = document.getElementById( 'main-display' );
-  clear.innerText = "";
-
-  var clearTwo = document.getElementById( 'choice-display' );
-  clearTwo.innerText = "";
-
-  this.area = document.getElementById( 'item-display' );
-  this.area.innerText = "";
+  this.resetView();
 }
 
 MenCasualView.prototype = {
@@ -46,8 +38,24 @@ MenCasualView.prototype = {
     }
   },
 
+  resetView: function() {
+    var clear = document.getElementById( 'main-display' );
+    clear.innerText = "";
+
+    var clearTwo = document.getElementById( 'choice-display' );
+    clearTwo.innerText = "";
+
+    var clearThree = document.getElementById( 'basket-display' );
+    clearThree.innerText = "";
+
+    this.area = document.getElementById( 'item-display' );
+    this.area.innerText = "";
+  },
+
   handleButtonClick: function( id ) {
     this.basket.add( mensCasual[ id ]);
+    this.resetView();
+    this.display();
   }
 }
 

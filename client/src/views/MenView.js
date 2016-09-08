@@ -12,6 +12,9 @@ var MenView = function( basket ) {
   var clearTwo = document.getElementById( 'item-display' );
   clearTwo.innerText = "";
 
+  var clearThree = document.getElementById( 'basket-display' );
+  clearThree.innerText = "";
+
   var area = document.getElementById( 'choice-display' );
   area.innerText = "";
 
@@ -40,6 +43,8 @@ var MenView = function( basket ) {
 
   area.appendChild( casual );
   area.appendChild( casualText );
+
+
 
   shoes.onclick = function() {
     displayMenShoes( basket );

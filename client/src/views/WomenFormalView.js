@@ -44,6 +44,9 @@ WomenFormalView.prototype = {
 
     var clearTwo = document.getElementById( 'choice-display' );
     clearTwo.innerText = "";
+    
+    var clearThree = document.getElementById( 'basket-display' );
+    clearThree.innerText = "";
 
     this.area = document.getElementById( 'item-display' );
     this.area.innerText = "";
