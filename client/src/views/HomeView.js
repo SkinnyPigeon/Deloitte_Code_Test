@@ -1,31 +1,39 @@
 var HomeView = function() {
-  console.log( "Home View Accessed" );
 
-  var clear = document.getElementById( 'choice-display' );
-  clear.innerText = "";
+  this.resetView();
+}
 
-  var clearTwo = document.getElementById( 'item-display' );
-  clearTwo.innerText = "";
+HomeView.prototype = {
 
-  var clearThree = document.getElementById( 'basket-display' );
-  clearThree.innerText = "";
+  display: function() {
+    var women = document.createElement( 'img' );
+    var men = document.createElement( 'img' );
 
-  var area = document.getElementById( 'main-display' );
-  area.innerText = "";
+    women.src = "./css/image/women.jpeg";
+    men.src = "./css/image/men.jpeg";
 
-  var women = document.createElement( 'img' );
-  var men = document.createElement( 'img' );
+    women.className = "home-images";
+    women.id = 'women-image';
+    men.className = "home-images";
+    men.id = 'men-image';
 
-  women.src = "./css/image/women.jpeg";
-  men.src = "./css/image/men.jpeg";
+    this.area.appendChild( women );
+    this.area.appendChild( men );
+  },
 
-  women.className = "home-images";
-  women.id = 'women-image';
-  men.className = "home-images";
-  men.id = 'men-image';
+  resetView: function() {
+    var clear = document.getElementById( 'choice-display' );
+    clear.innerText = "";
 
-  area.appendChild( women );
-  area.appendChild( men );
+    var clearTwo = document.getElementById( 'item-display' );
+    clearTwo.innerText = "";
+
+    var clearThree = document.getElementById( 'basket-display' );
+    clearThree.innerText = "";
+
+    this.area = document.getElementById( 'main-display' );
+    this.area.innerText = "";
+  }
 }
 
 module.exports = HomeView;
