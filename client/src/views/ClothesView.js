@@ -8,8 +8,12 @@ var ClothesView = function( basket, department ) {
 ClothesView.prototype = {
 
   display: function() {
+    var ul = document.createElement( 'ul' );
+    ul.id = "display-page-two";
+
     for( var i = 0; i < this.department.length; i++ ) {
 
+      var li = document.createElement( 'li' );
       var image = document.createElement( 'img' );
       var description = document.createElement( 'p' );
       var price = document.createElement( 'p' );
@@ -27,10 +31,13 @@ ClothesView.prototype = {
         this.handleButtonClick( id );
       }.bind( this );
 
-      this.area.appendChild( image );
-      this.area.appendChild( description );
-      this.area.appendChild( price );
-      this.area.appendChild( button );
+      li.appendChild( image );
+      li.appendChild( description );
+      li.appendChild( price );
+      li.appendChild( button );
+
+      ul.appendChild( li );
+      this.area.appendChild( ul );
     }
   },
 

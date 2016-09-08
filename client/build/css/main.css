@@ -171,6 +171,48 @@ p {
   color: #1c7f9b;
 }
 
+#women-page {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#women-page li {
+  float: left;
+  width: 28.3333333%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
+
+#display-page-three {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#display-page-three li {
+  float: left;
+  width: 28.3333333%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
+
+#display-page-two {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#display-page-two li {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
+
 
 
 

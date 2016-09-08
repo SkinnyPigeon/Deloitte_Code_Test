@@ -203,12 +203,18 @@
 	WomenView.prototype = {
 	
 	  display: function() {
+	    var ul = document.createElement( 'ul' );
+	    ul.id = "women-page";
+	
+	    var picOne = document.createElement( 'li' );
 	    var shoes = document.createElement( 'img' );
 	    var shoeText = document.createElement( 'p' );
 	
+	    var picTwo = document.createElement( 'li' );
 	    var formal = document.createElement( 'img' );
 	    var formalText = document.createElement( 'p' );
 	
+	    var picThree = document.createElement( 'li' );
 	    var casual = document.createElement( 'img' );
 	    var casualText = document.createElement( 'p' );
 	
@@ -220,14 +226,20 @@
 	    formalText.innerText = "Formal";
 	    casualText.innerText = "Casual";
 	
-	    this.area.appendChild( shoes );
-	    this.area.appendChild( shoeText );
+	    picOne.appendChild( shoes );
+	    picOne.appendChild( shoeText );
 	
-	    this.area.appendChild( formal );
-	    this.area.appendChild( formalText );
+	    picTwo.appendChild( formal );
+	    picTwo.appendChild( formalText );
 	
-	    this.area.appendChild( casual );
-	    this.area.appendChild( casualText );
+	    picThree.appendChild( casual );
+	    picThree.appendChild( casualText );
+	
+	    ul.appendChild( picOne );
+	    ul.appendChild( picTwo );
+	    ul.appendChild( picThree );
+	
+	    this.area.appendChild( ul );
 	
 	    shoes.onclick = function() {
 	      this.displayDepartment( this.basket, womensFootwear );
@@ -360,8 +372,12 @@
 	ClothesView.prototype = {
 	
 	  display: function() {
+	    var ul = document.createElement( 'ul' );
+	    ul.id = "display-page-two";
+	
 	    for( var i = 0; i < this.department.length; i++ ) {
 	
+	      var li = document.createElement( 'li' );
 	      var image = document.createElement( 'img' );
 	      var description = document.createElement( 'p' );
 	      var price = document.createElement( 'p' );
@@ -379,10 +395,13 @@
 	        this.handleButtonClick( id );
 	      }.bind( this );
 	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( button );
+	      li.appendChild( image );
+	      li.appendChild( description );
+	      li.appendChild( price );
+	      li.appendChild( button );
+	
+	      ul.appendChild( li );
+	      this.area.appendChild( ul );
 	    }
 	  },
 	
