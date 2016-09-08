@@ -14,7 +14,12 @@ var BasketView = function( basket ) {
 BasketView.prototype = {
 
   display: function() {
+    var div = document.createElement( 'div' );
+    div.className = 'basket-view'
+    var ul = document.createElement( 'ul' );
+    this.area.appendChild( ul );
     for( var i = 0; i < this.basket.items.length; i ++ ) {
+      var li = document.createElement( 'li' );
       var image = document.createElement( 'img' );
       var description = document.createElement( 'p' );
       var price = document.createElement( 'p' );
@@ -31,10 +36,17 @@ BasketView.prototype = {
         this.handleButtonClick( id );
       }.bind( this );
 
-      this.area.appendChild( image );
-      this.area.appendChild( description );
-      this.area.appendChild( price );
-      this.area.appendChild( button );
+      li.appendChild( image );
+      li.appendChild( description );
+      li.appendChild( price );
+      li.appendChild( button );
+
+      ul.appendChild( li );
+
+      // this.area.appendChild( image );
+      // this.area.appendChild( description );
+      // this.area.appendChild( price );
+      // this.area.appendChild( button );
     }
 
     var total = document.createElement( 'h3' );

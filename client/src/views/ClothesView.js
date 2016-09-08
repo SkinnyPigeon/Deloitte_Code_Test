@@ -13,13 +13,11 @@ ClothesView.prototype = {
       var image = document.createElement( 'img' );
       var description = document.createElement( 'p' );
       var price = document.createElement( 'p' );
-      var stock = document.createElement( 'p' );
       var button = document.createElement( 'button' );
 
       image.src = this.department[i].image;
       description.innerText = this.department[i].name;
       price.innerText = this.department[i].price;
-      stock.innerText = this.department[i].stock;
       button.innerText = "Add to basket";
       button.id = i;
       console.log( i );
@@ -32,7 +30,6 @@ ClothesView.prototype = {
       this.area.appendChild( image );
       this.area.appendChild( description );
       this.area.appendChild( price );
-      this.area.appendChild( stock );
       this.area.appendChild( button );
     }
   },

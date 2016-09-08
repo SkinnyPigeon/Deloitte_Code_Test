@@ -4,7 +4,7 @@
   TWO COLUMN LAYOUT
   ***************************/
   
-  #primary {
+/*  #primary {
     width: 50%;
     float: left;
   }
@@ -13,7 +13,7 @@
     width: 40%;
     float: right;
   }
-}
+}*/
 
 @media screen and (min-width: 660px) {
   
@@ -49,12 +49,8 @@
     font-size: 1.3em;
     margin-bottom: 20px;
   }
-
-
+  
   p {
     color: black;
   }
-  
-
-  
 }

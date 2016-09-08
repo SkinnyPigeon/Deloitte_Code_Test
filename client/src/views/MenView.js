@@ -13,12 +13,18 @@ var MenView = function( basket ) {
 MenView.prototype = {
 
   display: function() {
+    var ul = document.createElement( 'ul' );
+    ul.id = "men-page";
+
+    var picOne = document.createElement( 'li' );
     var shoes = document.createElement( 'img' );
     var shoeText = document.createElement( 'p' );
 
+    var picTwo = document.createElement( 'li' );
     var formal = document.createElement( 'img' );
     var formalText = document.createElement( 'p' );
 
+    var picThree = document.createElement( 'li' );
     var casual = document.createElement( 'img' );
     var casualText = document.createElement( 'p' );
 
@@ -30,14 +36,20 @@ MenView.prototype = {
     formalText.innerText = "Formal";
     casualText.innerText = "Casual";
 
-    this.area.appendChild( shoes );
-    this.area.appendChild( shoeText );
+    picOne.appendChild( shoes );
+    picOne.appendChild( shoeText );
 
-    this.area.appendChild( formal );
-    this.area.appendChild( formalText );
+    picTwo.appendChild( formal );
+    picTwo.appendChild( formalText );
 
-    this.area.appendChild( casual );
-    this.area.appendChild( casualText );
+    picThree.appendChild( casual );
+    picThree.appendChild( casualText );
+
+    ul.appendChild( picOne );
+    ul.appendChild( picTwo );
+    ul.appendChild( picThree );
+
+    this.area.appendChild( ul );
 
     shoes.onclick = function() {
       this.displayDepartment( this.basket, mensFootwear );

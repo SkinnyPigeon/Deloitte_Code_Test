@@ -2,50 +2,13 @@ body {
   font-family: 'Amatic SC', sans-serif;
 }
 
-#main-display {
-  /*display: grid;*/
-  /*display: flex;*/
-  align-items: center;
-  max-width: 35%;
-  max-height: 35%
-  min-width: 35%;
-  min-height: 35%;
-  margin: 0 auto;
-}
 
-#choice-display {
-  max-width: 25%;
-  min-width: 25%;
-  margin: 0 auto;
-}
-
-#item-display {
-  max-width: 25%;
-  min-width: 25%;
-  margin: 0 auto;
-}
-
-#basket-display {
-  max-width: 5%;
-  min-width: 5%;
-  margin: 0 auto;
-}
 
 img {
   max-width: 100%;
   min-width: 100%; 
   border: 2px solid transparent;
   border-color: #fff;
-}
-
-a {
-  text-decoration: none;
-}
-
-
-li {
-  list-style: none;
-  padding-right: 10px;
 }
 
 h3 {
@@ -158,7 +121,55 @@ p {
   color: #1c7f9b;
 }
 
+#wrapper {
+  max-width: 940px;
+  min-height: 720px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
 
+#home-page {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#home-page li {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
+
+#basket-display {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+#basket-display li {
+  /*float: left;*/
+  width: 25%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
+
+#men-page {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#men-page li {
+  float: left;
+  width: 28.3333333%;
+  margin: 2.5%;
+  background-color: transparent;
+  color: #1c7f9b;
+}
 
 
 

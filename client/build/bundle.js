@@ -140,19 +140,32 @@
 	HomeView.prototype = {
 	
 	  display: function() {
+	    var ul = document.createElement( 'ul' );
+	    ul.id = 'home-page';
+	
+	    var picOne = document.createElement( 'li' );
 	    var women = document.createElement( 'img' );
+	
+	    var picTwo = document.createElement( 'li' );
 	    var men = document.createElement( 'img' );
 	
 	    women.src = "./css/image/women.jpeg";
+	    picOne.appendChild( women )
+	
 	    men.src = "./css/image/men.jpeg";
+	    picTwo.appendChild( men );
 	
 	    women.className = "home-images";
 	    women.id = 'women-image';
 	    men.className = "home-images";
 	    men.id = 'men-image';
 	
-	    this.area.appendChild( women );
-	    this.area.appendChild( men );
+	    ul.appendChild( picOne );
+	    ul.appendChild( picTwo );
+	
+	    // this.area.appendChild( women );
+	    // this.area.appendChild( men );
+	    this.area.appendChild( ul );
 	  },
 	
 	  resetView: function() {
@@ -352,13 +365,11 @@
 	      var image = document.createElement( 'img' );
 	      var description = document.createElement( 'p' );
 	      var price = document.createElement( 'p' );
-	      var stock = document.createElement( 'p' );
 	      var button = document.createElement( 'button' );
 	
 	      image.src = this.department[i].image;
 	      description.innerText = this.department[i].name;
 	      price.innerText = this.department[i].price;
-	      stock.innerText = this.department[i].stock;
 	      button.innerText = "Add to basket";
 	      button.id = i;
 	      console.log( i );
@@ -371,7 +382,6 @@
 	      this.area.appendChild( image );
 	      this.area.appendChild( description );
 	      this.area.appendChild( price );
-	      this.area.appendChild( stock );
 	      this.area.appendChild( button );
 	    }
 	  },
@@ -426,12 +436,18 @@
 	MenView.prototype = {
 	
 	  display: function() {
+	    var ul = document.createElement( 'ul' );
+	    ul.id = "men-page";
+	
+	    var picOne = document.createElement( 'li' );
 	    var shoes = document.createElement( 'img' );
 	    var shoeText = document.createElement( 'p' );
 	
+	    var picTwo = document.createElement( 'li' );
 	    var formal = document.createElement( 'img' );
 	    var formalText = document.createElement( 'p' );
 	
+	    var picThree = document.createElement( 'li' );
 	    var casual = document.createElement( 'img' );
 	    var casualText = document.createElement( 'p' );
 	
@@ -443,14 +459,20 @@
 	    formalText.innerText = "Formal";
 	    casualText.innerText = "Casual";
 	
-	    this.area.appendChild( shoes );
-	    this.area.appendChild( shoeText );
+	    picOne.appendChild( shoes );
+	    picOne.appendChild( shoeText );
 	
-	    this.area.appendChild( formal );
-	    this.area.appendChild( formalText );
+	    picTwo.appendChild( formal );
+	    picTwo.appendChild( formalText );
 	
-	    this.area.appendChild( casual );
-	    this.area.appendChild( casualText );
+	    picThree.appendChild( casual );
+	    picThree.appendChild( casualText );
+	
+	    ul.appendChild( picOne );
+	    ul.appendChild( picTwo );
+	    ul.appendChild( picThree );
+	
+	    this.area.appendChild( ul );
 	
 	    shoes.onclick = function() {
 	      this.displayDepartment( this.basket, mensFootwear );
@@ -602,7 +624,12 @@
 	BasketView.prototype = {
 	
 	  display: function() {
+	    var div = document.createElement( 'div' );
+	    div.className = 'basket-view'
+	    var ul = document.createElement( 'ul' );
+	    this.area.appendChild( ul );
 	    for( var i = 0; i < this.basket.items.length; i ++ ) {
+	      var li = document.createElement( 'li' );
 	      var image = document.createElement( 'img' );
 	      var description = document.createElement( 'p' );
 	      var price = document.createElement( 'p' );
@@ -619,10 +646,17 @@
 	        this.handleButtonClick( id );
 	      }.bind( this );
 	
-	      this.area.appendChild( image );
-	      this.area.appendChild( description );
-	      this.area.appendChild( price );
-	      this.area.appendChild( button );
+	      li.appendChild( image );
+	      li.appendChild( description );
+	      li.appendChild( price );
+	      li.appendChild( button );
+	
+	      ul.appendChild( li );
+	
+	      // this.area.appendChild( image );
+	      // this.area.appendChild( description );
+	      // this.area.appendChild( price );
+	      // this.area.appendChild( button );
 	    }
 	
 	    var total = document.createElement( 'h3' );
