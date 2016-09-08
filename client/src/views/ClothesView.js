@@ -52,6 +52,7 @@ ClothesView.prototype = {
   },
 
   handleButtonClick: function( id ) {
+    console.log( this.basket );
     this.basket.add( this.department[ id ]);
     this.resetView();
     this.display();

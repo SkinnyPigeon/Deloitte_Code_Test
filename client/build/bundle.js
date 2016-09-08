@@ -52,7 +52,6 @@
 	var Basket = __webpack_require__( 18 );
 	var Voucher = __webpack_require__( 19 );
 	
-	
 	var basket = new Basket();
 	
 	window.onload = function() {
@@ -184,7 +183,7 @@
 	var ClothesView = __webpack_require__( 20 );
 	
 	var WomenView = function( basket ) {
-	
+	  this.basket = basket;
 	  this.resetView();
 	}
 	
@@ -218,15 +217,15 @@
 	    this.area.appendChild( casualText );
 	
 	    shoes.onclick = function() {
-	      this.displayDepartment( basket, womensFootwear );
+	      this.displayDepartment( this.basket, womensFootwear );
 	    }.bind( this );
 	
 	    formal.onclick = function() {
-	      this.displayDepartment( basket, womensFormal );
+	      this.displayDepartment( this.basket, womensFormal );
 	    }.bind( this );
 	
 	    casual.onclick = function() {
-	      this.displayDepartment( basket, womensCasual );
+	      this.displayDepartment( this.basket, womensCasual );
 	    }.bind( this );
 	  },
 	
@@ -349,6 +348,7 @@
 	
 	var MenView = function( basket ) {
 	
+	  this.basket = basket;
 	  this.resetView();
 	}
 	
@@ -382,15 +382,15 @@
 	    this.area.appendChild( casualText );
 	
 	    shoes.onclick = function() {
-	      this.displayDepartment( basket, mensFootwear );
+	      this.displayDepartment( this.basket, mensFootwear );
 	    }.bind( this );
 	
 	    formal.onclick = function() {
-	      this.displayDepartment( basket, mensFormal );
+	      this.displayDepartment( this.basket, mensFormal );
 	    }.bind( this );
 	
 	    casual.onclick = function() {
-	      this.displayDepartment( basket, mensCasual );
+	      this.displayDepartment( this.basket, mensCasual );
 	    }.bind( this );
 	  },
 	
@@ -856,6 +856,7 @@
 	  },
 	
 	  handleButtonClick: function( id ) {
+	    console.log( this.basket );
 	    this.basket.add( this.department[ id ]);
 	    this.resetView();
 	    this.display();

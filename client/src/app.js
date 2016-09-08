@@ -6,7 +6,6 @@ var BasketView = require( './views/BasketView' );
 var Basket = require( './models/basket' );
 var Voucher = require( './models/voucher' );
 
-
 var basket = new Basket();
 
 window.onload = function() {

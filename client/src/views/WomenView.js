@@ -5,7 +5,7 @@ var womensFootwear = require( '../models/stock/womensFootwear' );
 var ClothesView = require( './ClothesView' );
 
 var WomenView = function( basket ) {
-
+  this.basket = basket;
   this.resetView();
 }
 
@@ -39,15 +39,15 @@ WomenView.prototype = {
     this.area.appendChild( casualText );
 
     shoes.onclick = function() {
-      this.displayDepartment( basket, womensFootwear );
+      this.displayDepartment( this.basket, womensFootwear );
     }.bind( this );
 
     formal.onclick = function() {
-      this.displayDepartment( basket, womensFormal );
+      this.displayDepartment( this.basket, womensFormal );
     }.bind( this );
 
     casual.onclick = function() {
-      this.displayDepartment( basket, womensCasual );
+      this.displayDepartment( this.basket, womensCasual );
     }.bind( this );
   },
 

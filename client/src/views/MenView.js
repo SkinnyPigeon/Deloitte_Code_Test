@@ -6,6 +6,7 @@ var ClothesView = require( './ClothesView' );
 
 var MenView = function( basket ) {
 
+  this.basket = basket;
   this.resetView();
 }
 
@@ -39,15 +40,15 @@ MenView.prototype = {
     this.area.appendChild( casualText );
 
     shoes.onclick = function() {
-      this.displayDepartment( basket, mensFootwear );
+      this.displayDepartment( this.basket, mensFootwear );
     }.bind( this );
 
     formal.onclick = function() {
-      this.displayDepartment( basket, mensFormal );
+      this.displayDepartment( this.basket, mensFormal );
     }.bind( this );
 
     casual.onclick = function() {
-      this.displayDepartment( basket, mensCasual );
+      this.displayDepartment( this.basket, mensCasual );
     }.bind( this );
   },
 
