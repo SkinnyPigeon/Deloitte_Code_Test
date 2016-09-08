@@ -80,7 +80,14 @@ BasketView.prototype = {
     var voucherEntry = document.getElementById( 'voucher-entry' );
     var code = voucherEntry.value;
     var voucher = new Voucher( code );
+    voucher.setValidation();
+    console.log( voucher );
     // insert error handler here
+    runningTotal.addVoucher( voucher );
+    console.log( runningTotal.total );
+    this.total = runningTotal.total;
+    this.resetView();
+    this.display();
   },
 
   giveRunningTotal: function() {

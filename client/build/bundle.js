@@ -142,6 +142,9 @@
 	  var clearTwo = document.getElementById( 'item-display' );
 	  clearTwo.innerText = "";
 	
+	  var clearThree = document.getElementById( 'basket-display' );
+	  clearThree.innerText = "";
+	
 	  var area = document.getElementById( 'main-display' );
 	  area.innerText = "";
 	
@@ -983,7 +986,14 @@
 	    var voucherEntry = document.getElementById( 'voucher-entry' );
 	    var code = voucherEntry.value;
 	    var voucher = new Voucher( code );
+	    voucher.setValidation();
+	    console.log( voucher );
 	    // insert error handler here
+	    runningTotal.addVoucher( voucher );
+	    console.log( runningTotal.total );
+	    this.total = runningTotal.total;
+	    this.resetView();
+	    this.display();
 	  },
 	
 	  giveRunningTotal: function() {
@@ -1143,9 +1153,9 @@
 	  this.valid = false;
 	  this.value = 0;
 	  this.hasBeenUsed = false;
-	  this.fiveOff = [ "AA52721", "BC67123", "GHAD782" ];
-	  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127" ];
-	  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260" ];
+	  this.fiveOff = [ "AA52721", "BC67123", "GHAD782", "a" ];
+	  this.tenOff = [ "BSH7824", "BCHS927", "HAJS127", "b" ];
+	  this.fifteenOff = [ "HASK243", "ASHH326", "ADG1260", "c" ];
 	  this.code = code;
 	}
 	

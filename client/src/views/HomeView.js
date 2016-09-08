@@ -7,6 +7,9 @@ var HomeView = function() {
   var clearTwo = document.getElementById( 'item-display' );
   clearTwo.innerText = "";
 
+  var clearThree = document.getElementById( 'basket-display' );
+  clearThree.innerText = "";
+
   var area = document.getElementById( 'main-display' );
   area.innerText = "";
 

@@ -9,6 +9,12 @@ describe( 'The Vouchers', function() {
     assert.equal( true, voucher.valid );
   });
 
+  it( 'Should be able to make another valid voucher', function() {
+    voucher = new Voucher( "a" )
+    voucher.setValidation();
+    assert.equal( true, voucher.valid );
+  });
+
   it( 'Should be not set an invalid code to true on a voucher', function() {
      voucher = new Voucher( "AA52741" )
      voucher.setValidation();
