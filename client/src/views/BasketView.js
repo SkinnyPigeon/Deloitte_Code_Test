@@ -81,8 +81,8 @@ BasketView.prototype = {
     var code = voucherEntry.value;
     var voucher = new Voucher( code );
     voucher.setValidation();
-    console.log( voucher );
     // insert error handler here
+    this.handleAlert( voucher );
     runningTotal.addVoucher( voucher );
     console.log( runningTotal.total );
     console.log( this.basket );
@@ -95,6 +95,13 @@ BasketView.prototype = {
     runningTotal.setTotal( this.basket.items );
     this.total = runningTotal.total;
     return this.total;
+  },
+
+  handleAlert: function( voucher ) {
+    if( voucher.valid === false || 
+      runningTotal.checkForAboveSeventyFiveAndShoes( voucher )) {
+      alert( "Please check your voucher code and validity for use on this shop" );
+    }
   }
 }
 

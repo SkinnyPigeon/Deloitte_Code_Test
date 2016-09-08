@@ -601,8 +601,8 @@
 	    var code = voucherEntry.value;
 	    var voucher = new Voucher( code );
 	    voucher.setValidation();
-	    console.log( voucher );
 	    // insert error handler here
+	    this.handleAlert( voucher );
 	    runningTotal.addVoucher( voucher );
 	    console.log( runningTotal.total );
 	    console.log( this.basket );
@@ -615,6 +615,13 @@
 	    runningTotal.setTotal( this.basket.items );
 	    this.total = runningTotal.total;
 	    return this.total;
+	  },
+	
+	  handleAlert: function( voucher ) {
+	    if( voucher.valid === false || 
+	      runningTotal.checkForAboveSeventyFiveAndShoes( voucher )) {
+	      alert( "Please check your voucher code and validity for use on this shop" );
+	    }
 	  }
 	}
 	
@@ -857,9 +864,16 @@
 	
 	  handleButtonClick: function( id ) {
 	    console.log( this.basket );
+	    this.handleAlert( id );
 	    this.basket.add( this.department[ id ]);
 	    this.resetView();
 	    this.display();
+	  },
+	
+	  handleAlert: function( id ) {
+	    if( this.department[ id ].stock === 0 ) {
+	      alert( "Sorry we are out of that at the moment" );      
+	    }
 	  }
 	}
 	
