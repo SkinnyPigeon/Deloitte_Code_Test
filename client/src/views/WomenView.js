@@ -1,6 +1,6 @@
 var WomenShoeView = require( './WomenShoeView' );
-// var WomenFormalView = require( './WomenFormalView' );
-// var WomenCasualView = require( './WomenCasualView' );
+var WomenFormalView = require( './WomenFormalView' );
+var WomenCasualView = require( './WomenCasualView' );
 
 var WomenView = function( basket ) {
   console.log( "Women View Accessed" );
@@ -58,13 +58,15 @@ var displayWomenShoes = function( basket ) {
   view.display();
 }
 
-// var displayWomenFormal = function() {
-//   var view = new WomenFormalView();
-// }
+var displayWomenFormal = function() {
+  var view = new WomenFormalView();
+  view.display();
+}
 
-// var displayWomenCasual = function() {
-//   var view = new WomenCasualView();
-// }
+var displayWomenCasual = function() {
+  var view = new WomenCasualView();
+  view.display();
+}
 
 
 

@@ -12,10 +12,9 @@ var WomenFormalView = function( basket ) {
 
   this.area = document.getElementById( 'item-display' );
   this.area.innerText = "";
-
 }
 
-WomenShoeView.prototype = {
+WomenFormalView.prototype = {
 
   display: function() {
     for( var i = 0; i < womensFormal.length; i++ ) {

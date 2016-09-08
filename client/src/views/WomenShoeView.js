@@ -12,7 +12,6 @@ var WomenShoeView = function( basket ) {
 
   this.area = document.getElementById( 'item-display' );
   this.area.innerText = "";
-
 }
 
 WomenShoeView.prototype = {
