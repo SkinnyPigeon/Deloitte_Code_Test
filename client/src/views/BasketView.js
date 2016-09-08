@@ -8,6 +8,7 @@ var BasketView = function( basket ) {
   this.basket = basket;
   this.resetView();
   this.total = this.giveRunningTotal();
+  this.codes = [];
 }
 
 BasketView.prototype = {
@@ -79,10 +80,25 @@ BasketView.prototype = {
   handleVoucherClick: function() {
     var voucherEntry = document.getElementById( 'voucher-entry' );
     var code = voucherEntry.value.toUpperCase();
-    var voucher = new Voucher( code );
+    this.handleVoucherChecks( code );
+  },
 
+  handleVoucherChecks: function( code ) {
+    for( var i = 0; i < this.codes.length; i++ ) {
+      if( this.codes[i] === code ) {
+        alert( "Code has already been used" );
+        return
+      }
+    }
+    this.useVoucher( code );
+  },
+
+  useVoucher: function( code ) {
+    var voucher = new Voucher( code );
+    this.codes.push( code );
     voucher.setValidation();
     this.handleAlert( voucher );
+    voucher.useVoucher();
     this.total = runningTotal.total;
     this.resetView();
     this.display();

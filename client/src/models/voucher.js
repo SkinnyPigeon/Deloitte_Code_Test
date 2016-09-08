@@ -25,10 +25,19 @@ Voucher.prototype = {
     this.checkIfValid( this.fifteenOff, 15 );
   },
 
-  useVoucher: function() {
-    this.hasBeenUsed = true;
-  }
+  useVoucher: function( code ) {
+    this.findVoucher( this.fiveOff, code );
+    this.findVoucher( this.tenOff, code );
+    this.findVoucher( this.fifteenOff, code );
+  },
 
+  findVoucher: function( array, code ) {
+    for( var i = 0; i < array.length; i++ ) {
+      if( this.code === array[i] ) {
+        array.splice( array[i], 1 );
+      }
+    }
+  }
 }
 
 module.exports = Voucher;
