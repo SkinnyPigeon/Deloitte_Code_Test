@@ -3,12 +3,23 @@ body {
 }
 
 #main-display {
+  /*display: grid;*/
+  /*display: flex;*/
+  align-items: center;
   max-width: 35%;
+  max-height: 35%
   min-width: 35%;
+  min-height: 35%;
   margin: 0 auto;
 }
 
 #choice-display {
+  max-width: 25%;
+  min-width: 25%;
+  margin: 0 auto;
+}
+
+#item-display {
   max-width: 25%;
   min-width: 25%;
   margin: 0 auto;

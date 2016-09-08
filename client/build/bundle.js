@@ -44,18 +44,18 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var HomeView = __webpack_require__( 3 );
+	var HomeView = __webpack_require__( 1 );
 	var WomenView = __webpack_require__( 2 );
 	var MenView = __webpack_require__( 4 );
 	var BasketView = __webpack_require__( 5 );
 	
-	var Basket = __webpack_require__( 13 );
-	var stock = __webpack_require__( 14 );
-	var Voucher = __webpack_require__( 16 );
+	var Basket = __webpack_require__( 7 );
+	var stock = __webpack_require__( 8 );
+	var Voucher = __webpack_require__( 9 );
 	
-	var MenShoeView = __webpack_require__( 9 );
-	var MenCasualView = __webpack_require__( 10 );
-	var MenFormalView = __webpack_require__( 11 );
+	var MenShoeView = __webpack_require__( 10 );
+	var MenCasualView = __webpack_require__( 11 );
+	var MenFormalView = __webpack_require__( 12 );
 	
 	var basket = new Basket();
 	
@@ -132,11 +132,43 @@
 
 
 /***/ },
-/* 1 */,
+/* 1 */
+/***/ function(module, exports) {
+
+	var HomeView = function() {
+	  console.log( "Home View Accessed" );
+	
+	  var clear = document.getElementById( 'choice-display' );
+	  clear.innerText = "";
+	
+	  var clearTwo = document.getElementById( 'item-display' );
+	  clearTwo.innerText = "";
+	
+	  var area = document.getElementById( 'main-display' );
+	  area.innerText = "";
+	
+	  var women = document.createElement( 'img' );
+	  var men = document.createElement( 'img' );
+	
+	  women.src = "./css/image/women.jpeg";
+	  men.src = "./css/image/men.jpeg";
+	
+	  women.className = "home-images";
+	  women.id = 'women-image';
+	  men.className = "home-images";
+	  men.id = 'men-image';
+	
+	  area.appendChild( women );
+	  area.appendChild( men );
+	}
+	
+	module.exports = HomeView;
+
+/***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var WomenShoeView = __webpack_require__( 12 );
+	var WomenShoeView = __webpack_require__( 3 );
 	// var WomenFormalView = require( './WomenFormalView' );
 	// var WomenCasualView = require( './WomenCasualView' );
 	
@@ -219,185 +251,6 @@
 /* 3 */
 /***/ function(module, exports) {
 
-	var HomeView = function() {
-	  console.log( "Home View Accessed" );
-	
-	  var clear = document.getElementById( 'choice-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
-	
-	  var area = document.getElementById( 'main-display' );
-	  area.innerText = "";
-	
-	  var women = document.createElement( 'img' );
-	  var men = document.createElement( 'img' );
-	
-	  women.src = "./css/image/women.jpeg";
-	  men.src = "./css/image/men.jpeg";
-	
-	  women.className = "home-images";
-	  women.id = 'women-image';
-	  men.className = "home-images";
-	  men.id = 'men-image';
-	
-	  area.appendChild( women );
-	  area.appendChild( men );
-	}
-	
-	module.exports = HomeView;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	var MenView = function() {
-	  console.log( "Men View Accessed" );
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'item-display' );
-	  clearTwo.innerText = "";
-	
-	  var area = document.getElementById( 'choice-display' );
-	  area.innerText = "";
-	
-	  var shoes = document.createElement( 'img' );
-	  var shoeText = document.createElement( 'p' );
-	
-	  var formal = document.createElement( 'img' );
-	  var formalText = document.createElement( 'p' );
-	
-	  var casual = document.createElement( 'img' );
-	  var casualText = document.createElement( 'p' );
-	
-	  shoes.src = "./css/image/leather-tan.jpeg";
-	  formal.src = "./css/image/lightweight-deer.jpeg";
-	  casual.src = "./css/image/striped-green.jpg";
-	
-	  shoeText.innerText = "Shoes";
-	  formalText.innerText = "Formal";
-	  casualText.innerText = "Casual";
-	
-	  area.appendChild( shoes );
-	  area.appendChild( shoeText );
-	
-	  area.appendChild( formal );
-	  area.appendChild( formalText );
-	
-	  area.appendChild( casual );
-	  area.appendChild( casualText );
-	}
-	
-	module.exports = MenView;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Total = __webpack_require__( 15 );
-	
-	var runningTotal = new Total();
-	
-	var BasketView = function( basket ) {
-	
-	  console.log( basket );
-	
-	  runningTotal.setTotal( basket.items );
-	
-	  console.log( runningTotal.total );
-	
-	  console.log( "Basket View Accessed" );
-	  console.log( basket.totalItems() );
-	  var area = document.getElementById( 'main-display' );
-	  area.innerText = "";
-	  var p = document.createElement( 'p' );
-	  p.innerText = "This is the basket view";
-	  area.appendChild( p );
-	}
-	
-	module.exports = BasketView;
-
-/***/ },
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
-/***/ function(module, exports) {
-
-	var MenShoeView = function() {
-	  console.log( "Men Shoe View Accessed" );
-	
-	  var clear = document.getElementById( 'main-display' );
-	  clear.innerText = "";
-	
-	  var clearTwo = document.getElementById( 'choice-display' );
-	  clearTwo.innerText = "";
-	
-	  var area = document.getElementById( 'item-display' );
-	  area.innerText = "";
-	
-	  var shoes = document.createElement( 'img' );
-	  var shoeText = document.createElement( 'p' );
-	
-	  var formal = document.createElement( 'img' );
-	  var formalText = document.createElement( 'p' );
-	
-	  var casual = document.createElement( 'img' );
-	  var casualText = document.createElement( 'p' );
-	
-	  shoes.src = "./css/image/court-black.jpeg";
-	  formal.src = "./css/image/bird.jpeg";
-	  casual.src = "./css/image/cardigan-gold.jpg";
-	
-	  shoeText.innerText = "Shoes";
-	  formalText.innerText = "Formal";
-	  casualText.innerText = "Casual";
-	
-	  area.appendChild( shoes );
-	  area.appendChild( shoeText );
-	
-	  area.appendChild( formal );
-	  area.appendChild( formalText );
-	
-	  area.appendChild( casual );
-	  area.appendChild( casualText );
-	
-	  shoes.onclick = function() {
-	    displayWomenShoes();
-	  }
-	
-	  formal.onclick = function() {
-	    displayWomenFormal();
-	  }
-	
-	  casual.onclick = function() {
-	    displayWomenCasual();
-	  }
-	
-	}
-	
-	
-	module.exports = MenShoeView;
-
-/***/ },
-/* 10 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 12 */
-/***/ function(module, exports) {
-
 	var WomenShoeView = function( basket, stock ) {
 	  console.log( stock )
 	  console.log( "Women Shoe View Accessed" );
@@ -449,7 +302,182 @@
 	module.exports = WomenShoeView;
 
 /***/ },
-/* 13 */
+/* 4 */
+/***/ function(module, exports) {
+
+	var MenView = function() {
+	  console.log( "Men View Accessed" );
+	
+	  var clear = document.getElementById( 'main-display' );
+	  clear.innerText = "";
+	
+	  var clearTwo = document.getElementById( 'item-display' );
+	  clearTwo.innerText = "";
+	
+	  var area = document.getElementById( 'choice-display' );
+	  area.innerText = "";
+	
+	  var shoes = document.createElement( 'img' );
+	  var shoeText = document.createElement( 'p' );
+	
+	  var formal = document.createElement( 'img' );
+	  var formalText = document.createElement( 'p' );
+	
+	  var casual = document.createElement( 'img' );
+	  var casualText = document.createElement( 'p' );
+	
+	  shoes.src = "./css/image/leather-tan.jpeg";
+	  formal.src = "./css/image/lightweight-deer.jpeg";
+	  casual.src = "./css/image/striped-green.jpg";
+	
+	  shoeText.innerText = "Shoes";
+	  formalText.innerText = "Formal";
+	  casualText.innerText = "Casual";
+	
+	  area.appendChild( shoes );
+	  area.appendChild( shoeText );
+	
+	  area.appendChild( formal );
+	  area.appendChild( formalText );
+	
+	  area.appendChild( casual );
+	  area.appendChild( casualText );
+	}
+	
+	module.exports = MenView;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Total = __webpack_require__( 6 );
+	
+	var runningTotal = new Total();
+	
+	var BasketView = function( basket ) {
+	
+	  console.log( basket );
+	
+	  runningTotal.setTotal( basket.items );
+	
+	  console.log( runningTotal.total );
+	
+	  console.log( "Basket View Accessed" );
+	  console.log( basket.totalItems() );
+	  var area = document.getElementById( 'main-display' );
+	  area.innerText = "";
+	  var p = document.createElement( 'p' );
+	  p.innerText = "This is the basket view";
+	  area.appendChild( p );
+	}
+	
+	module.exports = BasketView;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	var Total = function() {
+	  this.total = 0;
+	  this.basket = [];
+	}
+	
+	Total.prototype = {
+	  setTotal: function( basket ) {
+	    this.total = 0;
+	    this.basket = basket;
+	    for( var i = 0; i < basket.length; i++ ) {
+	      this.total += basket[ i ].price;
+	    }
+	    return this.total;
+	  },
+	
+	  addVoucher: function( voucher ) {
+	    if( this.checkForUsedVouchers( voucher )) {
+	      return;
+	    }
+	
+	    if( !this.checkForValidVoucher( voucher )) {
+	      return;
+	    }
+	
+	    if( this.checkForUnderFifty( voucher )) {
+	      return;
+	    }
+	
+	    if( this.checkForUnderSeventyFive( voucher )) {
+	      return;
+	    }
+	
+	    if( this.checkForAboveSeventyFiveAndShoes( voucher )) {
+	      return;
+	    }
+	
+	    if( this.total >= voucher.value ) {
+	      this.total -= voucher.value;
+	    }
+	  },
+	
+	  checkForUsedVouchers: function( voucher ) {
+	    if( voucher.hasBeenUsed ) {
+	      return true;
+	    }
+	  },
+	
+	  checkForValidVoucher: function( voucher ) {
+	    if( voucher.valid ) {
+	      return true;
+	    }
+	  },
+	
+	  checkForUnderFifty: function( voucher ) {
+	    if( this.total <= 50 && voucher.value === 10 ) {
+	      return true;
+	    } else {
+	      return false;
+	    }
+	  },
+	
+	  checkForUnderSeventyFive: function( voucher ) {
+	    if( this.total <= 75 && voucher.value === 15 ) {
+	      return true;
+	    } else {
+	      return false;
+	    }
+	  },
+	
+	  checkForOverSeventyFive: function( voucher ) {
+	    if( this.total >= 75 && voucher.value === 15 ) {
+	      return true;
+	    } else {
+	      return false;
+	    }
+	  },
+	
+	  checkForShoes: function() {
+	    for( var i = 0; i < this.basket.length; i++ ) {
+	      if( this.basket[ i ].subcategory != "Footwear" ) {
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    } 
+	  },
+	
+	  checkForAboveSeventyFiveAndShoes: function( voucher ) {
+	    if( this.checkForOverSeventyFive( voucher ) && this.checkForShoes() ) {
+	      return true;
+	    } else {
+	      return false;
+	    }
+	  }
+	
+	}
+	
+	module.exports = Total;
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
 	var Basket = function() {
@@ -490,7 +518,7 @@
 	module.exports = Basket;
 
 /***/ },
-/* 14 */
+/* 8 */
 /***/ function(module, exports) {
 
 	itemOne = {
@@ -604,110 +632,7 @@
 
 
 /***/ },
-/* 15 */
-/***/ function(module, exports) {
-
-	var Total = function() {
-	  this.total = 0;
-	  this.basket = [];
-	}
-	
-	Total.prototype = {
-	  setTotal: function( basket ) {
-	    this.total = 0;
-	    this.basket = basket;
-	    for( var i = 0; i < basket.length; i++ ) {
-	      this.total += basket[ i ].price;
-	    }
-	    return this.total;
-	  },
-	
-	  addVoucher: function( voucher ) {
-	    if( this.checkForUsedVouchers( voucher )) {
-	      return;
-	    }
-	
-	    if( !this.checkForValidVoucher( voucher )) {
-	      return;
-	    }
-	
-	    if( this.checkForUnderFifty( voucher )) {
-	      return;
-	    }
-	
-	    if( this.checkForUnderSeventyFive( voucher )) {
-	      return;
-	    }
-	
-	    if( this.checkForAboveSeventyFiveAndShoes( voucher )) {
-	      return;
-	    }
-	
-	    if( this.total >= voucher.value ) {
-	      this.total -= voucher.value;
-	    }
-	  },
-	
-	  checkForUsedVouchers: function( voucher ) {
-	    if( voucher.hasBeenUsed ) {
-	      return true;
-	    }
-	  },
-	
-	  checkForValidVoucher: function( voucher ) {
-	    if( voucher.valid ) {
-	      return true;
-	    }
-	  },
-	
-	  checkForUnderFifty: function( voucher ) {
-	    if( this.total <= 50 && voucher.value === 10 ) {
-	      return true;
-	    } else {
-	      return false;
-	    }
-	  },
-	
-	  checkForUnderSeventyFive: function( voucher ) {
-	    if( this.total <= 75 && voucher.value === 15 ) {
-	      return true;
-	    } else {
-	      return false;
-	    }
-	  },
-	
-	  checkForOverSeventyFive: function( voucher ) {
-	    if( this.total >= 75 && voucher.value === 15 ) {
-	      return true;
-	    } else {
-	      return false;
-	    }
-	  },
-	
-	  checkForShoes: function() {
-	    for( var i = 0; i < this.basket.length; i++ ) {
-	      if( this.basket[ i ].subcategory != "Footwear" ) {
-	        return true;
-	      } else {
-	        return false;
-	      }
-	    } 
-	  },
-	
-	  checkForAboveSeventyFiveAndShoes: function( voucher ) {
-	    if( this.checkForOverSeventyFive( voucher ) && this.checkForShoes() ) {
-	      return true;
-	    } else {
-	      return false;
-	    }
-	  }
-	
-	}
-	
-	module.exports = Total;
-
-/***/ },
-/* 16 */
+/* 9 */
 /***/ function(module, exports) {
 
 	var Voucher = function( code ) {
@@ -744,6 +669,77 @@
 	}
 	
 	module.exports = Voucher;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	var MenShoeView = function() {
+	  console.log( "Men Shoe View Accessed" );
+	
+	  var clear = document.getElementById( 'main-display' );
+	  clear.innerText = "";
+	
+	  var clearTwo = document.getElementById( 'choice-display' );
+	  clearTwo.innerText = "";
+	
+	  var area = document.getElementById( 'item-display' );
+	  area.innerText = "";
+	
+	  var shoes = document.createElement( 'img' );
+	  var shoeText = document.createElement( 'p' );
+	
+	  var formal = document.createElement( 'img' );
+	  var formalText = document.createElement( 'p' );
+	
+	  var casual = document.createElement( 'img' );
+	  var casualText = document.createElement( 'p' );
+	
+	  shoes.src = "./css/image/court-black.jpeg";
+	  formal.src = "./css/image/bird.jpeg";
+	  casual.src = "./css/image/cardigan-gold.jpg";
+	
+	  shoeText.innerText = "Shoes";
+	  formalText.innerText = "Formal";
+	  casualText.innerText = "Casual";
+	
+	  area.appendChild( shoes );
+	  area.appendChild( shoeText );
+	
+	  area.appendChild( formal );
+	  area.appendChild( formalText );
+	
+	  area.appendChild( casual );
+	  area.appendChild( casualText );
+	
+	  shoes.onclick = function() {
+	    displayWomenShoes();
+	  }
+	
+	  formal.onclick = function() {
+	    displayWomenFormal();
+	  }
+	
+	  casual.onclick = function() {
+	    displayWomenCasual();
+	  }
+	
+	}
+	
+	
+	module.exports = MenShoeView;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+
 
 /***/ }
 /******/ ]);
