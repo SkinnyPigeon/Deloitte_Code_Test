@@ -28,9 +28,6 @@ Basket.prototype = {
   error: function() {
     return "Out of stock";
   }
-
 }
-
-
 
 module.exports = Basket;

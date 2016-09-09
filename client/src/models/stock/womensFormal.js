@@ -21,4 +21,3 @@ itemTwo = {
 var womensFormal = [ itemOne, itemTwo ]
 
 module.exports = womensFormal;
-

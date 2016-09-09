@@ -91,7 +91,6 @@ Total.prototype = {
     } 
     return false;
   }
-
 }
 
 module.exports = Total;

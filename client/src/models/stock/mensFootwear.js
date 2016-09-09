@@ -31,4 +31,3 @@ itemThree = {
 var mensFootwear = [ itemOne, itemTwo, itemThree ]
 
 module.exports = mensFootwear;
-

@@ -99,14 +99,4 @@ describe( 'The Total: ', function() {
     runningTotal.addVoucher( fakeFiveOff );
     assert.equal( 726, runningTotal.total );
   });
-
 });
-
-
-
-
-
-
-
-
-

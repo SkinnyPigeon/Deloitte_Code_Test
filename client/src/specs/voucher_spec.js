@@ -21,4 +21,3 @@ describe( 'The Vouchers', function() {
     assert.equal( 15, voucher.value );
   });
 });
-

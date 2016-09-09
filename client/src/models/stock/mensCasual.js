@@ -21,4 +21,3 @@ var mensCasual = [ itemOne, itemTwo ]
 
 
 module.exports = mensCasual;
-

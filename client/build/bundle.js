@@ -171,6 +171,7 @@
 	
 	module.exports = HomeView;
 
+
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
@@ -262,6 +263,7 @@
 	
 	module.exports = WomenView;
 
+
 /***/ },
 /* 3 */
 /***/ function(module, exports) {
@@ -318,7 +320,6 @@
 	var womensFormal = [ itemOne, itemTwo ]
 	
 	module.exports = womensFormal;
-	
 
 
 /***/ },
@@ -440,6 +441,7 @@
 	
 	module.exports = ClothesView;
 
+
 /***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
@@ -532,6 +534,7 @@
 	
 	module.exports = MenView;
 
+
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
@@ -559,7 +562,6 @@
 	
 	
 	module.exports = mensCasual;
-	
 
 
 /***/ },
@@ -589,7 +591,6 @@
 	var mensFormal = [ itemOne, itemTwo ]
 	
 	module.exports = mensFormal;
-	
 
 
 /***/ },
@@ -629,7 +630,6 @@
 	var mensFootwear = [ itemOne, itemTwo, itemThree ]
 	
 	module.exports = mensFootwear;
-	
 
 
 /***/ },
@@ -803,6 +803,7 @@
 	
 	module.exports = BasketView;
 
+
 /***/ },
 /* 12 */
 /***/ function(module, exports) {
@@ -900,10 +901,10 @@
 	    } 
 	    return false;
 	  }
-	
 	}
 	
 	module.exports = Total;
+
 
 /***/ },
 /* 13 */
@@ -952,6 +953,7 @@
 	
 	module.exports = Voucher;
 
+
 /***/ },
 /* 14 */
 /***/ function(module, exports) {
@@ -986,12 +988,10 @@
 	  error: function() {
 	    return "Out of stock";
 	  }
-	
 	}
 	
-	
-	
 	module.exports = Basket;
+
 
 /***/ }
 /******/ ]);

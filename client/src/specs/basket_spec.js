@@ -45,5 +45,4 @@ describe( 'The Basket', function() {
     basket.add( stock[ 4 ] );
     assert.equal( 0, stock[ 4 ]. stock );
   });
-
 });

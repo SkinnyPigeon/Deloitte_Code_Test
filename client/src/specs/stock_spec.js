@@ -18,5 +18,4 @@ describe( 'The Stock: ', function() {
   it( 'Should have a stock level', function() {
     assert.equal( 4, stock[ 1 ].stock );
   });
-
 });
