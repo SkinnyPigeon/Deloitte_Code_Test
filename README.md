@@ -1,4 +1,4 @@
-**Stron** DELOITTE DIGITAL DEVELOPMENT TEST
+**DELOITTE DIGITAL DEVELOPMENT TEST** 
 
 You’ve been asked to develop a responsive website for a clothing retailer.
 
@@ -24,7 +24,7 @@ As a User I can view the products and their category, price and availability inf
 7. As a User I am unable to add Out of Stock products to the shopping cart.
 
 
-**Strong** INSTALLATION
+**INSTALLATION **
 
 You need node.js installed globally:
 
@@ -36,7 +36,7 @@ $npm start
 Navigate to http://localhost:3000/ in your browser.
 
 
-**Strong** TO RUN TESTS
+**TO RUN TESTS** 
 
 From the main directory in your terminal:
 
