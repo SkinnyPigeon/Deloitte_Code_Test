@@ -202,6 +202,23 @@ p {
   min-width: 32.5px;
 }
 
+#basket-display h3 {
+  float: right;
+  padding-right: 47.5%;
+}
+
+#basket-display button {
+  float: right;
+  margin-right: 2%;
+}
+
+#basket-display input {
+  float: right;
+  margin-right: 2%;
+}
+
+
+
 
 
 

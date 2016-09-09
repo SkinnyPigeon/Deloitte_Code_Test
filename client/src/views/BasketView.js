@@ -78,16 +78,19 @@ BasketView.prototype = {
     total.innerText = this.total;
     this.area.appendChild( total );
 
-    var voucherEntry = document.createElement( 'input' );
-    voucherEntry.id = "voucher-entry";
-    voucherEntry.type = "text";
-    voucherEntry.placeholder = "Enter voucher code...";
-    this.area.appendChild( voucherEntry );
+
 
     var voucherButton = document.createElement( 'button' );
     voucherButton.id = "voucher-button";
     voucherButton.innerText = "Add voucher";
     this.area.appendChild( voucherButton );
+
+    var voucherEntry = document.createElement( 'input' );
+    voucherEntry.id = "voucher-entry";
+    voucherEntry.type = "text";
+    voucherEntry.placeholder = "Enter voucher code...";
+    this.area.appendChild( voucherEntry );
+    
     voucherButton.onclick = function() {
       this.handleVoucherClick();
     }.bind( this );
