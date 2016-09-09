@@ -57,6 +57,7 @@ nav ul {
 
 nav li {
   display: inline-block;
+  padding-right: 2%;
 }
 
 
@@ -91,10 +92,12 @@ a {
 }
 
 nav a, nav a:visited {
+  cursor:pointer;
   color: #fff;
 }
 
 nav a.selected, nav li:hover {
+  cursor:pointer;
   color: #1c7f9b;
 }
 
@@ -127,6 +130,10 @@ p {
   margin: 2.5%;
   background-color: transparent;
   color: #1c7f9b;
+}
+
+#home-page img:hover {
+  cursor: pointer;
 }
 
 #basket-display li img {
