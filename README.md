@@ -71,26 +71,3 @@ These are case insensitive.
 As this was a Front-End project I have used built this app entirely in Javascript. I avoided frameworks as I felt that otherwise I would be bringing in a large codebase that would go mostly unused.  
 
 I desgined the site to be reactive from the start, making sure that wherever possible I stuck to percentage based values in the CSS and also included a breakpoint to make the layout look nice on different screen sizes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

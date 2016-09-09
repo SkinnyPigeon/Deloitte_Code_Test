@@ -65,7 +65,8 @@ BasketView.prototype = {
       button.id = i;
 
       button.onclick = function( e ) {
-        var id = e.path[0].id;
+        console.log( e );
+        var id = e.target.id;
         this.handleButtonClick( id );
       }.bind( this );
 

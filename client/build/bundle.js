@@ -385,7 +385,6 @@
 	      price.innerText = cost;
 	      button.innerText = "Add to basket";
 	      button.id = i;
-	      console.log( i );
 	
 	      button.onclick = function( e ) {
 	        var id = e.path[0].id;
@@ -425,7 +424,6 @@
 	  },
 	
 	  handleButtonClick: function( id ) {
-	    console.log( this.basket );
 	    this.handleAlert( id );
 	    this.basket.add( this.department[ id ]);
 	    this.resetView();
@@ -703,7 +701,8 @@
 	      button.id = i;
 	
 	      button.onclick = function( e ) {
-	        var id = e.path[0].id;
+	        console.log( e );
+	        var id = e.target.id;
 	        this.handleButtonClick( id );
 	      }.bind( this );
 	
@@ -977,10 +976,9 @@
 	  },
 	
 	  remove: function( item ) {
-	    for( basketItem of this.items ) {
-	
-	      if( item.name === basketItem.name ){
-	        this.items.splice( basketItem.index, 1);
+	    for( basketItem in this.items ) {
+	      if( item.name === this.items[ basketItem ].name ){
+	        this.items.splice( basketItem, 1);
 	      }
 	    }
 	  },

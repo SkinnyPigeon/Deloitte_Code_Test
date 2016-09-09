@@ -28,7 +28,6 @@ ClothesView.prototype = {
       price.innerText = cost;
       button.innerText = "Add to basket";
       button.id = i;
-      console.log( i );
 
       button.onclick = function( e ) {
         var id = e.path[0].id;
@@ -68,7 +67,6 @@ ClothesView.prototype = {
   },
 
   handleButtonClick: function( id ) {
-    console.log( this.basket );
     this.handleAlert( id );
     this.basket.add( this.department[ id ]);
     this.resetView();

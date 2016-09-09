@@ -17,10 +17,9 @@ Basket.prototype = {
   },
 
   remove: function( item ) {
-    for( basketItem of this.items ) {
-
-      if( item.name === basketItem.name ){
-        this.items.splice( basketItem.index, 1);
+    for( basketItem in this.items ) {
+      if( item.name === this.items[ basketItem ].name ){
+        this.items.splice( basketItem, 1);
       }
     }
   },
