@@ -4,6 +4,7 @@ itemOne = {
   subcategory: "Casualwear",
   image: "./css/image/cardigan-gold.png",
   price: 167,
+  salePrice: null,
   stock: 6
 }
 
@@ -13,6 +14,7 @@ itemTwo = {
   subcategory: "Casualwear",
   image: "./css/image/shorts-red.png",
   price: 30,
+  salePrice: null,
   stock: 5
 }
 

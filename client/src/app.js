@@ -9,7 +9,7 @@ var Voucher = require( './models/voucher' );
 var basket = new Basket();
 
 window.onload = function() {
-  main()
+  main();
 }
 
 var main = function() {
@@ -68,15 +68,3 @@ var displayBasket = function( basket ) {
   var view = new BasketView( basket );
   view.display();
 }
-
-
-
-
-
-
-
-
-
-
-
-

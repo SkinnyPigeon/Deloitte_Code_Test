@@ -55,7 +55,7 @@
 	var basket = new Basket();
 	
 	window.onload = function() {
-	  main()
+	  main();
 	}
 	
 	var main = function() {
@@ -114,18 +114,6 @@
 	  var view = new BasketView( basket );
 	  view.display();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 
 /***/ },
@@ -163,8 +151,6 @@
 	    ul.appendChild( picOne );
 	    ul.appendChild( picTwo );
 	
-	    // this.area.appendChild( women );
-	    // this.area.appendChild( men );
 	    this.area.appendChild( ul );
 	  },
 	
@@ -286,6 +272,7 @@
 	  subcategory: "Casualwear",
 	  image: "./css/image/cardigan-gold.png",
 	  price: 167,
+	  salePrice: null,
 	  stock: 6
 	}
 	
@@ -295,6 +282,7 @@
 	  subcategory: "Casualwear",
 	  image: "./css/image/shorts-red.png",
 	  price: 30,
+	  salePrice: null,
 	  stock: 5
 	}
 	
@@ -313,6 +301,7 @@
 	  subcategory: "Formalwear",
 	  image: "./css/image/bird.png",
 	  price: 270,
+	  salePrice: null,
 	  stock: 10
 	}
 	
@@ -322,6 +311,7 @@
 	  subcategory: "Formalwear",
 	  image: "./css/image/twist-pink.png",
 	  price: 540,
+	  salePrice: null,
 	  stock: 5
 	}
 	
@@ -341,6 +331,7 @@
 	  subcategory: "Footwear",
 	  image: "./css/image/court-black.png",
 	  price: 99,
+	  salePrice: null,
 	  stock: 5
 	}
 	
@@ -350,6 +341,7 @@
 	  subcategory: "Footwear",
 	  image: "./css/image/suede-blue.png",
 	  price: 42,
+	  salePrice: null,
 	  stock: 4
 	}
 	
@@ -578,8 +570,9 @@
 	  name: "Sharkskin Waistcoat, Charcoal",
 	  category: "Men’s Formalwear",
 	  subcategory: "Formalwear",
-	  image: "./css/image/waistcoat-grey-low.png",
+	  image: "./css/image/waistcoat-grey.png",
 	  price: 75,
+	  salePrice: null,
 	  stock: 2
 	}
 	
@@ -589,6 +582,7 @@
 	  subcategory: "Formalwear",
 	  image: "./css/image/lightweight-deer.png",
 	  price: 175.5,
+	  salePrice: null,
 	  stock: 1
 	}
 	
@@ -608,6 +602,7 @@
 	  subcategory: "Footwear",
 	  image: "./css/image/leather-tan.png",
 	  price: 34,
+	  salePrice: null,
 	  stock: 12
 	}
 	
@@ -617,6 +612,7 @@
 	  subcategory: "Footwear",
 	  image: "./css/image/flipflop-red.png",
 	  price: 19,
+	  salePrice: null,
 	  stock: 6
 	}
 	
@@ -626,6 +622,7 @@
 	  subcategory: "Footwear",
 	  image: "./css/image/flipflop-blue.png",
 	  price: 19,
+	  salePrice: null,
 	  stock: 0
 	}
 	

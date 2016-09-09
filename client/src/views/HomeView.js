@@ -29,8 +29,6 @@ HomeView.prototype = {
     ul.appendChild( picOne );
     ul.appendChild( picTwo );
 
-    // this.area.appendChild( women );
-    // this.area.appendChild( men );
     this.area.appendChild( ul );
   },
 

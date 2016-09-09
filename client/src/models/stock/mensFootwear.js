@@ -4,6 +4,7 @@ itemOne = {
   subcategory: "Footwear",
   image: "./css/image/leather-tan.png",
   price: 34,
+  salePrice: null,
   stock: 12
 }
 
@@ -13,6 +14,7 @@ itemTwo = {
   subcategory: "Footwear",
   image: "./css/image/flipflop-red.png",
   price: 19,
+  salePrice: null,
   stock: 6
 }
 
@@ -22,6 +24,7 @@ itemThree = {
   subcategory: "Footwear",
   image: "./css/image/flipflop-blue.png",
   price: 19,
+  salePrice: null,
   stock: 0
 }
 

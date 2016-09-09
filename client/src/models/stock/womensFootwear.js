@@ -4,6 +4,7 @@ itemOne = {
   subcategory: "Footwear",
   image: "./css/image/court-black.png",
   price: 99,
+  salePrice: null,
   stock: 5
 }
 
@@ -13,6 +14,7 @@ itemTwo = {
   subcategory: "Footwear",
   image: "./css/image/suede-blue.png",
   price: 42,
+  salePrice: null,
   stock: 4
 }
 
