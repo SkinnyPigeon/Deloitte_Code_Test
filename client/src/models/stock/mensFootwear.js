@@ -2,7 +2,7 @@ itemOne = {
   name: "Leather Driver Saddle Loafers, Tan",
   category: "Men’s Footwear",
   subcategory: "Footwear",
-  image: "./css/image/leather-tan.jpeg",
+  image: "./css/image/leather-tan.png",
   price: 34,
   stock: 12
 }
@@ -11,7 +11,7 @@ itemTwo = {
   name: "Flip Flops, Red",
   category: "Men’s Footwear",
   subcategory: "Footwear",
-  image: "./css/image/flipflop-red.jpg",
+  image: "./css/image/flipflop-red.png",
   price: 19,
   stock: 6
 }
@@ -20,7 +20,7 @@ itemThree = {
   name: "Flip Flops, Blue",
   category: "Men’s Footwear",
   subcategory: "Footwear",
-  image: "./css/image/flipflop-blue.jpg",
+  image: "./css/image/flipflop-blue.png",
   price: 19,
   stock: 0
 }

@@ -28,9 +28,9 @@ MenView.prototype = {
     var casual = document.createElement( 'img' );
     var casualText = document.createElement( 'p' );
 
-    shoes.src = "./css/image/leather-tan.jpeg";
-    formal.src = "./css/image/lightweight-deer.jpeg";
-    casual.src = "./css/image/striped-green.jpg";
+    shoes.src = "./css/image/leather-tan.png";
+    formal.src = "./css/image/lightweight-deer.png";
+    casual.src = "./css/image/striped-green.png";
 
     shoeText.innerText = "Shoes";
     formalText.innerText = "Formal";

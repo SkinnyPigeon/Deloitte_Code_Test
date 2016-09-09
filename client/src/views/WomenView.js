@@ -27,9 +27,9 @@ WomenView.prototype = {
     var casual = document.createElement( 'img' );
     var casualText = document.createElement( 'p' );
 
-    shoes.src = "./css/image/court-black.jpeg";
-    formal.src = "./css/image/bird.jpeg";
-    casual.src = "./css/image/cardigan-gold.jpg";
+    shoes.src = "./css/image/court-black.png";
+    formal.src = "./css/image/bird.png";
+    casual.src = "./css/image/cardigan-gold.png";
 
     shoeText.innerText = "Shoes";
     formalText.innerText = "Formal";

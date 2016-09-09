@@ -218,9 +218,9 @@
 	    var casual = document.createElement( 'img' );
 	    var casualText = document.createElement( 'p' );
 	
-	    shoes.src = "./css/image/court-black.jpeg";
-	    formal.src = "./css/image/bird.jpeg";
-	    casual.src = "./css/image/cardigan-gold.jpg";
+	    shoes.src = "./css/image/court-black.png";
+	    formal.src = "./css/image/bird.png";
+	    casual.src = "./css/image/cardigan-gold.png";
 	
 	    shoeText.innerText = "Shoes";
 	    formalText.innerText = "Formal";
@@ -284,7 +284,7 @@
 	  name: "Gold Button Cardigan, Black",
 	  category: "Women’s Casualwear",
 	  subcategory: "Casualwear",
-	  image: "./css/image/cardigan-gold.jpg",
+	  image: "./css/image/cardigan-gold.png",
 	  price: 167,
 	  stock: 6
 	}
@@ -293,7 +293,7 @@
 	  name: "Cotton Shorts, Medium Red",
 	  category: "Women’s Casualwear",
 	  subcategory: "Casualwear",
-	  image: "./css/image/shorts-red.jpg",
+	  image: "./css/image/shorts-red.png",
 	  price: 30,
 	  stock: 5
 	}
@@ -311,7 +311,7 @@
 	  name: "Bird Print Dress, Black",
 	  category: "Women’s Formalwear",
 	  subcategory: "Formalwear",
-	  image: "./css/image/bird.jpeg",
+	  image: "./css/image/bird.png",
 	  price: 270,
 	  stock: 10
 	}
@@ -320,7 +320,7 @@
 	  name: "Mid Twist Cut-Out Dress, Pink",
 	  category: "Women’s Formalwear",
 	  subcategory: "Formalwear",
-	  image: "./css/image/twist-pink.jpeg",
+	  image: "./css/image/twist-pink.png",
 	  price: 540,
 	  stock: 5
 	}
@@ -339,7 +339,7 @@
 	  name: "Almond Toe Court Shoes, Patent Black",
 	  category: "Women’s Footwear",
 	  subcategory: "Footwear",
-	  image: "./css/image/court-black.jpeg",
+	  image: "./css/image/court-black.png",
 	  price: 99,
 	  stock: 5
 	}
@@ -348,7 +348,7 @@
 	  name: "Suede Shoes, Blue",
 	  category: "Women's Footwear",
 	  subcategory: "Footwear",
-	  image: "./css/image/suede-blue.jpg",
+	  image: "./css/image/suede-blue.png",
 	  price: 42,
 	  stock: 4
 	}
@@ -470,9 +470,9 @@
 	    var casual = document.createElement( 'img' );
 	    var casualText = document.createElement( 'p' );
 	
-	    shoes.src = "./css/image/leather-tan.jpeg";
-	    formal.src = "./css/image/lightweight-deer.jpeg";
-	    casual.src = "./css/image/striped-green.jpg";
+	    shoes.src = "./css/image/leather-tan.png";
+	    formal.src = "./css/image/lightweight-deer.png";
+	    casual.src = "./css/image/striped-green.png";
 	
 	    shoeText.innerText = "Shoes";
 	    formalText.innerText = "Formal";
@@ -536,7 +536,7 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Grey",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
-	  image: "./css/image/striped-grey.jpg",
+	  image: "./css/image/striped-grey.png",
 	  price: 49.99,
 	  salePrice: null,
 	  stock: 9
@@ -546,7 +546,7 @@
 	  name: "Fine Stripe Short Sleeve Shirt, Green",
 	  category: "Men’s Casualwear",
 	  subcategory: "Casualwear",
-	  image: "./css/image/striped-green.jpg",
+	  image: "./css/image/striped-green.png",
 	  price: 49.99,
 	  salePrice: 39.99,
 	  stock: 3
@@ -566,7 +566,7 @@
 	  name: "Sharkskin Waistcoat, Charcoal",
 	  category: "Men’s Formalwear",
 	  subcategory: "Formalwear",
-	  image: "./css/image/waistcoat-grey-low.jpg",
+	  image: "./css/image/waistcoat-grey-low.png",
 	  price: 75,
 	  stock: 2
 	}
@@ -575,7 +575,7 @@
 	  name: "Lightweight Patch Pocket Blazer, Deer",
 	  category: "Men’s Formalwear ",
 	  subcategory: "Formalwear",
-	  image: "./css/image/lightweight-deer.jpeg",
+	  image: "./css/image/lightweight-deer.png",
 	  price: 175.5,
 	  stock: 1
 	}
@@ -594,7 +594,7 @@
 	  name: "Leather Driver Saddle Loafers, Tan",
 	  category: "Men’s Footwear",
 	  subcategory: "Footwear",
-	  image: "./css/image/leather-tan.jpeg",
+	  image: "./css/image/leather-tan.png",
 	  price: 34,
 	  stock: 12
 	}
@@ -603,7 +603,7 @@
 	  name: "Flip Flops, Red",
 	  category: "Men’s Footwear",
 	  subcategory: "Footwear",
-	  image: "./css/image/flipflop-red.jpg",
+	  image: "./css/image/flipflop-red.png",
 	  price: 19,
 	  stock: 6
 	}
@@ -612,7 +612,7 @@
 	  name: "Flip Flops, Blue",
 	  category: "Men’s Footwear",
 	  subcategory: "Footwear",
-	  image: "./css/image/flipflop-blue.jpg",
+	  image: "./css/image/flipflop-blue.png",
 	  price: 19,
 	  stock: 0
 	}
