@@ -1,4 +1,5 @@
-Deloitte Digital Development Test
+DELOITTE DIGITAL DEVELOPMENT TEST
+
 
 You’ve been asked to develop a responsive website for a clothing retailer.
 
@@ -22,5 +23,49 @@ As a User I can view the products and their category, price and availability inf
 5. As a User I can view the total price for the products in my shopping cart with discounts applied.
 6. As a User I am alerted when I apply an invalid voucher to my shopping cart.
 7. As a User I am unable to add Out of Stock products to the shopping cart.
+
+
+INSTALLATION
+
+You need node.js installed globally:
+
+$git clone https://github.com/SkinnyPigeon/Deloitte_Code_Test
+$cd Deloitte_Code_Test
+$npm install
+$npm start
+
+Navigate to http://localhost:3000/ in your browser.
+
+
+TO RUN TESTS
+
+From the main directory in your terminal:
+
+$cd client
+$npm install
+$cd src/specs
+$mocha basket_spec.js
+$mocha stock_spec.js
+$mocha total_spec.js
+$mocha voucher_spec.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
