@@ -46,7 +46,21 @@ From the main directory in your terminal:
 `$mocha basket_spec.js`  
 `$mocha stock_spec.js`  
 `$mocha total_spec.js`  
-`$mocha voucher_spec.js`
+`$mocha voucher_spec.js`  
+
+**CODE LAYOUT**
+
+I have built this in Javascript using the Model, View, Controller pattern. The main files are located in the SRC directory. The app.js file is the entry point for the application via the index.html file found in the Build directory.
+
+The Models directory contains the logic for the various components as well as the stock object which are used to display information about the products. 
+
+The Views directory contains the layout information for the different areas of the website and allows for the layout to change dynamically. 
+
+Within the CSS directory ( found in Build ) there are the different CSS files. The responsive.css file triggers at around tablet display size.
+
+**APPROACH**
+
+
 
 
 
