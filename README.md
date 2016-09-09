@@ -28,9 +28,9 @@ As a User I can view the products and their category, price and availability inf
 
 You need node.js installed globally:
 
-`$git clone https://github.com/SkinnyPigeon/Deloitte_Code_Test  `
-`$cd Deloitte_Code_Test  `
-`$npm install  `
+`$git clone https://github.com/SkinnyPigeon/Deloitte_Code_Test`  
+`$cd Deloitte_Code_Test`  
+`$npm install`  
 `$npm start`
 
 Navigate to http://localhost:3000/ in your browser.
@@ -40,12 +40,12 @@ Navigate to http://localhost:3000/ in your browser.
 
 From the main directory in your terminal:
 
-`$cd client  `
-`$npm install  `
-`$cd src/specs  `
-`$mocha basket_spec.js  `
-`$mocha stock_spec.js  `
-`$mocha total_spec.js  `
+`$cd client`  
+`$npm install`  
+`$cd src/specs`  
+`$mocha basket_spec.js`  
+`$mocha stock_spec.js`  
+`$mocha total_spec.js`  
 `$mocha voucher_spec.js`
 
 
