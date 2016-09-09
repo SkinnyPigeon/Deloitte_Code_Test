@@ -52,8 +52,15 @@ BasketView.prototype = {
 
       image.src = this.basket.items[i].image;
       description.innerText = this.basket.items[i].name;
+
+
       price.innerText = this.basket.items[i].price.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
-      
+
+
+      if( this.basket.items[i].salePrice != null ) {
+        price.innerText = this.basket.items[i].salePrice.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
+      }
+
       button.innerText = "Delete";
       button.id = i;
 

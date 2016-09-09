@@ -379,8 +379,9 @@
 	
 	      var li = document.createElement( 'li' );
 	      var image = document.createElement( 'img' );
-	      var description = document.createElement( 'p' );
+	      var description = document.createElement( 'h3' );
 	      var price = document.createElement( 'p' );
+	      var salePrice = document.createElement( 'p' );
 	      var button = document.createElement( 'button' );
 	
 	      image.src = this.department[i].image;
@@ -401,6 +402,14 @@
 	      li.appendChild( image );
 	      li.appendChild( description );
 	      li.appendChild( price );
+	
+	      if( this.department[i].salePrice != null ) {
+	        salePrice.innerText = this.department[i].salePrice.toLocaleString('en-GB', {style:'currency', currency:'GBP'})
+	        price.style.textDecoration = "line-through";
+	        li.appendChild( price );
+	        li.appendChild( salePrice );
+	      }
+	
 	      li.appendChild( button );
 	
 	      ul.appendChild( li );
@@ -684,8 +693,15 @@
 	
 	      image.src = this.basket.items[i].image;
 	      description.innerText = this.basket.items[i].name;
+	
+	
 	      price.innerText = this.basket.items[i].price.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
-	      
+	
+	
+	      if( this.basket.items[i].salePrice != null ) {
+	        price.innerText = this.basket.items[i].salePrice.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
+	      }
+	
 	      button.innerText = "Delete";
 	      button.id = i;
 	
@@ -804,7 +820,11 @@
 	    this.total = 0;
 	    this.basket = basket;
 	    for( var i = 0; i < basket.length; i++ ) {
-	      this.total += basket[ i ].price;
+	      this.total += basket[i].price;
+	      if( basket[i].salePrice != null ) {
+	        this.total -= basket[i].price;
+	        this.total += basket[i].salePrice;
+	      }
 	    }
 	    return this.total;
 	  },

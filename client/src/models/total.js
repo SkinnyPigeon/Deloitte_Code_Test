@@ -8,7 +8,11 @@ Total.prototype = {
     this.total = 0;
     this.basket = basket;
     for( var i = 0; i < basket.length; i++ ) {
-      this.total += basket[ i ].price;
+      this.total += basket[i].price;
+      if( basket[i].salePrice != null ) {
+        this.total -= basket[i].price;
+        this.total += basket[i].salePrice;
+      }
     }
     return this.total;
   },

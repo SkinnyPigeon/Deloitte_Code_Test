@@ -194,6 +194,15 @@ p {
   color: #1c7f9b;
 }
 
+#display-page p {
+  display: inline-block;
+  padding-right: 2%;
+}
+
+#display-page button {
+  display: block;
+}
+
 #basket-display {
   margin: 0;
   padding: 0;

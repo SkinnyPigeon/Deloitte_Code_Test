@@ -15,8 +15,9 @@ ClothesView.prototype = {
 
       var li = document.createElement( 'li' );
       var image = document.createElement( 'img' );
-      var description = document.createElement( 'p' );
+      var description = document.createElement( 'h3' );
       var price = document.createElement( 'p' );
+      var salePrice = document.createElement( 'p' );
       var button = document.createElement( 'button' );
 
       image.src = this.department[i].image;
@@ -37,6 +38,14 @@ ClothesView.prototype = {
       li.appendChild( image );
       li.appendChild( description );
       li.appendChild( price );
+
+      if( this.department[i].salePrice != null ) {
+        salePrice.innerText = this.department[i].salePrice.toLocaleString('en-GB', {style:'currency', currency:'GBP'})
+        price.style.textDecoration = "line-through";
+        li.appendChild( price );
+        li.appendChild( salePrice );
+      }
+
       li.appendChild( button );
 
       ul.appendChild( li );
