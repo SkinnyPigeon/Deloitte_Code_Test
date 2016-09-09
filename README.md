@@ -56,9 +56,10 @@ The Models directory contains the logic for the various components as well as th
 
 The Views directory contains the layout information for the different areas of the website and allows for the layout to change dynamically. 
 
-Within the CSS directory ( found in Build ) there are the different CSS files. The responsive.css file triggers at around tablet display size.
+Within the CSS directory ( found in Build ) there are the different CSS files. The main.css was written for tablet sized screen and the responsive.css file triggers when the screen size has a pixel width greater than 660px.
 
 **APPROACH**
+
 
 
 
