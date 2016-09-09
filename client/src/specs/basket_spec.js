@@ -27,6 +27,7 @@ describe( 'The Basket', function() {
     basket.add( stock[ 1 ] );
     assert.deepEqual( [{  name: "Suede Shoes, Blue",
                           category: "Women's Footwear",
+                          subcategory: "Footwear",
                           price: 42,
                           stock: 3 }], basket.items );
   });

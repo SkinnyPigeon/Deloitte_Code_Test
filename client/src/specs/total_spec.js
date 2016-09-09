@@ -53,14 +53,6 @@ describe( 'The Total: ', function() {
     assert.equal( 99, runningTotal.total );
   });
 
-  it( 'Should not take a used voucher', function() {
-    basket.add( stock[0] );
-    runningTotal.setTotal( basket.items );
-    fiveOff.useVoucher();
-    runningTotal.addVoucher( fiveOff );
-    assert.equal( 99, runningTotal.total );
-  });
-
   it( 'Should apply £10 off when total is over £50', function() {
     basket.add( stock[0] );
     runningTotal.setTotal( basket.items );

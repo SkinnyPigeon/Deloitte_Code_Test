@@ -9,12 +9,6 @@ describe( 'The Vouchers', function() {
     assert.equal( true, voucher.valid );
   });
 
-  it( 'Should be able to make another valid voucher', function() {
-    voucher = new Voucher( "a" )
-    voucher.setValidation();
-    assert.equal( true, voucher.valid );
-  });
-
   it( 'Should be not set an invalid code to true on a voucher', function() {
      voucher = new Voucher( "AA52741" )
      voucher.setValidation();
@@ -26,13 +20,5 @@ describe( 'The Vouchers', function() {
     voucher.setValidation();
     assert.equal( 15, voucher.value );
   });
-
-  it( 'Should change to used once it has been applied', function() {
-    voucher = new Voucher( "ASHH326" )
-    voucher.setValidation();
-    voucher.useVoucher();
-    assert.equal( true, voucher.hasBeenUsed );
-  })
-
 });
 
