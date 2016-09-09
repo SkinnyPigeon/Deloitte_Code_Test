@@ -197,6 +197,10 @@ p {
   text-align: left;
 }
 
+#basket-display th button {
+  float: left;
+}
+
 #basket-display img {
   max-width: 15%;
   min-width: 32.5px;

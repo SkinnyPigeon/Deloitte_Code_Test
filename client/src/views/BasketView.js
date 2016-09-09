@@ -52,7 +52,8 @@ BasketView.prototype = {
 
       image.src = this.basket.items[i].image;
       description.innerText = this.basket.items[i].name;
-      price.innerText = this.basket.items[i].price;
+      price.innerText = this.basket.items[i].price.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
+      
       button.innerText = "Delete";
       button.id = i;
 
@@ -75,10 +76,8 @@ BasketView.prototype = {
     }
 
     var total = document.createElement( 'h3' );
-    total.innerText = this.total;
+    total.innerText = this.total.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
     this.area.appendChild( total );
-
-
 
     var voucherButton = document.createElement( 'button' );
     voucherButton.id = "voucher-button";

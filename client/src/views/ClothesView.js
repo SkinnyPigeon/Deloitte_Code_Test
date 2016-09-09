@@ -21,7 +21,10 @@ ClothesView.prototype = {
 
       image.src = this.department[i].image;
       description.innerText = this.department[i].name;
-      price.innerText = this.department[i].price;
+
+      var cost = this.department[i].price.toLocaleString('en-GB', {style:'currency', currency:'GBP'})
+
+      price.innerText = cost;
       button.innerText = "Add to basket";
       button.id = i;
       console.log( i );

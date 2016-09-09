@@ -385,7 +385,10 @@
 	
 	      image.src = this.department[i].image;
 	      description.innerText = this.department[i].name;
-	      price.innerText = this.department[i].price;
+	
+	      var cost = this.department[i].price.toLocaleString('en-GB', {style:'currency', currency:'GBP'})
+	
+	      price.innerText = cost;
 	      button.innerText = "Add to basket";
 	      button.id = i;
 	      console.log( i );
@@ -681,7 +684,8 @@
 	
 	      image.src = this.basket.items[i].image;
 	      description.innerText = this.basket.items[i].name;
-	      price.innerText = this.basket.items[i].price;
+	      price.innerText = this.basket.items[i].price.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
+	      
 	      button.innerText = "Delete";
 	      button.id = i;
 	
@@ -704,10 +708,8 @@
 	    }
 	
 	    var total = document.createElement( 'h3' );
-	    total.innerText = this.total;
+	    total.innerText = this.total.toLocaleString('en-GB', {style:'currency', currency:'GBP'});
 	    this.area.appendChild( total );
-	
-	
 	
 	    var voucherButton = document.createElement( 'button' );
 	    voucherButton.id = "voucher-button";
